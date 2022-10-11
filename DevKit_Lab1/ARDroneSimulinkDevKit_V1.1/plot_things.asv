@@ -1,0 +1,21 @@
+clear all;
+close all;
+
+path ='C:\Users\w\Documents\GitHub\ARob-Labs\DevKit_Lab1\ARDroneSimulinkDevKit_V1.1\Dados\';
+i=1;
+files = dir(strcat(path,'*.mat'));
+for file = files'
+    dados(i).nome = file.name;
+    dados(i).KH = erase(file.name,"_teorico.mat");
+    dados(i).KH = erase(dados(i).KH,"_experimental.mat");
+    dados(i).KH = strrep(dados(i).KH,'_',' ');
+    dados(i).dado = load(strcat(path,file.name));
+    i = i+1;
+end
+
+for coisa = dados
+    figure();
+    plot(coisa.dado.ans(1,:),coisa.dado.ans(2,:));
+    hold on;
+    title(coisa.KH);
+end
