@@ -172,21 +172,7 @@ for c=1:size(dados,2)
 end
 [~,I] = sort(Transfer_function);
 Transfer_function = Transfer_function(I(:,1),[1,2]);
-beta_0 = [5;0.5;10;0.3];
-%beta_0 = [5; 0.5;5+1i; 5-1i];
-% Estimacao com os dados
-[beta, ~, ~, ~, error, ~] = nlinfit(Transfer_function(:,1),...
-                                    10.^(Transfer_function(:,2)/20),...
-                                    @tf_pitch,...
-                                    beta_0...
-                                    );
-
-beta
-error
-
-X = logspace( log(1)/log(10), log(20)/log(10),100).';
-
-fitting = [X, 20*log(tf_pitch(beta,X))/log(10)];
+s = tf('s');
 
 %% Plot dos resultados
 for coisa = dados
@@ -256,21 +242,75 @@ for coisa = dados
     
 end
 
-%% Plot do bode plot
-plus = 0;
-for c=1:size(dados,2)
-    for i=1:size(dados(c).command,2)
-        Transfer_function(plus + i,1) = dados(c).command(i).frequency;
-        Transfer_function(plus + i,2)  = dados(c).experiment(i).gain;
-    end
-    plus = plus + i;
-end
-[~,I] = sort(Transfer_function);
-Transfer_function = Transfer_function(I(:,1),[1,2]);
+%% Bode plot - Segunda ordem
+fprintf('Resultados para o fitting pra uma FT de <strong>2a ordem sem polo</strong>\n\n');
+
+beta_0a = [5;10;0.3];
+% Estimacao com os dados
+[beta_a, ~, ~, ~, error, ~] = nlinfit(Transfer_function(:,1),...
+                                    10.^(Transfer_function(:,2)/20),...
+                                    @tf_pitch_a,...
+                                    beta_0a...
+                                    );
+beta_a(2) = abs(beta_a(2));
+fprintf(' K_p = %f \n omega_n = %f rad/s \n csi = %f\n', beta_a(1), beta_a(2), beta_a(3));
+fprintf(' MSE - %.3f 10^-2 \n\n', error*100);
+
+tf_a = beta_a(1)/(s^2 + 2*beta_a(2)*beta_a(3)*s + beta_a(2)^2);
+
+opts = bodeoptions;
+opts.XLim = 10.^[-1,2];
+
 figure();
-semilogx(Transfer_function(:,1),Transfer_function(:,2),'*');
 hold on;
-semilogx(fitting(:,1),fitting(:,2));
+semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#FF6100");
+bodeplot(tf_a,opts);
+
+%% Bode plot - Segunda ordem + Zero
+
+fprintf('Resultados para o fitting pra uma FT de <strong>2a ordem com zero</strong>\n\n');
+
+beta_0b = [5;0.5;10;0.3];
+% Estimacao com os dados
+[beta_b, ~, ~, ~, error, ~] = nlinfit(Transfer_function(:,1),...
+                                    10.^(Transfer_function(:,2)/20),...
+                                    @tf_pitch_b,...
+                                    beta_0b...
+                                    );
+beta_b(3) = abs(beta_b(3));
+fprintf(' K_p = %f \n a = %f \n omega_n = %f rad/s \n csi = %f \n', ...
+        beta_b(1), beta_b(2), beta_b(3), beta_b(4));
+fprintf(' MSE - %.3f 10^-2 \n\n', error*100);
+
+tf_b = beta_b(1)*(s + beta_b(2))/(s^2 + 2*beta_b(3)*beta_b(4)*s + beta_b(3)^2);
+
+figure();
+hold on;
+semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#FF6100");
+bodeplot(tf_b,opts);
+
+%% Bode plot - Terceira ordem + Zero
+
+fprintf('Resultados para o fitting pra uma FT de <strong>3a ordem com polo</strong>\n\n');
+beta_0c = [5;0.5;3;0.3;3];
+% Estimacao com os dados
+[beta_c, ~, ~, ~, error, ~] = nlinfit(Transfer_function(:,1),...
+                                    10.^(Transfer_function(:,2)/20),...
+                                    @tf_pitch_c,...
+                                    beta_0c...
+                                    );
+                                
+beta_c(3) = abs(beta_c(3));
+fprintf(' K_p = %f \n a = %f \n omega_n = %f rad/s \n csi = %f \n b = %f \n', ...
+        beta_c(1), beta_c(2), beta_c(3), beta_c(4), beta_c(5));
+fprintf(' MSE - %.3f 10^-2 \n\n', error*100);
+
+tf_c = beta_c(1)*(s + beta_c(2))/(s^2 + 2*beta_c(3)*beta_c(4)*s + beta_c(3)^2)/(s + beta_c(5));
+
+figure();
+hold on;
+semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#FF6100");
+bodeplot(tf_c,opts);
 
 %% Funcoes
 function t = zerocross_detection(x1, x2)
@@ -314,14 +354,34 @@ function x = abs_maximum(list_x)
 
 end
 
-function y = tf_pitch(beta, x)
+function y = tf_pitch_a(beta, x)
 
-    % beta(1) = a
-    % beta(2) = kp
+    % beta(1) = kp
+    % beta(2) = omega_n
+    % beta(3) = csi
+    
+    y = beta(1)./( sqrt( (beta(2)^2-x.^2).^2 + (2*beta(2)*beta(3).*x).^2 ) );
+    
+end
+function y = tf_pitch_b(beta, x)
+
+    % beta(1) = kp
+    % beta(2) = a
     % beta(3) = omega_n
     % beta(4) = csi
     
+    y = ( beta(1).*sqrt(x.^2 + beta(2)^2) )./( sqrt( (beta(3)^2-x.^2).^2 + (2*beta(3)*beta(4).*x).^2 ) );
+    
+end
+function y = tf_pitch_c(beta, x)
+
+    % beta(1) = kp
+    % beta(2) = a
+    % beta(3) = omega_n
+    % beta(4) = csi
+    % beta(5) = b
+    
     %y = abs(beta(2)*(1i*x + beta(1)) ./ ( (1i.*x + beta(3)).*(1i.*x + beta(4)) ));
-    y = ( beta(2).*sqrt(x.^2 + beta(1)^2) )./( sqrt( (beta(3)^2-x.^2).^2 + (2*beta(3)*beta(4).*x).^2 ) );
+    y = ( beta(1).*sqrt(x.^2 + beta(2)^2) )./( sqrt( (beta(3)^2-x.^2).^2 + (2*beta(3)*beta(4).*x).^2 ) )./sqrt(x.^2 + beta(5)^2);
     
 end

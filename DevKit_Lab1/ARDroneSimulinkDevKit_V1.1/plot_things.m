@@ -11,7 +11,8 @@ close all;
 %      2 -  depois do k e h, dizer "_teorico" ou "_experimental"
 %      OBRIGATÓRIO
 
-path ='C:\Users\w\Documents\GitHub\ARob-Labs\DevKit_Lab1\ARDroneSimulinkDevKit_V1.1\Dados\';
+path(pathdef);
+path = [pwd '\Dados\'];
 
 i=1;
 previous = 'lol';
