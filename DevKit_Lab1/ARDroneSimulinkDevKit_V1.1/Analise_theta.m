@@ -312,6 +312,27 @@ hold on;
 semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#FF6100");
 bodeplot(tf_c,opts);
 
+%% Resposta para step de theta
+path = path + "step\";
+
+files = dir(strcat(path,'*.mat'));
+for file = files'
+    step(i).nome   = file.name;
+    step(i).KH     = erase(file.name,"_commands.mat");
+    step(i).KH     = erase(step(i).KH,".mat");
+    step(i).KH     = strrep(step(i).KH,'_',' ');
+    step_answer    = load(strcat(path,file.name));
+    if(size(holder.ans,1) == 2)             % Caso venha do vetor de comando
+        step(i).tempo  = holder.ans(1,:);
+        step(i).theta  = holder.ans(2,:);
+    else                                    % Caso venha do vetor de estados
+        step(i).theta_exp  = holder.ans(3,:);
+        i = i - 1;
+    end
+    i = i+1;
+end
+
+
 %% Funcoes
 function t = zerocross_detection(x1, x2)
 
