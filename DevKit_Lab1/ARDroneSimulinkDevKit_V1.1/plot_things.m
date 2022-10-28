@@ -1,5 +1,5 @@
-clear all;
-close all;
+%clear all;
+%close all;
 
 %NOTA: para este código funcionar:
 %
@@ -22,6 +22,7 @@ for file = files'
     dados(i).nome = file.name;
     dados(i).KH = erase(file.name,"_teorico.mat");
     dados(i).KH = erase(dados(i).KH,"_experimental.mat");
+    dados(i).KH = erase(dados(i).KH,"_xpedido.mat");
     dados(i).KH = strrep(dados(i).KH,'_',' ');
     dados(i).dado = load(strcat(path,file.name));
     i = i+1;
@@ -30,12 +31,16 @@ end
 for coisa = dados
     if(strcmp(previous, coisa.KH) == 1) % o anterior tbm era os mesmo dados
         plot(coisa.dado.ans(1,:),coisa.dado.ans(2,:));
-        legend('experimental', 'teorico', 'Location', 'southeast');
+        xlabel('tempo [s]');
+        ylabel('altitude [m]');
+        axis([20,50,0.6,MAX]);
+        legend('Experimental', 'Teorico', 'Pedido', 'Location', 'southeast');
     else
         figure();
+        MAX = max(coisa.dado.ans(2,:) + 0.15);
         plot(coisa.dado.ans(1,:),coisa.dado.ans(2,:));
         hold on;
-        title(coisa.KH);
+        %title(coisa.KH);
         %hold off;
     end
     previous = coisa.KH;

@@ -5,11 +5,9 @@ close all;
 %
 %      Nome dos ficheiros: 
 %
-%      1 -  devem começar com a indicação do k e do h, e deve estar
-%      exatamente da mesma forma escrito para o experimental e o teorico
+%      Devem, preferencialmente, apenas diferir no sufixo co os comandos a
+%      terem *_commands.mat
 %      
-%      2 -  depois do k e h, dizer "_teorico" ou "_experimental"
-%      OBRIGATÓRIO
 
 path(pathdef);
 path = [pwd '\Dados\Theta\'];
@@ -167,11 +165,14 @@ for c=1:size(dados,2)
     for i=1:size(dados(c).command,2)
         Transfer_function(plus + i,1) = dados(c).command(i).frequency;
         Transfer_function(plus + i,2)  = dados(c).experiment(i).gain;
+        Transfer_function(plus + i,3)  = dados(c).command(i).amplitude;
+        Transfer_function(plus + i,4)  = dados(c).experiment(i).amplitude;
+        
     end
     plus = plus + i;
 end
 [~,I] = sort(Transfer_function);
-Transfer_function = Transfer_function(I(:,1),[1,2]);
+Transfer_function = Transfer_function(I(:,1),[1,2,3,4]);
 s = tf('s');
 
 %% Plot dos resultados
@@ -243,7 +244,7 @@ for coisa = dados
 end
 
 %% Bode plot - Segunda ordem
-fprintf('Resultados para o fitting pra uma FT de <strong>2a ordem sem polo</strong>\n\n');
+fprintf('Resultados para o fitting para uma FT de <strong>2a ordem sem zero</strong>\n\n');
 
 beta_0a = [5;10;0.3];
 % Estimacao com os dados
@@ -268,7 +269,7 @@ bodeplot(tf_a,opts);
 
 %% Bode plot - Segunda ordem + Zero
 
-fprintf('Resultados para o fitting pra uma FT de <strong>2a ordem com zero</strong>\n\n');
+fprintf('Resultados para o fitting para uma FT de <strong>2a ordem com zero</strong>\n\n');
 
 beta_0b = [5;0.5;10;0.3];
 % Estimacao com os dados
@@ -291,7 +292,7 @@ bodeplot(tf_b,opts);
 
 %% Bode plot - Terceira ordem + Zero
 
-fprintf('Resultados para o fitting pra uma FT de <strong>3a ordem com polo</strong>\n\n');
+fprintf('Resultados para o fitting para uma FT de <strong>3a ordem com zero</strong>\n\n');
 beta_0c = [5;0.5;3;0.3;3];
 % Estimacao com os dados
 [beta_c, ~, ~, ~, error, ~] = nlinfit(Transfer_function(:,1),...
@@ -309,8 +310,15 @@ tf_c = beta_c(1)*(s + beta_c(2))/(s^2 + 2*beta_c(3)*beta_c(4)*s + beta_c(3)^2)/(
 
 figure();
 hold on;
-semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#FF6100");
+semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#267F00");
 bodeplot(tf_c,opts);
+
+figure();
+hold on;
+semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#267F00");
+bodeplot(tf_a,opts);
+bodeplot(tf_b,opts);
+
 
 %% Funcoes
 function t = zerocross_detection(x1, x2)
