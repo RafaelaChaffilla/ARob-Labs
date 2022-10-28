@@ -317,6 +317,39 @@ semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#2
 bodeplot(tf_a,opts);
 bodeplot(tf_b,opts);
 
+%% Resposta para pedido retangulo de theta
+
+path = path + "step\";
+
+i=1;
+files = dir(strcat(path,'*.mat'));
+for file = files'
+    step(i).nome   = file.name;
+    step(i).holder = load(strcat(path,file.name));
+    if(size(step(i).holder.ans,1) == 2)   % Caso venha do vetor de comando
+        step(i).tempo  = step(i).holder.ans(1,:)-10;
+        step(i).theta_comms  = step(i).holder.ans(2,:);
+    else                                  % Caso venha do vetor de estados
+        step(i).theta_exp  = step(i).holder.ans(3,:);        
+        i = i - 1;                    
+    end
+    i = i+1;
+end
+
+Y_tfc = lsim(tf_c,step(1).theta_comms,step(1).tempo); 
+Y_tfb = lsim(tf_b,step(1).theta_comms,step(1).tempo);
+Y_tfa = lsim(tf_a,step(1).theta_comms,step(1).tempo);
+
+figure();
+plot(step(1).tempo,Y_tfa, step(1).tempo,Y_tfb, step(1).tempo,Y_tfc);
+hold on;
+
+plot(step(1).tempo, step(1).theta_comms, step(1).tempo, step(1).theta_exp);
+legend("Resposta de T_1(s)","Resposta de T_2(s)","Resposta de T_3(s)", "Pedido de Ângulo de Picada", "Resposta Experimental", 'Location', 'southwest');
+xlim([0 31.97]);
+xlabel('Tempo [s]');
+ylabel('\theta [rad]');
+hold off;
 
 %% Funcoes
 function t = zerocross_detection(x1, x2)

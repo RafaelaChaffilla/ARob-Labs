@@ -329,7 +329,7 @@ for file = files'
     step(i).nome   = file.name;
     step(i).holder = load(strcat(path,file.name));
     if(size(step(i).holder.ans,1) == 2)   % Caso venha do vetor de comando
-        step(i).tempo  = step(i).holder.ans(1,:);
+        step(i).tempo  = step(i).holder.ans(1,:)-10;
         step(i).theta_comms  = step(i).holder.ans(2,:);
     else                                  % Caso venha do vetor de estados
         step(i).theta_exp  = step(i).holder.ans(3,:);        
@@ -342,25 +342,49 @@ end
 % [Y_tfc,T_tfc]=step(tf_c, opt);
 Y_tfc = lsim(tf_c,step(1).theta_comms,step(1).tempo); 
 Y_tfb = lsim(tf_b,step(1).theta_comms,step(1).tempo);
-Y_tfa = lsim(tf_b,step(1).theta_comms,step(1).tempo);
+Y_tfa = lsim(tf_a,step(1).theta_comms,step(1).tempo);
 
 figure();
-plot(step(1).tempo,Y_tfc, step(1).tempo,Y_tfb, step(1).tempo,Y_tfa);
-title("step response");
+plot(step(1).tempo,Y_tfa, step(1).tempo,Y_tfb, step(1).tempo,Y_tfc);
+% title("step response");
 hold on;
 
 plot(step(1).tempo, step(1).theta_comms, step(1).tempo, step(1).theta_exp);
-legend("tfc(s)","tfb(s)","tfa(s)", "pedido de step", "resposta experimental", 'Location', 'southwest');
-xlim([10 40]);
-xlabel('tempo [s]');
+legend("Resposta de T_1(s)","Resposta de T_2(s)","Resposta de T_3(s)", "Pedido de Ângulo de Picada", "Resposta Experimental", 'Location', 'southwest');
+xlim([0 31.97]);
+xlabel('Tempo [s]');
 ylabel('\theta [rad]');
 hold off;
 
-figure();
-plot(step(1).tempo,Y_tfb);
+
+tempo1 = [0:0.05:3];
+tempo2 = tempo1 + 3.05;
+tempo3 = tempo2 + 3.05;
+comms1 = zeros(size(tempo1));
+comms2 = 0.2 + comms1;
+comms3 = comms1;
+
+tempo_f = [tempo1 tempo2 tempo3];
+comms_f = [comms1 comms2 comms3];
+Y_tfc = lsim(tf_c,comms_f,tempo_f); 
+Y_tfb = lsim(tf_b,comms_f,tempo_f);
+Y_tfa = lsim(tf_a,comms_f,tempo_f);
+
 
 figure();
-plot(step(1).tempo,Y_tfa);
+plot(tempo_f,Y_tfc);
+title("tfc");
+hold on;
+% figure();
+plot(tempo_f,Y_tfb);
+% title("tfb");
+
+% figure();
+plot(tempo_f,Y_tfa);
+hold on;
+plot(tempo_f, comms_f);
+% title("tfa");
+legend("c", "b", "a", "comms");
 
 %% Funcoes
 function t = zerocross_detection(x1, x2)
