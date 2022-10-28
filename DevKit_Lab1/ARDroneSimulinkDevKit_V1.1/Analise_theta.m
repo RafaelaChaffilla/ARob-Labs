@@ -319,6 +319,48 @@ semilogx(Transfer_function(:,1),Transfer_function(:,2),'*','MarkerEdgeColor',"#2
 bodeplot(tf_a,opts);
 bodeplot(tf_b,opts);
 
+%% Resposta para step de theta
+
+path = path + "step\";
+
+i=1;
+files = dir(strcat(path,'*.mat'));
+for file = files'
+    step(i).nome   = file.name;
+    step(i).holder = load(strcat(path,file.name));
+    if(size(step(i).holder.ans,1) == 2)   % Caso venha do vetor de comando
+        step(i).tempo  = step(i).holder.ans(1,:);
+        step(i).theta_comms  = step(i).holder.ans(2,:);
+    else                                  % Caso venha do vetor de estados
+        step(i).theta_exp  = step(i).holder.ans(3,:);        
+        i = i - 1;                    % Para ficar no mesmo vetor de dados
+    end
+    i = i+1;
+end
+
+% opt = stepDataOptions('StepAmplitude',0.2);
+% [Y_tfc,T_tfc]=step(tf_c, opt);
+Y_tfc = lsim(tf_c,step(1).theta_comms,step(1).tempo); 
+Y_tfb = lsim(tf_b,step(1).theta_comms,step(1).tempo);
+Y_tfa = lsim(tf_b,step(1).theta_comms,step(1).tempo);
+
+figure();
+plot(step(1).tempo,Y_tfc, step(1).tempo,Y_tfb, step(1).tempo,Y_tfa);
+title("step response");
+hold on;
+
+plot(step(1).tempo, step(1).theta_comms, step(1).tempo, step(1).theta_exp);
+legend("tfc(s)","tfb(s)","tfa(s)", "pedido de step", "resposta experimental", 'Location', 'southwest');
+xlim([10 40]);
+xlabel('tempo [s]');
+ylabel('\theta [rad]');
+hold off;
+
+figure();
+plot(step(1).tempo,Y_tfb);
+
+figure();
+plot(step(1).tempo,Y_tfa);
 
 %% Funcoes
 function t = zerocross_detection(x1, x2)
