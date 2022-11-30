@@ -19,7 +19,7 @@ clc
 
 %%
 
-sampleTime=0.03;
+sampleTime=0.05;
 disp('This script guides the user through examples of both simulations and');
 disp('Wi-Fi control Simulink models for the Parrot ARDrone ');
 disp(' '); 
