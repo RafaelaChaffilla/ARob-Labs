@@ -7,21 +7,21 @@ Bacc=load("./dataB/B_acc.mat");
 Bgyr=load("./dataB/B_gyro.mat");
 Cacc=load("./dataC/C_acc.mat");
 Cgyr=load("./dataC/C_gyro.mat");
-% PLUSacc=load("./data/PLUS_accelerometer.mat");
-% PLUSgyr=load("./data/PLUS_gyro.mat");
+PLUSacc=load("./data/PLUS_accelerometer.mat");
+PLUSgyr=load("./data/PLUS_gyro.mat");
 
 %% plots
 plot_acc_gyr(Aacc, Agyr);
 plot_acc_gyr(Bacc.B_acc, Bgyr.B_gyr);
 plot_acc_gyr(Cacc.C_acc, Cgyr.C_gyr);
-% plot_acc_gyr(PLUSacc, PLUSgyr);
+plot_acc_gyr(PLUSacc, PLUSgyr);
 
 %% media e variancia
 
 [mean_Aacc, var_Aacc, mean_Agyr, var_Agyr] = mean_and_var(Aacc, Agyr);
 [mean_Bacc, var_Bacc, mean_Bgyr, var_Bgyr] = mean_and_var(Bacc.B_acc, Bgyr.B_gyr);
 [mean_Cacc, var_Cacc, mean_Cgyr, var_Cgyr] = mean_and_var(Cacc.C_acc, Cgyr.C_gyr);
-% [mean_PLUSacc, var_PLUSacc, mean_PLUSgyr, var_PLUSgyr] = mean_and_var(PLUSacc, PLUSgyr);
+[mean_PLUSacc, var_PLUSacc, mean_PLUSgyr, var_PLUSgyr] = mean_and_var(PLUSacc, PLUSgyr);
 
 %% functions
 function plot_acc_gyr(Aacc, Agyr)
