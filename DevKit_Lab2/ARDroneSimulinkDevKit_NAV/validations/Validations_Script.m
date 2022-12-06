@@ -7,20 +7,21 @@
 %% Initialization
 clear all;
 close all;
+addpath '../Kalman_Filters'
 sampleTime  = 0.05;
 %% Setup of filters
 % 1st filter - no bias
 
 Q           = 2*10^(-2);
 R           = 1*10^(-2);
-Kalman_1    = Setup_Kalman_1(Q, R);
+Kalman_1    = Setup_Kalman_1(Q, R, sampleTime);
 
 disp(['1st Kalman Filter gains are L_1 = ' num2str(Kalman_1.L)])
 % 2nd filter - bias
 
 Q           = [8*10^(-3),1.5*10^(-3)];
 R           = 1*10^(-2);
-Kalman_2    = Setup_Kalman_2(Q, R);
+Kalman_2    = Setup_Kalman_2(Q, R, sampleTime);
 
 disp(['2nd Kalman Filter gains are L_1 = ' num2str(Kalman_2.L(1))...
       '; L_2 = ' num2str(Kalman_2.L(2))]);
@@ -42,7 +43,7 @@ filter = 1;
 bias = [0; 0; 0]*pi/180;
 %   simulation
 tests = tests +1;
-SIM(tests) = sim('Validation_Kalman_OP');
+SIM(tests) = sim('Validation_Kalman_Filters');
 
 %   bias choise
 bias = [-1; 2; 0]*pi/180;
