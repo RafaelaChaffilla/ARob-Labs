@@ -1,45 +1,73 @@
+%% Filter Validations
+%
+%   Duarte Ferro Lopes  , n 95783
+%   Jose Medeiro        , n 95811
+%   Rafaela Chaffilla   , n 95840
+%
+%% Initialization
 clear all;
-
+close all;
 sampleTime  = 0.05;
-%% 1st filter - no bias
+%% Setup of filters
+% 1st filter - no bias
 
-A = 0;
-B = [1,1];
-C = 1;
-D = [0,0];
+Q           = 2*10^(-2);
+R           = 1*10^(-2);
+Kalman_1    = Setup_Kalman_1(Q, R);
 
-Kalman_1.sys = ss(A,B,C,D);
-Kalman_1.sys = c2d(Kalman_1.sys,sampleTime);
+disp(['1st Kalman Filter gains are L_1 = ' num2str(Kalman_1.L)])
+% 2nd filter - bias
 
-Q = 2*10^(-2);
-R = 1*10^(-2);
-N = 0;
+Q           = [8*10^(-3),1.5*10^(-3)];
+R           = 1*10^(-2);
+Kalman_2    = Setup_Kalman_2(Q, R);
 
-[Kalman_1.sys,Kalman_1.L,~] = kalman(Kalman_1.sys, Q, R, N);
+disp(['2nd Kalman Filter gains are L_1 = ' num2str(Kalman_2.L(1))...
+      '; L_2 = ' num2str(Kalman_2.L(2))]);
 
-%% 2nd filter - bias
+% P. Batista filter
 
-A = [0,-1;0,0];
-B = [1,1,0;0,0,1];
-C = [1,0];
-D = [0,0,0];
+Q           = [ 0.05, 0.05, 0.05,...
+                0.01, 0.01, 0.01];
+R           = [ 0.05, 0.05, 0.05];
+Kalman_OP   = Setup_Kalman_OP(Q, R);
 
-Kalman_2.sys = ss(A,B,C,D);
-Kalman_2.sys = c2d(Kalman_2.sys,sampleTime);
+%% Tests
+tests = 0;
+%
+% 1st filter
+%   filter choise
+filter = 1;
+%   bias choise
+bias = [0; 0; 0]*pi/180;
+%   simulation
+tests = tests +1;
+SIM(tests) = sim('Validation_Kalman_OP');
 
-Q = diag([8*10^(-3),1.5*10^(-3)]);
-R = 1*10^(-2);
-N = 0;
+%   bias choise
+bias = [-1; 2; 0]*pi/180;
+%   simulation
+tests = tests +1;
+SIM(2) = sim('Validation_Kalman_OP');
 
-[Kalman_2.sys,Kalman_2.L,~] = kalman(Kalman_2.sys, Q, R, N);
+%
+% 2nd filter
+%   filter choise
+filter = 2;
+%   bias choise
+bias = [5; -3; 0]*pi/180;
+%   simulation
+tests = tests +1;
+SIM(tests) = sim('Validation_Kalman_OP');
 
-%% P. Batista filter
+%
+% 3nd filter
+%   filter choise
+filter = 3;
+%   bias choise
+bias = [5; -3; 3]*pi/180;
+%   simulation
+tests = tests +1;
+SIM(tests) = sim('Validation_Kalman_OP');
 
-Kalman_OP.C = [eye(3), zeros(3,3)];
-
-Kalman_OP.Q = [ eye(3)*0.05 , zeros(3,3)    ;...
-                zeros(3,3)  , eye(3)*0.01   ];
-
-Kalman_OP.R = eye(3)*0.05;
-
-SIM.Kalman_OP = sim('Validation_Kalman_OP');
+%% Plots

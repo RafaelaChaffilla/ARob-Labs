@@ -16,10 +16,23 @@ bdclose all;
 clear all;
 bdclose all;
 clc
-
-%%
-
 sampleTime=0.05;
+%% Kalman Filters Setup
+addpath './Kalman_Filters/';
+Q           = 1*10^(-2);
+R           = 1*10^(-2);
+Kalman_1    = Setup_Kalman_1(Q,R,sampleTime);
+
+Q           = [6*10^(-2),1.5*10^(-2)];
+R           = 5*10^(-2);
+Kalman_2    = Setup_Kalman_2(Q,R,sampleTime);
+
+Q           = [ ones(3,1)*4*10^(-3);...
+                ones(3,1)*1*10^(-8);];
+R           =   ones(3,1)*8*10^(-3);
+Kalman_OP   = Setup_Kalman_OP(Q,R);
+%% Selection
+
 disp('This script guides the user through examples of both simulations and');
 disp('Wi-Fi control Simulink models for the Parrot ARDrone ');
 disp(' '); 
@@ -83,7 +96,14 @@ switch option
     case 3
         disp('Filename from where navdata will be loaded:'); 
         filename = input(' ','s');
-        load(filename)
+        loadedNavdata = load(filename);
+        if isfield(loadedNavdata,'ans')
+            loadedNavdata = loadedNavdata.ans;
+            finalTime = loadedNavdata.Time(end);
+        else
+            loadedNavdata = loadedNavdata.navdata;
+            finalTime = loadedNavdata.time(end);
+        end
         cd Replay;
         setupReplay;
     otherwise
