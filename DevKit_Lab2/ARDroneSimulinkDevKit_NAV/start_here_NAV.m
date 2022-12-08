@@ -27,9 +27,9 @@ Q           = [6*10^(-2),1.5*10^(-2)];
 R           = 5*10^(-2);
 Kalman_2    = Setup_Kalman_2(Q,R,sampleTime);
 
-Q           = [ ones(3,1)*4*10^(-3);...
-                ones(3,1)*1*10^(-8);];
-R           =   ones(3,1)*8*10^(-3);
+Q           = [ [1; 1; 1]*1;...
+                [1; 1; 1]*1*10^(-5)];
+R           = [  1; 1; 1]*2;
 Kalman_OP   = Setup_Kalman_OP(Q,R);
 %% Selection
 

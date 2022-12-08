@@ -39,6 +39,11 @@ tests = 0;
 % 1st filter
 %   filter choise
 filter = 1;
+%   angle choise
+PHI.gain    = 0;
+PHI.bias    = 0;
+THETA.gain  = 0;
+THETA.bias  = 0;
 %   bias choise
 bias = [0; 0; 0]*pi/180;
 %   simulation
@@ -49,26 +54,72 @@ SIM(tests) = sim('Validation_Kalman_Filters');
 bias = [-1; 2; 0]*pi/180;
 %   simulation
 tests = tests +1;
-SIM(2) = sim('Validation_Kalman_OP');
+SIM(2) = sim('Validation_Kalman_Filters');
 
 %
 % 2nd filter
 %   filter choise
 filter = 2;
+%   angle choise
+PHI.gain    = 0;
+PHI.bias    = 0;
+THETA.gain  = 0;
+THETA.bias  = 0;
 %   bias choise
-bias = [5; -3; 0]*pi/180;
+bias = [2; -3; 1]*pi/180;
 %   simulation
 tests = tests +1;
-SIM(tests) = sim('Validation_Kalman_OP');
+SIM(tests) = sim('Validation_Kalman_Filters');
 
 %
-% 3nd filter
+% 3rd filter
 %   filter choise
 filter = 3;
+%   angle choise
+PHI.gain    = 7;
+PHI.bias    = 3.5;
+THETA.gain  = 20;
+THETA.bias  = 0;
 %   bias choise
-bias = [5; -3; 3]*pi/180;
+bias = [2; -3; 1]*pi/180;
 %   simulation
 tests = tests +1;
-SIM(tests) = sim('Validation_Kalman_OP');
+SIM(tests) = sim('Validation_Kalman_Filters');
 
+%
+% 4th filter
+%   filter choise
+filter = 4;
+%   angle choise
+PHI.gain    = 7;
+PHI.bias    = 3.5;
+THETA.gain  = 20;
+THETA.bias  = 0;
+%   bias choise
+bias = [2; -3; 1]*pi/180;
+%   simulation
+tests = tests +1;
+SIM(tests) = sim('Validation_Kalman_Filters');
 %% Plots
+% angle error plots
+for c = 1:size(SIM,2)
+    figure();
+    hold on;
+    % roll
+    plot(SIM(c).ang_hat.time,...
+         SIM(c).ang.signals.values(:,1) - SIM(c).ang_hat.signals.values(:,1));
+    % pitch
+    plot(SIM(c).ang_hat.time,...
+         SIM(c).ang.signals.values(:,2) - SIM(c).ang_hat.signals.values(:,2));
+end
+% bias error plots
+for c = 1:size(SIM,2)
+    figure();
+    hold on;
+    % roll
+    plot(SIM(c).bias_hat.time,...
+         SIM(c).bias_real.signals.values(:,1)*180/pi - SIM(c).bias_hat.signals.values(:,1));
+    % pitch
+    plot(SIM(c).bias_hat.time,...
+         SIM(c).bias_real.signals.values(:,2)*180/pi - SIM(c).bias_hat.signals.values(:,2));
+end
