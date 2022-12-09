@@ -17,6 +17,11 @@ plot_acc_gyr(Cacc.C_acc, Cgyr.C_gyr);
 plot_acc_gyr(PLUSacc, PLUSgyr);
 
 %% media e variancia
+% remove data from perturbances
+Aacc.ans = Aacc.ans(:, 4:end);
+Agyr.ans = Agyr.ans(:, 4:end);
+Cacc.C_acc.ans = Cacc.C_acc.ans(:, 190:end);
+Cgyr.C_gyr.ans = Cgyr.C_gyr.ans(:, 190:end);
 
 [mean_Aacc, var_Aacc, mean_Agyr, var_Agyr] = mean_and_var(Aacc, Agyr);
 [mean_Bacc, var_Bacc, mean_Bgyr, var_Bgyr] = mean_and_var(Bacc.B_acc, Bgyr.B_gyr);
