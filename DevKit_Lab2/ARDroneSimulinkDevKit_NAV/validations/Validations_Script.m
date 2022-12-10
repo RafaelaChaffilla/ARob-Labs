@@ -77,22 +77,7 @@ SIM(tests) = sim('Validation_Kalman_Filters');
 filter = 3;
 %   angle choise
 PHI.gain    = 7;
-PHI.bias    = 3.5;
-THETA.gain  = 20;
-THETA.bias  = 0;
-%   bias choise
-bias = [2; -3; 1];
-%   simulation
-tests = tests +1;
-SIM(tests) = sim('Validation_Kalman_Filters');
-
-%
-% 4th filter
-%   filter choise
-filter = 4;
-%   angle choise
-PHI.gain    = 7;
-PHI.bias    = 3.5;
+PHI.bias    = 7;
 THETA.gain  = 20;
 THETA.bias  = 0;
 %   bias choise
@@ -101,7 +86,13 @@ bias = [2; -3; 1];
 tests = tests +1;
 SIM(tests) = sim('Validation_Kalman_Filters');
 %% Plots
-
+palette.PHI	  =["#0026FF";...
+                "#00FFFF"];
+palette.THETA =["#FF0000";...
+                "#E5BF00"];
+palette.BIAS  =["#009DFF";...
+                "#FF6A00";...
+                "#00CC17"];
 for i=1:tests
     if(i<4)
         figure();
@@ -121,12 +112,17 @@ for i=1:tests
         hold off;
     end
     if(i>3)
-        % plot do erro dos angulos
         figure();
         hold on;
-        for d =1:SIM(i).ang_hat.signals.dimensions
-            plot(SIM(i).ang.time, SIM(i).ang_hat.signals.values(:,d) - SIM(i).ang.signals.values(:,d)); 
-        end
+        % phi
+        plot(SIM(i).ang.time, SIM(i).ang_hat.signals.values(:,1) ...
+                             -SIM(i).ang.signals.values(:,1),...
+                 'Color',palette.PHI(1));
+        % theta
+        plot(SIM(i).ang.time, SIM(i).ang_hat.signals.values(:,2) ...
+                             -SIM(i).ang.signals.values(:,2),...
+                 'Color',palette.THETA(1));
+        % detalhes logisticos
         legend('\phi','\theta');
         xlabel("Tempo [s]");
         ylabel('e_{ângulos} [º]');
@@ -135,16 +131,19 @@ for i=1:tests
         figure();
         hold on;
         for d =1:SIM(i).bias_real.signals.dimensions
-            plot(SIM(i).bias_hat.time, SIM(i).bias_hat.signals.values(:,d) - SIM(i).bias_real.signals.values(:,d)); 
+            plot(SIM(i).bias_hat.time, SIM(i).bias_hat.signals.values(:,d)...
+                                      -SIM(i).bias_real.signals.values(:,d),...
+                 'Color',palette.BIAS(d)); 
         end
-        legend('$b_x$','$b_y$', '$b_z$','Interpreter','latex');
+        legend( '$b_x$','$b_y$', '$b_z$',...
+                'Interpreter','latex');
         xlabel("Tempo [s]");
         ylabel('e_{bias} [º/s]');
         hold off;
     end
 end
 
-%% bias
+% bias
 %bias em p
 figure();
 hold on;
@@ -161,45 +160,3 @@ plot(SIM(1,3).bias_hat.time, -3*ones(size(SIM(1,3).bias_hat.time, 1)), SIM(1,3).
 legend('bias real','bias estimado');
 xlabel("Tempo [s]");
 ylabel("bias [º]");
-
-% plot do angulo P. Batista
-pallete_1 =["#0072BD";...
-            "#D95319";...
-            "#009DFF";...
-            "#FF611E"];
-pallete_2 =["#0072BD";...
-            "#D95319";...
-            "#638E27";...
-            "#009DFF";...
-            "#FF611E";...
-            "#77AC30"];
-
-figure();
-hold on;
-for i = 4:5
-    for d =1:SIM(i).ang_hat.signals.dimensions
-        plot(SIM(i).ang.time, SIM(i).ang_hat.signals.values(:,d) - SIM(i).ang.signals.values(:,d),...
-            'Color',pallete_1(d)); 
-    end
-end
-legend('$\phi_c$','$\theta_c$',...
-       '$\phi_d$','$\theta_d$',...
-       'Interpreter','latex');
-xlabel("Tempo [s]");
-ylabel('e_{ângulos} [º]');
-hold off;
-% plot do bias P. Batista
-figure();
-hold on;
-for i = 4:5
-    for d =1:SIM(i).bias_real.signals.dimensions
-        plot(SIM(i).bias_hat.time, SIM(i).bias_hat.signals.values(:,d) - SIM(i).bias_real.signals.values(:,d),...
-            'Color',pallete_2(d)); 
-    end
-end
-legend('$b_x,c$','$b_y,c$', '$b_z,c$',...
-       '$b_x,d$','$b_y,d$', '$b_z,d$',...
-       'Interpreter','latex');
-xlabel("Tempo [s]");
-ylabel('e_{bias} [º/s]');
-hold off;
