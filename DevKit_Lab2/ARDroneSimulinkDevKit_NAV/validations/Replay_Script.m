@@ -28,19 +28,32 @@ end
 %% Setup of filters
 % 1st filter - no bias
 
-Q           = 2*10^(-2);
-R           = 1*10^(-2);
-Kalman_1    = Setup_Kalman_1(Q, R, sampleTime);
+Q               = 1;
+R               = 5;
+Kalman_1_theta  = Setup_Kalman_1(Q, R, sampleTime);
 
-disp(['1st Kalman Filter gains are L_1 = ' num2str(Kalman_1.L)])
+Q               = 5;
+R               = 1;
+Kalman_1_phi  = Setup_Kalman_1(Q, R, sampleTime);
+
+disp(['1st Kalman Filter for gains for theta are L_1 = ' num2str(Kalman_1_theta.contL)])
+disp(['1st Kalman Filter for gains for phi are L_1 = ' num2str(Kalman_1_phi.contL)])
+
 % 2nd filter - bias
 
-Q           = [8*10^(-3),1.5*10^(-3)];
-R           = 1*10^(-2);
-Kalman_2    = Setup_Kalman_2(Q, R, sampleTime);
+Q               = [1*10^(-3),4*10^(-2)];
+R               = 5*10^(-1);
+Kalman_2_theta  = Setup_Kalman_2(Q, R, sampleTime);
 
-disp(['2nd Kalman Filter gains are L_1 = ' num2str(Kalman_2.L(1))...
-      '; L_2 = ' num2str(Kalman_2.L(2))]);
+Q               = [1*10^(-3),4*10^(-2)];
+R               = 5*10^(-2);
+Kalman_2_phi    = Setup_Kalman_2(Q, R, sampleTime);
+
+disp(['2nd Kalman Filter gains for theta are L_1 = ' num2str(Kalman_2_theta.contL(1))...
+      '; L_2 = ' num2str(Kalman_2_theta.contL(2))]);
+  
+  disp(['2nd Kalman Filter gains for phi are L_1 = ' num2str(Kalman_2_phi.contL(1))...
+      '; L_2 = ' num2str(Kalman_2_phi.contL(2))]);
 
 % P. Batista filter
 
@@ -52,6 +65,9 @@ Kalman_OP   = Setup_Kalman_OP(Q, R);
 %% Tests
 bias        = [0; 0; 1];
 seperate    = [1; 1; 0];
+
+Kalman_1    = Kalman_1_theta;
+Kalman_2    = Kalman_2_theta;
 
 % For every replay
 for c=1:size(files,1)
@@ -102,6 +118,7 @@ for i=1:n
         xlabel("Tempo [s]");
         ylabel("\phi [º]");
         hold off;
+        
         % THETA
         figure();
         hold on;
@@ -125,6 +142,7 @@ for i=1:n
         xlabel("Tempo [s]");
         ylabel("\theta [º]");
         hold off;
+        
     else
         figure();
         hold on;
@@ -177,4 +195,54 @@ for i=1:n
         ylabel('bias [º/s]');
         hold off;
     end
+end
+
+%% Check influence of Q and R
+
+PAR               = DATA(1); % experience D
+
+Q               = 1;
+R               = 500;
+Kalman_1_theta  = Setup_Kalman_1(Q, R, sampleTime);
+
+SIM.RESULTS(n+1)  = sim('Replay_Kalman_Filters');
+
+Q               = 500;
+R               = 1;
+Kalman_1_theta  = Setup_Kalman_1(Q, R, sampleTime);
+
+SIM.RESULTS(n+2)  = sim('Replay_Kalman_Filters');
+
+palette.THETA =["#FF0000";...
+                "#E5BF00";...
+                "#7E2F8E"];
+for i=1:2
+    % THETA
+        figure();
+        i
+        hold on;
+        % theta Teorico e Estimado
+        plot(SIM.RESULTS(i+n).tout(1:END), SIM.RESULTS(i+n).ang_meas.signals.values(1:END,2),...
+            'Color',palette.RAW);
+        plot(SIM.RESULTS(i+n).tout(1:END), SIM.RESULTS(i+n).ang.signals.values(1:END,2),...
+            'Color',palette.THETA(1));
+        plot(SIM.RESULTS(i+n).tout(1:END), SIM.RESULTS(i+n).ang_hat.signals.values(1:END,2),...
+            'Color',palette.THETA(2));
+        plot(SIM.RESULTS(i+n).tout(1:END), SIM.RESULTS(i+n).gyro_int.signals.values(1:END,2),...
+            'Color',palette.THETA(3));
+        % legenda e outras coisas
+        legend( 'medido','fornecido', 'estimado','giroscópio integrado',...
+                'Location','northwest');
+        axis([SIM.RESULTS(i+n).tout(1), SIM.RESULTS(i+n).tout(END)  ,...
+             min([SIM.RESULTS(i+n).ang_hat.signals.values(1:END,2);...
+                  SIM.RESULTS(i+n).ang.signals.values(1:END,2);
+                  SIM.RESULTS(i+n).ang_meas.signals.values(1:END,2);...
+                  SIM.RESULTS(i+n).gyro_int.signals.values(1:END,2)])*1.2  ,...
+             max([SIM.RESULTS(i+n).ang_hat.signals.values(1:END,2);...
+                  SIM.RESULTS(i+n).ang.signals.values(1:END,2);...
+                  SIM.RESULTS(i+n).ang_meas.signals.values(:,2);...
+                  SIM.RESULTS(i+n).gyro_int.signals.values(1:END,2)])*1.2  ]);
+        xlabel("Tempo [s]");
+        ylabel("\theta [º]");
+        hold off;
 end

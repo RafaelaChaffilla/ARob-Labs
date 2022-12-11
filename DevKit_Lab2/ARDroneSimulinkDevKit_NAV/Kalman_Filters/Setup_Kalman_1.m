@@ -14,12 +14,16 @@ C = 1;
 D = [0,0];
 
 Kalman.sys = ss(A,B,C,D);
-% Continuous to Discrete Space Space
-Kalman.sys = c2d(Kalman.sys,sampleTime);
 
 Q = diag(q);
 R = diag(r);
 N = 0;
+
+%Obtain Gain in Continuous System
+[~,Kalman.contL,~] = kalman(Kalman.sys, Q, R, N);
+
+% Continuous to Discrete Space Space
+Kalman.sys = c2d(Kalman.sys,sampleTime);
 
 % Kalman Space State calculation
 [Kalman.sys,Kalman.L,~] = kalman(Kalman.sys, Q, R, N);
