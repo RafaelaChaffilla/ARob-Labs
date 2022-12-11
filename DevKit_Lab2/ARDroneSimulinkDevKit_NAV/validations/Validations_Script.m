@@ -12,19 +12,19 @@ sampleTime  = 0.05;
 %% Setup of filters
 % 1st filter - no bias
 
-Q           = 2*10^(-2);
-R           = 1*10^(-2);
+Q               = 1*10^(-1);
+R               = 5*10^(-1);
 Kalman_1    = Setup_Kalman_1(Q, R, sampleTime);
 
-disp(['1st Kalman Filter gains are L_1 = ' num2str(Kalman_1.L)])
+disp(['1st Kalman Filter gains are L_1 = ' num2str(Kalman_1.contL)])
 % 2nd filter - bias
 
-Q           = [8*10^(-3),1.5*10^(-3)];
-R           = 1*10^(-2);
+Q               = [1*10^(-3),1*10^(-1)];
+R               = 5*10^(-1);
 Kalman_2    = Setup_Kalman_2(Q, R, sampleTime);
 
-disp(['2nd Kalman Filter gains are L_1 = ' num2str(Kalman_2.L(1))...
-      '; L_2 = ' num2str(Kalman_2.L(2))]);
+disp(['2nd Kalman Filter gains are L_1 = ' num2str(Kalman_2.contL(1))...
+      '; L_2 = ' num2str(Kalman_2.contL(2))]);
 
 % P. Batista filter
 
@@ -40,34 +40,37 @@ tests = 0;
 %   filter choise
 filter = 1;
 %   angle choise
-PHI.gain    = 0;
+PHI.gain    = 10;
 PHI.bias    = 0;
-THETA.gain  = 0;
+THETA.gain  = 10;
 THETA.bias  = 0;
 %   bias choise
-bias = [0; 0; 0]*pi/180;
+bias = [0; 0; 0]; %deg
 %   simulation
+finalTime = 50;
 tests = tests +1;
 SIM(tests) = sim('Validation_Kalman_Filters');
 
 %   bias choise
-bias = [-1; 2; 0]*pi/180;
+bias = [-1; 2; 0]; %deg
 %   simulation
+finalTime = 50;
 tests = tests +1;
-SIM(2) = sim('Validation_Kalman_Filters');
+SIM(tests) = sim('Validation_Kalman_Filters');
 
 %
 % 2nd filter
 %   filter choise
 filter = 2;
 %   angle choise
-PHI.gain    = 0;
+PHI.gain    = 10;
 PHI.bias    = 0;
-THETA.gain  = 0;
+THETA.gain  = 10;
 THETA.bias  = 0;
 %   bias choise
-bias = [2; -3; 1]*pi/180;
+bias = [2; -3; 1]; %deg
 %   simulation
+finalTime = 50;
 tests = tests +1;
 SIM(tests) = sim('Validation_Kalman_Filters');
 
@@ -83,6 +86,7 @@ THETA.bias  = 0;
 %   bias choise
 bias = [2; -3; 1];
 %   simulation
+finalTime = 100;
 tests = tests +1;
 SIM(tests) = sim('Validation_Kalman_Filters');
 %% Plots
@@ -109,6 +113,19 @@ for i=1:tests
         legend('\phi medido','\phi estimado','\phi real');
         xlabel("Tempo [s]");
         ylabel("\phi [º]");
+        hold off;
+    end
+    if(i == 3) %kalman com bias, print estimação do bias
+        % plot do erro dos bias
+        figure();
+        hold on;
+        plot(SIM(i).bias_hat.time, SIM(i).bias_hat.signals.values(:,2),... 
+             'Color',palette.BIAS(2)); 
+        plot(SIM(i).bias_hat.time, SIM(i).bias_real.signals.values(:,2),... 
+             'Color',palette.BIAS(1)); 
+        legend('estimado','real');     
+        xlabel("Tempo [s]");
+        ylabel('bias_q [º/s]');
         hold off;
     end
     if(i>3)

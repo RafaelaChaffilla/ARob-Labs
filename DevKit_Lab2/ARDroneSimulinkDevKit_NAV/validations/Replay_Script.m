@@ -28,12 +28,12 @@ end
 %% Setup of filters
 % 1st filter - no bias
 
-Q               = 1;
-R               = 5;
+Q               = 1*10^(-1);
+R               = 5*10^(-1);
 Kalman_1_theta  = Setup_Kalman_1(Q, R, sampleTime);
 
-Q               = 5;
-R               = 1;
+Q               = 5*10^(-1);
+R               = 1*10^(-1);
 Kalman_1_phi  = Setup_Kalman_1(Q, R, sampleTime);
 
 disp(['1st Kalman Filter for gains for theta are L_1 = ' num2str(Kalman_1_theta.contL)])
@@ -41,8 +41,8 @@ disp(['1st Kalman Filter for gains for phi are L_1 = ' num2str(Kalman_1_phi.cont
 
 % 2nd filter - bias
 
-Q               = [1*10^(-3),4*10^(-2)];
-R               = 5*10^(-1);
+Q               = [5*10^(-1),4*10^(-1)];
+R               = 5*10^(0);
 Kalman_2_theta  = Setup_Kalman_2(Q, R, sampleTime);
 
 Q               = [1*10^(-3),4*10^(-2)];
@@ -198,7 +198,7 @@ for i=1:n
 end
 
 %% Check influence of Q and R
-
+filter = 1;
 PAR               = DATA(1); % experience D
 
 Q               = 1;
@@ -216,32 +216,31 @@ SIM.RESULTS(n+2)  = sim('Replay_Kalman_Filters');
 palette.THETA =["#FF0000";...
                 "#E5BF00";...
                 "#7E2F8E"];
-for i=1:2
+for i=n+1:n+2
     % THETA
         figure();
-        i
         hold on;
         % theta Teorico e Estimado
-        plot(SIM.RESULTS(i+n).tout(1:END), SIM.RESULTS(i+n).ang_meas.signals.values(1:END,2),...
+        plot(SIM.RESULTS(i).tout(1:END), SIM.RESULTS(i).ang_meas.signals.values(1:END,2),...
             'Color',palette.RAW);
-        plot(SIM.RESULTS(i+n).tout(1:END), SIM.RESULTS(i+n).ang.signals.values(1:END,2),...
+        plot(SIM.RESULTS(i).tout(1:END), SIM.RESULTS(i).ang.signals.values(1:END,2),...
             'Color',palette.THETA(1));
-        plot(SIM.RESULTS(i+n).tout(1:END), SIM.RESULTS(i+n).ang_hat.signals.values(1:END,2),...
+        plot(SIM.RESULTS(i).tout(1:END), SIM.RESULTS(i).ang_hat.signals.values(1:END,2),...
             'Color',palette.THETA(2));
-        plot(SIM.RESULTS(i+n).tout(1:END), SIM.RESULTS(i+n).gyro_int.signals.values(1:END,2),...
+        plot(SIM.RESULTS(i).tout(1:END), SIM.RESULTS(i).gyro_int.signals.values(1:END,2),...
             'Color',palette.THETA(3));
         % legenda e outras coisas
         legend( 'medido','fornecido', 'estimado','giroscópio integrado',...
                 'Location','northwest');
-        axis([SIM.RESULTS(i+n).tout(1), SIM.RESULTS(i+n).tout(END)  ,...
-             min([SIM.RESULTS(i+n).ang_hat.signals.values(1:END,2);...
-                  SIM.RESULTS(i+n).ang.signals.values(1:END,2);
-                  SIM.RESULTS(i+n).ang_meas.signals.values(1:END,2);...
-                  SIM.RESULTS(i+n).gyro_int.signals.values(1:END,2)])*1.2  ,...
-             max([SIM.RESULTS(i+n).ang_hat.signals.values(1:END,2);...
-                  SIM.RESULTS(i+n).ang.signals.values(1:END,2);...
-                  SIM.RESULTS(i+n).ang_meas.signals.values(:,2);...
-                  SIM.RESULTS(i+n).gyro_int.signals.values(1:END,2)])*1.2  ]);
+        axis([SIM.RESULTS(i).tout(1), SIM.RESULTS(i).tout(END)  ,...
+             min([SIM.RESULTS(i).ang_hat.signals.values(1:END,2);...
+                  SIM.RESULTS(i).ang.signals.values(1:END,2);
+                  SIM.RESULTS(i).ang_meas.signals.values(1:END,2);...
+                  SIM.RESULTS(i).gyro_int.signals.values(1:END,2)])*1.2  ,...
+             max([SIM.RESULTS(i).ang_hat.signals.values(1:END,2);...
+                  SIM.RESULTS(i).ang.signals.values(1:END,2);...
+                  SIM.RESULTS(i).ang_meas.signals.values(:,2);...
+                  SIM.RESULTS(i).gyro_int.signals.values(1:END,2)])*1.2  ]);
         xlabel("Tempo [s]");
         ylabel("\theta [º]");
         hold off;
