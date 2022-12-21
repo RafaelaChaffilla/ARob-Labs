@@ -1,0 +1,54 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   5 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "t0"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ARDroneTTSim:4951:505-507"\
+    }\
+    ChartData {\
+      Name         "t0_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ARDroneTTSim:4951:505-507"\
+    }\
+    ChartData {\
+      Name         "p0"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ARDroneTTSim:4951:519-521"\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "previous_status"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ARDroneTTSim:4951:533-548"\
+    }\
+    ChartData {\
+      Name         "previous_status_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ARDroneTTSim:4951:533-548"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
