@@ -45,9 +45,10 @@ simDT = 0.005 ;
 
 %% Altitude Simulation for different k_w
 % k_w_vector=[0.5:0.5:3];
+% K=zeros(3,6);
 % for i = 1:size(k_w_vector,2)
 %     k_w = k_w_vector(i);
-%     sim_results(i) = sim('ARDroneTTSim');
+%     sim_results(i) = sim('ARDroneTTSim_2019');
 % end
 % 
 % % Plot altitude tracking for different k_w
@@ -69,7 +70,7 @@ simDT = 0.005 ;
 % ylabel('Altitude h [m]');
 
 %% Horizontal Line Simulation
-k_w = 1.5;
+k_w = 1;
 
 A = [zeros(3,3) eye(3);...
      zeros(3,3) zeros(3,3)];
@@ -80,7 +81,7 @@ R = diag([1 1 1]);
 
 K = lqr(A,B,Q,R);
 
-sim_line_results = sim('ARDroneTTSim');
+sim_line_results = sim('ARDroneTTSim_2019');
 
 % Plot altitude tracking for different k_w
 figure();
