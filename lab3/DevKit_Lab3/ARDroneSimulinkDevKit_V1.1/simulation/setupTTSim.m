@@ -43,58 +43,74 @@ setupARModel;
 % Simulation time
 simDT = 0.005 ;
 
-%% Altitude Simulation for different k_w
-% k_w_vector=[0.5:0.5:3];
-% K=zeros(3,6);
-% for i = 1:size(k_w_vector,2)
-%     k_w = k_w_vector(i);
-%     sim_results(i) = sim('ARDroneTTSim_2019');
-% end
-% 
-% % Plot altitude tracking for different k_w
-% figure();
-% hold on;
-% plot(sim_results(1).pd.time, sim_results(1).pd.signals.values(3, :));
-% for c = 1:size(sim_results,2)
-%     plot(sim_results(c).tout, - sim_results(c).h_sim.signals.values);
-% end
-% xlim([0 30]);
-% legend('desired', sprintf('k = %0.1f', k_w_vector(1)), ...
-%     sprintf('k = %0.1f', k_w_vector(2)), ...
-%     sprintf('k = %0.1f', k_w_vector(3)), ...
-%     sprintf('k = %0.1f', k_w_vector(4)), ...
-%     sprintf('k = %0.1f', k_w_vector(5)), ...
-%     sprintf('k = %0.1f', k_w_vector(6)), ...
-%     'location', 'west');
-% xlabel('Tempo [s]');
-% ylabel('Altitude h [m]');
+%% choose simulation to run
 
-%% Horizontal Line Simulation
-k_w = 1;
+disp('Choose the simulation you want to run:'); 
+disp('    (1) Altitude'); 
+disp('    (2) Horizontal Line'); 
 
-A = [zeros(3,3) eye(3);...
-     zeros(3,3) zeros(3,3)];
-B = [zeros(3,3); eye(3)];
+choice = input('');
 
-Q = diag([2; 2; 2; 20; 20; 20]);
-R = diag([1 1 1]);
+switch choice
+    case 1
+        % Altitude Simulation for different k_w
+        k_w_vector=[0.5:0.5:3];
+        K=zeros(3,6);
+        for i = 1:size(k_w_vector,2)
+            k_w = k_w_vector(i);
+            sim_results(i) = sim('ARDroneTTSim_2019');
+        end
 
-K = lqr(A,B,Q,R);
+        % Plot altitude tracking for different k_w
+        figure();
+        hold on;
+        plot(sim_results(1).pd.time, sim_results(1).pd.signals.values(3, :));
+        for c = 1:size(sim_results,2)
+            plot(sim_results(c).tout, - sim_results(c).h_sim.signals.values);
+        end
+        xlim([0 30]);
+        legend('desired', sprintf('k = %0.1f', k_w_vector(1)), ...
+            sprintf('k = %0.1f', k_w_vector(2)), ...
+            sprintf('k = %0.1f', k_w_vector(3)), ...
+            sprintf('k = %0.1f', k_w_vector(4)), ...
+            sprintf('k = %0.1f', k_w_vector(5)), ...
+            sprintf('k = %0.1f', k_w_vector(6)), ...
+            'location', 'west');
+        xlabel('Tempo [s]');
+        ylabel('Altitude h [m]');
 
-sim_line_results = sim('ARDroneTTSim_2019');
+    case 2
+        % Horizontal Line Simulation
+        k_w = 1;
 
-% Plot altitude tracking for different k_w
-figure();
-hold on;
-plot(sim_line_results.pd.signals.values(1, :), sim_line_results.pd.signals.values(2, :));
-plot(sim_line_results.x_sim.signals.values, sim_line_results.y_sim.signals.values);
-% xlim([0 30]);
-legend('desired', 'simulated', 'location', 'west');
-xlabel('Posição x [m]');
-ylabel('Posição y [m]');
+        A = [zeros(3,3) eye(3);...
+             zeros(3,3) zeros(3,3)];
+        B = [zeros(3,3); eye(3)];
 
-% Loading Simulink model of ARDrone
-% ARDroneTTSim ;
+        Q = diag([2; 2; 2; 20; 20; 20]);
+        R = diag([1 1 1]);
+
+        K = lqr(A,B,Q,R);
+
+        sim_line_results = sim('ARDroneTTSim_2019');
+
+        % Plot altitude tracking for different k_w
+        figure();
+        hold on;
+        plot(sim_line_results.pd.signals.values(1, :), sim_line_results.pd.signals.values(2, :));
+        plot(sim_line_results.x_sim.signals.values, sim_line_results.y_sim.signals.values);
+        % xlim([0 30]);
+        legend('desired', 'simulated', 'location', 'west');
+        xlabel('Posição x [m]');
+        ylabel('Posição y [m]');
+        
+    otherwise
+        %Loading Simulink model of ARDrone
+        ARDroneTTSim ;
+        
+end
+
+
  
  
  
