@@ -1,0 +1,39 @@
+%implements s10_b0_3euhs_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS8B6 = OpaqueTLCBlockFcn("Terminate", 8, 6, 1, 8)
+%assign tlcTerminateFcnOfS8B10 = OpaqueTLCBlockFcn("Terminate", 8, 10, 1, 8)
+%assign tlcTerminateFcnOfS8B12 = OpaqueTLCBlockFcn("Terminate", 8, 12, 1, 8)
+%assign tlcTerminateFcnOfS8B15 = OpaqueTLCBlockFcn("Terminate", 8, 15, 1, 8)
+%if !WHITE_SPACE(tlcTerminateFcnOfS8B6)
+/* Terminate for ToWorkspace: '<Root>/To Workspace' */
+%<tlcTerminateFcnOfS8B6>\
+%endif
+%if !WHITE_SPACE(tlcTerminateFcnOfS8B10)
+/* Terminate for ToWorkspace: '<S5>/To Workspace' */
+%<tlcTerminateFcnOfS8B10>\
+%endif
+%if !WHITE_SPACE(tlcTerminateFcnOfS8B12)
+/* Terminate for ToWorkspace: '<S5>/To Workspace1' */
+%<tlcTerminateFcnOfS8B12>\
+%endif
+%if !WHITE_SPACE(tlcTerminateFcnOfS8B15)
+/* Terminate for VariableTransportDelay: '<S1>/total communication time delay' incorporates:
+ *  Constant: '<S1>/time delay'
+ */
+%<tlcTerminateFcnOfS8B15>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 8, fcnProtoType)>
+%endfunction

@@ -1,0 +1,71 @@
+%implements s10_b0_3euhs_Derivatives "C"
+
+%function Derivatives(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+XDot_ARDroneTTSim_T *_rtXdot;
+%closefile localVarDecl
+%assign tlcDerivativesFcnOfS8B15 = OpaqueTLCBlockFcn("Derivatives", 8, 15, 1, 6)
+_rtXdot = %<(SLibCG_SE(SLibGetContStatesDerivativeStructPtr()))>;
+/* Derivatives for StateSpace: '<S1>/State-Space' */
+_rtXdot->StateSpace_CSTATE[0] = 0.0;
+/* Derivatives for StateSpace: '<S1>/State-Space1' */
+_rtXdot->StateSpace1_CSTATE[0] = 0.0;
+/* Derivatives for Integrator: '<S19>/Integrator' */
+_rtXdot->Integrator_CSTATE[0] = ARDroneTTSim_B.Vel_xy[0];
+/* Derivatives for StateSpace: '<S1>/State-Space' */
+_rtXdot->StateSpace_CSTATE[1] = 0.0;
+/* Derivatives for StateSpace: '<S1>/State-Space1' */
+_rtXdot->StateSpace1_CSTATE[1] = 0.0;
+/* Derivatives for Integrator: '<S19>/Integrator' */
+_rtXdot->Integrator_CSTATE[1] = ARDroneTTSim_B.Vel_xy[1];
+/* Derivatives for StateSpace: '<S1>/State-Space' */
+_rtXdot->StateSpace_CSTATE[0] += ARDroneTTSim_P.StateSpace_A[0] * ARDroneTTSim_X.StateSpace_CSTATE[0];
+_rtXdot->StateSpace_CSTATE[0] += ARDroneTTSim_P.StateSpace_A[1] * ARDroneTTSim_X.StateSpace_CSTATE[1];
+_rtXdot->StateSpace_CSTATE[1] += ARDroneTTSim_P.StateSpace_A[2] * ARDroneTTSim_X.StateSpace_CSTATE[0];
+_rtXdot->StateSpace_CSTATE[0] += ARDroneTTSim_P.StateSpace_B * ARDroneTTSim_B.totalcommunicationtimedelay[0];
+/* Derivatives for StateSpace: '<S1>/State-Space1' */
+_rtXdot->StateSpace1_CSTATE[0] += ARDroneTTSim_P.StateSpace1_A[0] * ARDroneTTSim_X.StateSpace1_CSTATE[0];
+_rtXdot->StateSpace1_CSTATE[0] += ARDroneTTSim_P.StateSpace1_A[1] * ARDroneTTSim_X.StateSpace1_CSTATE[1];
+_rtXdot->StateSpace1_CSTATE[1] += ARDroneTTSim_P.StateSpace1_A[2] * ARDroneTTSim_X.StateSpace1_CSTATE[0];
+_rtXdot->StateSpace1_CSTATE[0] += ARDroneTTSim_P.StateSpace1_B * ARDroneTTSim_B.totalcommunicationtimedelay[1];
+/* Derivatives for StateSpace: '<S1>/State-Space4' */
+_rtXdot->StateSpace4_CSTATE = 0.0;
+_rtXdot->StateSpace4_CSTATE += ARDroneTTSim_P.StateSpace4_A * ARDroneTTSim_X.StateSpace4_CSTATE;
+_rtXdot->StateSpace4_CSTATE += ARDroneTTSim_P.StateSpace4_B * ARDroneTTSim_B.totalcommunicationtimedelay[2];
+/* Derivatives for StateSpace: '<S1>/State-Space3' */
+_rtXdot->StateSpace3_CSTATE = 0.0;
+_rtXdot->StateSpace3_CSTATE += ARDroneTTSim_P.StateSpace3_A * ARDroneTTSim_X.StateSpace3_CSTATE;
+_rtXdot->StateSpace3_CSTATE += ARDroneTTSim_P.StateSpace3_B * ARDroneTTSim_B.gain;
+/* Derivatives for StateSpace: '<S1>/State-Space2' */
+_rtXdot->StateSpace2_CSTATE = 0.0;
+_rtXdot->StateSpace2_CSTATE += ARDroneTTSim_P.StateSpace2_A * ARDroneTTSim_X.StateSpace2_CSTATE;
+_rtXdot->StateSpace2_CSTATE += ARDroneTTSim_P.StateSpace2_B * ARDroneTTSim_B.gain1;
+/* Derivatives for StateSpace: '<S1>/State-Space5' */
+_rtXdot->StateSpace5_CSTATE[0] = 0.0;
+_rtXdot->StateSpace5_CSTATE[1] = 0.0;
+_rtXdot->StateSpace5_CSTATE[0] += ARDroneTTSim_P.StateSpace5_A[0] * ARDroneTTSim_X.StateSpace5_CSTATE[0];
+_rtXdot->StateSpace5_CSTATE[0] += ARDroneTTSim_P.StateSpace5_A[1] * ARDroneTTSim_X.StateSpace5_CSTATE[1];
+_rtXdot->StateSpace5_CSTATE[1] += ARDroneTTSim_P.StateSpace5_A[2] * ARDroneTTSim_X.StateSpace5_CSTATE[0];
+_rtXdot->StateSpace5_CSTATE[0] += ARDroneTTSim_P.StateSpace5_B * ARDroneTTSim_B.totalcommunicationtimedelay[3];
+%if !WHITE_SPACE(tlcDerivativesFcnOfS8B15)
+/* Derivatives for VariableTransportDelay: '<S1>/total communication time delay' incorporates:
+ *  Constant: '<S1>/time delay'
+ */
+%<tlcDerivativesFcnOfS8B15>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedDerivativeLocalVars", localVarDecl)>
+%endfunction
+%function DerivativesFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Derivatives(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 6, fcnProtoType)>
+%endfunction

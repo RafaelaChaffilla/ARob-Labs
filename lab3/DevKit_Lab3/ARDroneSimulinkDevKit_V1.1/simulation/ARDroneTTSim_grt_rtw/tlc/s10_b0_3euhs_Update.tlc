@@ -1,0 +1,70 @@
+%implements s10_b0_3euhs_Update "C"
+
+%function UpdateForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcUpdateFcnOfS8B15 = OpaqueTLCBlockFcn("Update", 8, 15, 1, 4)
+/* Update for Integrator: '<S19>/Integrator' */
+ARDroneTTSim_DW.Integrator_IWORK = 0;
+%if !WHITE_SPACE(tlcUpdateFcnOfS8B15)
+/* Update for VariableTransportDelay: '<S1>/total communication time delay' incorporates:
+ *  Constant: '<S1>/time delay'
+ */
+%<tlcUpdateFcnOfS8B15>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+/* {S!d196}Update for RateTransition: '<Root>/RTrans4' */
+ARDroneTTSim_DW.RTrans4_Buffer0 = ARDroneTTSim_B.ManualSwitch3[3];
+/* {S!d198}Update for RateTransition: '<Root>/RTrans3' */
+ARDroneTTSim_DW.RTrans3_Buffer0 = ARDroneTTSim_B.ManualSwitch3[2];
+/* {S!d200}Update for RateTransition: '<Root>/RTrans2' */
+ARDroneTTSim_DW.RTrans2_Buffer0 = ARDroneTTSim_B.ManualSwitch3[1];
+/* {S!d202}Update for RateTransition: '<Root>/RTrans1' */
+ARDroneTTSim_DW.RTrans1_Buffer0 = ARDroneTTSim_B.ManualSwitch3[0];
+/* {S!d204}Update for DiscreteIntegrator: '<S3>/Discrete-Time Integrator' */
+if (!ARDroneTTSim_B.Compare) {
+    ARDroneTTSim_DW.DiscreteTimeIntegrator_DSTATE[0] += ARDroneTTSim_P.DiscreteTimeIntegrator_gainval * ARDroneTTSim_B.dot_xi[0];
+    ARDroneTTSim_DW.DiscreteTimeIntegrator_DSTATE[1] += ARDroneTTSim_P.DiscreteTimeIntegrator_gainval * ARDroneTTSim_B.dot_xi[1];
+    ARDroneTTSim_DW.DiscreteTimeIntegrator_DSTATE[2] += ARDroneTTSim_P.DiscreteTimeIntegrator_gainval * ARDroneTTSim_B.dot_xi[2];
+    ARDroneTTSim_DW.DiscreteTimeIntegrator_DSTATE[3] += ARDroneTTSim_P.DiscreteTimeIntegrator_gainval * ARDroneTTSim_B.dot_xi[3];
+}
+ARDroneTTSim_DW.DiscreteTimeIntegrator_PrevRese = (int8_T)ARDroneTTSim_B.Compare;
+/* {E!d204}End of Update for DiscreteIntegrator: '<S3>/Discrete-Time Integrator' */
+%closefile cfgTxt
+%<cfgTxt>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
+%function UpdateFcnProtoTypeForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update0(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 4, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update1(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 5, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction

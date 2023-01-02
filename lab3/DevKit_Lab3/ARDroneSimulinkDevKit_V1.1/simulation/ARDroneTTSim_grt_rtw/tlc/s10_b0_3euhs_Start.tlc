@@ -1,0 +1,115 @@
+%implements s10_b0_3euhs_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcSetupRuntimeResourcesFcnOfS8B6 = OpaqueTLCBlockFcn("SetupRuntimeResources", 8, 6, 1, 0)
+%assign tlcSetupRuntimeResourcesFcnOfS8B10 = OpaqueTLCBlockFcn("SetupRuntimeResources", 8, 10, 1, 0)
+%assign tlcSetupRuntimeResourcesFcnOfS8B12 = OpaqueTLCBlockFcn("SetupRuntimeResources", 8, 12, 1, 0)
+%assign tlcStartFcnOfS8B1 = OpaqueTLCBlockFcn("Start", 8, 1, 1, 0)
+%assign tlcStartFcnOfS8B7 = OpaqueTLCBlockFcn("Start", 8, 7, 1, 0)
+%assign tlcStartFcnOfS8B8 = OpaqueTLCBlockFcn("Start", 8, 8, 1, 0)
+%assign tlcStartFcnOfS8B9 = OpaqueTLCBlockFcn("Start", 8, 9, 1, 0)
+%assign tlcStartFcnOfS8B11 = OpaqueTLCBlockFcn("Start", 8, 11, 1, 0)
+%assign tlcStartFcnOfS8B13 = OpaqueTLCBlockFcn("Start", 8, 13, 1, 0)
+%assign tlcStartFcnOfS8B15 = OpaqueTLCBlockFcn("Start", 8, 15, 1, 0)
+%assign tlcStartFcnOfS8B20 = OpaqueTLCBlockFcn("Start", 8, 20, 1, 0)
+%assign tlcStartFcnOfS8B21 = OpaqueTLCBlockFcn("Start", 8, 21, 1, 0)
+%assign tlcStartFcnOfS8B22 = OpaqueTLCBlockFcn("Start", 8, 22, 1, 0)
+%assign tlcStartFcnOfS8B23 = OpaqueTLCBlockFcn("Start", 8, 23, 1, 0)
+%assign tlcStartFcnOfS8B24 = OpaqueTLCBlockFcn("Start", 8, 24, 1, 0)
+%assign tlcStartFcnOfS8B25 = OpaqueTLCBlockFcn("Start", 8, 25, 1, 0)
+%assign tlcStartFcnOfS8B27 = OpaqueTLCBlockFcn("Start", 8, 27, 1, 0)
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS8B6)
+/* SetupRuntimeResources for ToWorkspace: '<Root>/To Workspace' */
+%<tlcSetupRuntimeResourcesFcnOfS8B6>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS8B10)
+/* SetupRuntimeResources for ToWorkspace: '<S5>/To Workspace' */
+%<tlcSetupRuntimeResourcesFcnOfS8B10>\
+%endif
+%if !WHITE_SPACE(tlcSetupRuntimeResourcesFcnOfS8B12)
+/* SetupRuntimeResources for ToWorkspace: '<S5>/To Workspace1' */
+%<tlcSetupRuntimeResourcesFcnOfS8B12>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B1)
+/* Start for Scope: '<Root>/Euler angles (deg)' */
+%<tlcStartFcnOfS8B1>\
+%endif
+/* Start for Constant: '<S19>/Constant1' */
+ARDroneTTSim_B.Constant1[0] = ARDroneTTSim_P.Constant1_Value[0];
+ARDroneTTSim_B.Constant1[1] = ARDroneTTSim_P.Constant1_Value[1];
+%if !WHITE_SPACE(tlcStartFcnOfS8B7)
+/* Start for Scope: '<S5>/Height (m)' */
+%<tlcStartFcnOfS8B7>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B8)
+/* Start for Scope: '<S5>/Inertial potition along Xe (m)' */
+%<tlcStartFcnOfS8B8>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B9)
+/* Start for Scope: '<S5>/Inertial potition along Ye (m)' */
+%<tlcStartFcnOfS8B9>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B11)
+/* Start for Scope: '<S5>/heading (deg)' */
+%<tlcStartFcnOfS8B11>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B13)
+/* Start for Scope: '<Root>/pd (m)' */
+%<tlcStartFcnOfS8B13>\
+%endif
+/* Start for RateTransition: '<Root>/RTrans4' */
+ARDroneTTSim_B.RTrans4 = ARDroneTTSim_P.RTrans4_InitialCondition;
+/* Start for RateTransition: '<Root>/RTrans3' */
+ARDroneTTSim_B.RTrans3 = ARDroneTTSim_P.RTrans3_InitialCondition;
+/* Start for RateTransition: '<Root>/RTrans2' */
+ARDroneTTSim_B.RTrans2 = ARDroneTTSim_P.RTrans2_InitialCondition;
+/* Start for RateTransition: '<Root>/RTrans1' */
+ARDroneTTSim_B.RTrans1 = ARDroneTTSim_P.RTrans1_InitialCondition;
+%if !WHITE_SPACE(tlcStartFcnOfS8B15)
+/* Start for VariableTransportDelay: '<S1>/total communication time delay' incorporates:
+ *  Constant: '<S1>/time delay'
+ */
+%<tlcStartFcnOfS8B15>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B20)
+/* Start for Scope: '<S9>/error_phi' */
+%<tlcStartFcnOfS8B20>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B21)
+/* Start for Scope: '<S9>/error_psi' */
+%<tlcStartFcnOfS8B21>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B22)
+/* Start for Scope: '<S9>/error_theta' */
+%<tlcStartFcnOfS8B22>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B23)
+/* Start for Scope: '<S9>/errorx' */
+%<tlcStartFcnOfS8B23>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B24)
+/* Start for Scope: '<S9>/errory' */
+%<tlcStartFcnOfS8B24>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B25)
+/* Start for Scope: '<S9>/errorz' */
+%<tlcStartFcnOfS8B25>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS8B27)
+/* Start for Scope: '<S9>/psi  psi_d' */
+%<tlcStartFcnOfS8B27>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 0, fcnProtoType)>
+%endfunction

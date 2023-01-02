@@ -1,0 +1,1588 @@
+%implements s10_b0_3euhs_TLCInterface "C"
+
+%function getInputAddr_8_6_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_pd
+
+%return "&rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_6_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_pd
+
+%return "rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_6_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_8_6_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getInputAddr_8_10_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getInput_8_10_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getDWorkAddr_8_10_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace_PWORK_d"
+%endfunction
+
+%function getDWork_8_10_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace_PWORK_d"
+%endfunction
+
+%function getDWorkAddr_8_12_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace1_PWORK"
+%endfunction
+
+%function getDWork_8_12_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace1_PWORK"
+%endfunction
+
+%function getInputAddr_8_1_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.deg2rad1"
+%endfunction
+
+%function getInput_8_1_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.deg2rad1"
+%endfunction
+
+%function getInputAddr_8_1_1_0_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.deg2rad"
+%endfunction
+
+%function getInput_8_1_1_0_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.deg2rad"
+%endfunction
+
+%function getInputAddr_8_1_1_0_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.deg2rad2"
+%endfunction
+
+%function getInput_8_1_1_0_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.deg2rad2"
+%endfunction
+
+%function getDWorkAddr_8_1_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.Euleranglesdeg_PWORK"
+%endfunction
+
+%function getDWork_8_1_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.Euleranglesdeg_PWORK"
+%endfunction
+
+%function getInputAddr_8_7_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getInput_8_7_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getDWorkAddr_8_7_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.Heightm_PWORK"
+%endfunction
+
+%function getDWork_8_7_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.Heightm_PWORK"
+%endfunction
+
+%function getInputAddr_8_8_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_8_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_8_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.InertialpotitionalongXem_PWORK"
+%endfunction
+
+%function getDWork_8_8_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.InertialpotitionalongXem_PWORK"
+%endfunction
+
+%function getInputAddr_8_9_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_9_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_9_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.InertialpotitionalongYem_PWORK"
+%endfunction
+
+%function getDWork_8_9_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.InertialpotitionalongYem_PWORK"
+%endfunction
+
+%function getInputAddr_8_11_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.deg2rad1_l"
+%endfunction
+
+%function getInput_8_11_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.deg2rad1_l"
+%endfunction
+
+%function getDWorkAddr_8_11_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.headingdeg_PWORK"
+%endfunction
+
+%function getDWork_8_11_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.headingdeg_PWORK"
+%endfunction
+
+%function getInputAddr_8_13_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_pd
+
+%return "&rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_13_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_pd
+
+%return "rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_8_13_1_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(28, 0, "")> %% rtb_dot_pd
+
+%return "&rtb_dot_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_13_1_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(28, 0, "")> %% rtb_dot_pd
+
+%return "rtb_dot_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_13_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.pdm_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_13_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.pdm_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_8_15_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInput_8_15_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInputAddr_8_15_1_0_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInput_8_15_1_0_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInputAddr_8_15_1_0_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInput_8_15_1_0_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInputAddr_8_15_1_0_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInput_8_15_1_0_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInputAddr_8_15_1_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_8_15_1_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_8_15_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_8_15_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_8_15_1_0_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParam_8_15_1_0_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParamAddr_8_15_1_0_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getParam_8_15_1_0_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getInputAddr_8_20_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 0, "")> %% rtb_Add1
+
+%return "&rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_20_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 0, "")> %% rtb_Add1
+
+%return "rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_20_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.error_phi_PWORK"
+%endfunction
+
+%function getDWork_8_20_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.error_phi_PWORK"
+%endfunction
+
+%function getInputAddr_8_21_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 0, "")> %% rtb_Add1
+
+%return "&rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_21_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 0, "")> %% rtb_Add1
+
+%return "rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_21_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.error_psi_PWORK"
+%endfunction
+
+%function getDWork_8_21_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.error_psi_PWORK"
+%endfunction
+
+%function getInputAddr_8_22_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 0, "")> %% rtb_Add1
+
+%return "&rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_22_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 0, "")> %% rtb_Add1
+
+%return "rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_22_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.error_theta_PWORK"
+%endfunction
+
+%function getDWork_8_22_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.error_theta_PWORK"
+%endfunction
+
+%function getInputAddr_8_23_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 0, "")> %% rtb_Add
+
+%return "&rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_23_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 0, "")> %% rtb_Add
+
+%return "rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_23_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.errorx_PWORK"
+%endfunction
+
+%function getDWork_8_23_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.errorx_PWORK"
+%endfunction
+
+%function getInputAddr_8_24_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 0, "")> %% rtb_Add
+
+%return "&rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_24_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 0, "")> %% rtb_Add
+
+%return "rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_24_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.errory_PWORK"
+%endfunction
+
+%function getDWork_8_24_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.errory_PWORK"
+%endfunction
+
+%function getInputAddr_8_25_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 0, "")> %% rtb_Add
+
+%return "&rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_25_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 0, "")> %% rtb_Add
+
+%return "rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_25_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.errorz_PWORK"
+%endfunction
+
+%function getDWork_8_25_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.errorz_PWORK"
+%endfunction
+
+%function getInputAddr_8_27_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_yawanglerad
+
+%return "&rtb_yawanglerad"
+%endfunction
+
+%function getInput_8_27_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 0, "")> %% rtb_yawanglerad
+
+%return "rtb_yawanglerad"
+%endfunction
+
+%function getInputAddr_8_27_1_0_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(30, 0, "")> %% rtb_psi_d
+
+%return "&rtb_psi_d"
+%endfunction
+
+%function getInput_8_27_1_0_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(30, 0, "")> %% rtb_psi_d
+
+%return "rtb_psi_d"
+%endfunction
+
+%function getInputAddr_8_27_1_0_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.sf_normalizeanglebetweenpiand_c.angleOut"
+%endfunction
+
+%function getInput_8_27_1_0_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.sf_normalizeanglebetweenpiand_c.angleOut"
+%endfunction
+
+%function getDWorkAddr_8_27_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.psipsi_d_PWORK"
+%endfunction
+
+%function getDWork_8_27_1_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.psipsi_d_PWORK"
+%endfunction
+
+%function getInputAddr_8_15_1_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInput_8_15_1_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInputAddr_8_15_1_1_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInput_8_15_1_1_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInputAddr_8_15_1_1_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInput_8_15_1_1_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInputAddr_8_15_1_1_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInput_8_15_1_1_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInputAddr_8_15_1_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_8_15_1_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_8_15_1_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_8_15_1_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_1_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_1_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_8_15_1_1_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParam_8_15_1_1_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParamAddr_8_15_1_1_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getParam_8_15_1_1_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getInputAddr_8_1_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.deg2rad1"
+%endfunction
+
+%function getInput_8_1_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.deg2rad1"
+%endfunction
+
+%function getInputAddr_8_1_1_2_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.deg2rad"
+%endfunction
+
+%function getInput_8_1_1_2_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.deg2rad"
+%endfunction
+
+%function getInputAddr_8_1_1_2_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.deg2rad2"
+%endfunction
+
+%function getInput_8_1_1_2_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.deg2rad2"
+%endfunction
+
+%function getDWorkAddr_8_1_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.Euleranglesdeg_PWORK"
+%endfunction
+
+%function getDWork_8_1_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.Euleranglesdeg_PWORK"
+%endfunction
+
+%function getInputAddr_8_7_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getInput_8_7_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getDWorkAddr_8_7_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.Heightm_PWORK"
+%endfunction
+
+%function getDWork_8_7_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.Heightm_PWORK"
+%endfunction
+
+%function getInputAddr_8_8_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_8_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_8_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.InertialpotitionalongXem_PWORK"
+%endfunction
+
+%function getDWork_8_8_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.InertialpotitionalongXem_PWORK"
+%endfunction
+
+%function getInputAddr_8_9_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_9_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_9_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.InertialpotitionalongYem_PWORK"
+%endfunction
+
+%function getDWork_8_9_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.InertialpotitionalongYem_PWORK"
+%endfunction
+
+%function getInputAddr_8_10_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getInput_8_10_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getDWorkAddr_8_10_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace_PWORK_d"
+%endfunction
+
+%function getDWork_8_10_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace_PWORK_d"
+%endfunction
+
+%function getInputAddr_8_11_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.deg2rad1_l"
+%endfunction
+
+%function getInput_8_11_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.deg2rad1_l"
+%endfunction
+
+%function getDWorkAddr_8_11_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.headingdeg_PWORK"
+%endfunction
+
+%function getDWork_8_11_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.headingdeg_PWORK"
+%endfunction
+
+%function getDWorkAddr_8_12_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace1_PWORK"
+%endfunction
+
+%function getDWork_8_12_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace1_PWORK"
+%endfunction
+
+%function getInputAddr_8_15_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInput_8_15_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInputAddr_8_15_1_2_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInput_8_15_1_2_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInputAddr_8_15_1_2_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInput_8_15_1_2_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInputAddr_8_15_1_2_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInput_8_15_1_2_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInputAddr_8_15_1_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.timeDelay"
+%endfunction
+
+%function getInput_8_15_1_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.timeDelay"
+%endfunction
+
+%function getOutputAddr_8_15_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_8_15_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_8_15_1_2_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParam_8_15_1_2_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParamAddr_8_15_1_2_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getParam_8_15_1_2_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getInputAddr_8_6_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 2, "")> %% rtb_pd
+
+%return "&rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_6_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 2, "")> %% rtb_pd
+
+%return "rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_6_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_8_6_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getInputAddr_8_13_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 2, "")> %% rtb_pd
+
+%return "&rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_13_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 2, "")> %% rtb_pd
+
+%return "rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_8_13_1_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(28, 2, "")> %% rtb_dot_pd
+
+%return "&rtb_dot_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_13_1_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(28, 2, "")> %% rtb_dot_pd
+
+%return "rtb_dot_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_13_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.pdm_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_13_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.pdm_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_8_20_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 2, "")> %% rtb_Add1
+
+%return "&rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_20_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 2, "")> %% rtb_Add1
+
+%return "rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_20_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.error_phi_PWORK"
+%endfunction
+
+%function getDWork_8_20_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.error_phi_PWORK"
+%endfunction
+
+%function getInputAddr_8_21_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 2, "")> %% rtb_Add1
+
+%return "&rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_21_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 2, "")> %% rtb_Add1
+
+%return "rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_21_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.error_psi_PWORK"
+%endfunction
+
+%function getDWork_8_21_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.error_psi_PWORK"
+%endfunction
+
+%function getInputAddr_8_22_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 2, "")> %% rtb_Add1
+
+%return "&rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_22_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 2, "")> %% rtb_Add1
+
+%return "rtb_Add1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_22_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.error_theta_PWORK"
+%endfunction
+
+%function getDWork_8_22_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.error_theta_PWORK"
+%endfunction
+
+%function getInputAddr_8_23_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 2, "")> %% rtb_Add
+
+%return "&rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_23_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 2, "")> %% rtb_Add
+
+%return "rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_23_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.errorx_PWORK"
+%endfunction
+
+%function getDWork_8_23_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.errorx_PWORK"
+%endfunction
+
+%function getInputAddr_8_24_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 2, "")> %% rtb_Add
+
+%return "&rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_24_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 2, "")> %% rtb_Add
+
+%return "rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_24_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.errory_PWORK"
+%endfunction
+
+%function getDWork_8_24_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.errory_PWORK"
+%endfunction
+
+%function getInputAddr_8_25_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 2, "")> %% rtb_Add
+
+%return "&rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_25_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(31, 2, "")> %% rtb_Add
+
+%return "rtb_Add" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_25_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.errorz_PWORK"
+%endfunction
+
+%function getDWork_8_25_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.errorz_PWORK"
+%endfunction
+
+%function getInputAddr_8_27_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 2, "")> %% rtb_yawanglerad
+
+%return "&rtb_yawanglerad"
+%endfunction
+
+%function getInput_8_27_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(4, 2, "")> %% rtb_yawanglerad
+
+%return "rtb_yawanglerad"
+%endfunction
+
+%function getInputAddr_8_27_1_3_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(30, 2, "")> %% rtb_psi_d
+
+%return "&rtb_psi_d"
+%endfunction
+
+%function getInput_8_27_1_3_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(30, 2, "")> %% rtb_psi_d
+
+%return "rtb_psi_d"
+%endfunction
+
+%function getInputAddr_8_27_1_3_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.sf_normalizeanglebetweenpiand_c.angleOut"
+%endfunction
+
+%function getInput_8_27_1_3_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.sf_normalizeanglebetweenpiand_c.angleOut"
+%endfunction
+
+%function getDWorkAddr_8_27_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.psipsi_d_PWORK"
+%endfunction
+
+%function getDWork_8_27_1_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.psipsi_d_PWORK"
+%endfunction
+
+%function getInputAddr_8_15_1_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInput_8_15_1_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInputAddr_8_15_1_4_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInput_8_15_1_4_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInputAddr_8_15_1_4_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInput_8_15_1_4_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInputAddr_8_15_1_4_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInput_8_15_1_4_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInputAddr_8_15_1_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_8_15_1_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_8_15_1_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_8_15_1_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_4_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_4_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_8_15_1_4_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParam_8_15_1_4_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParamAddr_8_15_1_4_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getParam_8_15_1_4_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getInputAddr_8_15_1_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInput_8_15_1_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInputAddr_8_15_1_6_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInput_8_15_1_6_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInputAddr_8_15_1_6_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInput_8_15_1_6_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInputAddr_8_15_1_6_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInput_8_15_1_6_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInputAddr_8_15_1_6_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_8_15_1_6_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_8_15_1_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_8_15_1_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_6_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_6_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_6_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_6_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_8_15_1_6_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParam_8_15_1_6_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParamAddr_8_15_1_6_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getParam_8_15_1_6_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getInputAddr_8_15_1_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInput_8_15_1_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInputAddr_8_15_1_7_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInput_8_15_1_7_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInputAddr_8_15_1_7_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInput_8_15_1_7_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInputAddr_8_15_1_7_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInput_8_15_1_7_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInputAddr_8_15_1_7_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_8_15_1_7_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_8_15_1_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_8_15_1_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_7_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_7_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_7_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_7_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_7_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_8_15_1_7_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParam_8_15_1_7_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParamAddr_8_15_1_7_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getParam_8_15_1_7_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getInputAddr_8_6_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_pd
+
+%return "&rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_8_6_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_pd
+
+%return "rtb_pd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_6_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_8_6_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getInputAddr_8_10_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getInput_8_10_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.StateSpace5"
+%endfunction
+
+%function getDWorkAddr_8_10_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace_PWORK_d"
+%endfunction
+
+%function getDWork_8_10_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace_PWORK_d"
+%endfunction
+
+%function getDWorkAddr_8_12_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.ToWorkspace1_PWORK"
+%endfunction
+
+%function getDWork_8_12_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.ToWorkspace1_PWORK"
+%endfunction
+
+%function getInputAddr_8_15_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInput_8_15_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation1"
+%endfunction
+
+%function getInputAddr_8_15_1_8_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInput_8_15_1_8_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation2"
+%endfunction
+
+%function getInputAddr_8_15_1_8_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInput_8_15_1_8_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation3"
+%endfunction
+
+%function getInputAddr_8_15_1_8_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInput_8_15_1_8_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.Saturation4"
+%endfunction
+
+%function getInputAddr_8_15_1_8_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getInput_8_15_1_8_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutputAddr_8_15_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_8_15_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_B.totalcommunicationtimedelay" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_8_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_RWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_8_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_8_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_IWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_8_15_1_8_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_8_15_1_8_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_DW.totalcommunicationtimedelay_PWO" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_8_15_1_8_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParam_8_15_1_8_1_56(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Max"
+%endfunction
+
+%function getParamAddr_8_15_1_8_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+
+%function getParam_8_15_1_8_1_57(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "ARDroneTTSim_P.totalcommunicationtimedelay_Ini"
+%endfunction
+

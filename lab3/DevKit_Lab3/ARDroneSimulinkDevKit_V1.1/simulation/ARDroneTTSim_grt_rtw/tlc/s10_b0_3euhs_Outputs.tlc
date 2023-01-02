@@ -1,0 +1,663 @@
+%implements s10_b0_3euhs_Outputs "C"
+
+%function OutputsForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%<SLibCGIRAccessLocalVar(0, 0, "")> %% rtb_StateSpace4
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T Vel_xy_tmp;
+real_T Vel_xy_tmp_0;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%assign tlcOutputsFcnOfS8B1 = OpaqueTLCBlockFcn("Outputs", 8, 1, 1, 2)
+%assign tlcOutputsFcnOfS8B7 = OpaqueTLCBlockFcn("Outputs", 8, 7, 1, 2)
+%assign tlcOutputsFcnOfS8B8 = OpaqueTLCBlockFcn("Outputs", 8, 8, 1, 2)
+%assign tlcOutputsFcnOfS8B9 = OpaqueTLCBlockFcn("Outputs", 8, 9, 1, 2)
+%assign tlcOutputsFcnOfS8B10 = OpaqueTLCBlockFcn("Outputs", 8, 10, 1, 2)
+%assign tlcOutputsFcnOfS8B11 = OpaqueTLCBlockFcn("Outputs", 8, 11, 1, 2)
+%assign tlcOutputsFcnOfS8B12 = OpaqueTLCBlockFcn("Outputs", 8, 12, 1, 2)
+%assign tlcOutputsFcnOfS8B15 = OpaqueTLCBlockFcn("Outputs", 8, 15, 1, 2)
+/* {S!d78}Gain: '<S1>/gain1' incorporates:
+ *  StateSpace: '<S1>/State-Space'
+ */
+ARDroneTTSim_B.gain1 = (ARDroneTTSim_P.StateSpace_C[0] * ARDroneTTSim_X.StateSpace_CSTATE[0] + ARDroneTTSim_P.StateSpace_C[1] * ARDroneTTSim_X.StateSpace_CSTATE[1]) * ARDroneTTSim_P.gain1_Gain;
+/* {S!d80}Gain: '<S1>/deg 2 rad1' */
+ARDroneTTSim_B.deg2rad1 = ARDroneTTSim_P.deg2rad1_Gain * ARDroneTTSim_B.gain1;
+/* {S!d82}Gain: '<S1>/gain' incorporates:
+ *  StateSpace: '<S1>/State-Space1'
+ */
+ARDroneTTSim_B.gain = (ARDroneTTSim_P.StateSpace1_C[0] * ARDroneTTSim_X.StateSpace1_CSTATE[0] + ARDroneTTSim_P.StateSpace1_C[1] * ARDroneTTSim_X.StateSpace1_CSTATE[1]) * ARDroneTTSim_P.gain_Gain;
+/* {S!d84}Gain: '<S1>/deg 2 rad' */
+ARDroneTTSim_B.deg2rad = ARDroneTTSim_P.deg2rad_Gain * ARDroneTTSim_B.gain;
+/* {S!d86}StateSpace: '<S1>/State-Space4' */
+rtb_StateSpace4 = 0.0;
+rtb_StateSpace4 += ARDroneTTSim_P.StateSpace4_C * ARDroneTTSim_X.StateSpace4_CSTATE;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[2], "Output",0)
+/* {S!d88}MATLAB Function: '<S1>/normalize angle  between -pi and pi radians' */
+%if SLibCG_SystemFcnArgAccessed("normalizeanglebetweenpiandp",2,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+%if SLibCG_SystemFcnArgAccessed("normalizeanglebetweenpiandp",2,1)
+%<SLibCGIRAccessLocalVar(0, 0, "")> %% rtb_StateSpace4
+%endif
+
+%<SLibCGIRGenReusableSysCall("normalizeanglebetweenpiandp", ["%<_modelSS>", "rtb_StateSpace4", "&ARDroneTTSim_B.sf_normalizeanglebetweenpiandpi"], 2, 0, 7, 0, 7, 8)>\
+
+
+%endif
+/* {S!d90}Gain: '<S1>/deg 2 rad2' */
+ARDroneTTSim_B.deg2rad2 = ARDroneTTSim_P.deg2rad2_Gain * ARDroneTTSim_B.sf_normalizeanglebetweenpiandpi.angleOut;
+if (%<(SLibCGIRIsSampleHit(1, 8))>) {
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B1)
+    /* {S!d92}Scope: '<Root>/Euler angles (deg)' */
+%<tlcOutputsFcnOfS8B1>\
+%endif
+}
+/* {S!d94}Gain: '<Root>/deg 2 rad' */
+ARDroneTTSim_B.deg2rad_p[0] = ARDroneTTSim_P.deg2rad_Gain_a * ARDroneTTSim_B.deg2rad1;
+ARDroneTTSim_B.deg2rad_p[1] = ARDroneTTSim_P.deg2rad_Gain_a * ARDroneTTSim_B.deg2rad;
+ARDroneTTSim_B.deg2rad_p[2] = ARDroneTTSim_P.deg2rad_Gain_a * ARDroneTTSim_B.deg2rad2;
+/* {S!d96}RateTransition: '<Root>/RTrans5' */
+if (%<(SLibCG_SE(SLibCGIRIsSampleHit(1, 8)))> && %<(SLibCG_SE(LibIsSpecialSampleHit(2, 1)))>) {
+    ARDroneTTSim_DW.RTrans5_1_Buffer = ARDroneTTSim_B.deg2rad_p[0];
+    ARDroneTTSim_DW.RTrans5_2_Buffer = ARDroneTTSim_B.deg2rad_p[1];
+    ARDroneTTSim_DW.RTrans5_3_Buffer = ARDroneTTSim_B.deg2rad_p[2];
+}
+/* {S!d98}StateSpace: '<S1>/State-Space3' */
+ARDroneTTSim_B.StateSpace3 = 0.0;
+ARDroneTTSim_B.StateSpace3 += ARDroneTTSim_P.StateSpace3_C * ARDroneTTSim_X.StateSpace3_CSTATE;
+/* {S!d100}RateTransition: '<Root>/RTrans5' */
+if (%<(SLibCG_SE(SLibCGIRIsSampleHit(1, 8)))> && %<(SLibCG_SE(LibIsSpecialSampleHit(2, 1)))>) {
+    ARDroneTTSim_DW.RTrans5_4_Buffer = ARDroneTTSim_B.StateSpace3;
+}
+/* {S!d102}StateSpace: '<S1>/State-Space2' */
+ARDroneTTSim_B.StateSpace2 = 0.0;
+ARDroneTTSim_B.StateSpace2 += ARDroneTTSim_P.StateSpace2_C * ARDroneTTSim_X.StateSpace2_CSTATE;
+/* {S!d104}RateTransition: '<Root>/RTrans5' incorporates:
+ *  Constant: '<S19>/Constant1'
+ *  Constant: '<S1>/The ARDrone sends zero for the vertical velocity.  '
+ */
+if (%<(SLibCGIRIsSampleHit(1, 8))>) {
+    if (%<(LibIsSpecialSampleHit(2, 1))>) {
+        ARDroneTTSim_DW.RTrans5_5_Buffer = ARDroneTTSim_B.StateSpace2;
+        ARDroneTTSim_DW.RTrans5_6_Buffer = ARDroneTTSim_P.TheARDronesendszeroforthevertic;
+    }
+    ARDroneTTSim_B.Constant1[0] = ARDroneTTSim_P.Constant1_Value[0];
+    ARDroneTTSim_B.Constant1[1] = ARDroneTTSim_P.Constant1_Value[1];
+}
+/* {S!d106}Integrator: '<S19>/Integrator' */
+if (ARDroneTTSim_DW.Integrator_IWORK != 0) {
+    ARDroneTTSim_X.Integrator_CSTATE[0] = ARDroneTTSim_B.Constant1[0];
+    ARDroneTTSim_X.Integrator_CSTATE[1] = ARDroneTTSim_B.Constant1[1];
+}
+ARDroneTTSim_B.Integrator[0] = ARDroneTTSim_X.Integrator_CSTATE[0];
+ARDroneTTSim_B.Integrator[1] = ARDroneTTSim_X.Integrator_CSTATE[1];
+/* {E!d106}End of Integrator: '<S19>/Integrator' */
+
+/* {S!d108}RateTransition: '<Root>/RTrans5' */
+if (%<(SLibCG_SE(SLibCGIRIsSampleHit(1, 8)))> && %<(SLibCG_SE(LibIsSpecialSampleHit(2, 1)))>) {
+    ARDroneTTSim_DW.RTrans5_7_Buffer = ARDroneTTSim_B.Integrator[0];
+    ARDroneTTSim_DW.RTrans5_8_Buffer = ARDroneTTSim_B.Integrator[1];
+}
+/* {S!d110}StateSpace: '<S1>/State-Space5' */
+ARDroneTTSim_B.StateSpace5 = 0.0;
+ARDroneTTSim_B.StateSpace5 += ARDroneTTSim_P.StateSpace5_C[0] * ARDroneTTSim_X.StateSpace5_CSTATE[0];
+ARDroneTTSim_B.StateSpace5 += ARDroneTTSim_P.StateSpace5_C[1] * ARDroneTTSim_X.StateSpace5_CSTATE[1];
+/* {S!d112}RateTransition: '<Root>/RTrans5' */
+if (%<(SLibCG_SE(SLibCGIRIsSampleHit(1, 8)))> && %<(SLibCG_SE(LibIsSpecialSampleHit(2, 1)))>) {
+    ARDroneTTSim_DW.RTrans5_9_Buffer = ARDroneTTSim_B.StateSpace5;
+}
+/* {S!d114}Clock: '<Root>/Time' */
+ARDroneTTSim_B.Time = %<(SLibCG_SE(LibGetT()))>;
+/* {S!d124}RateTransition: '<Root>/RTrans7' */
+if (%<(SLibCGIRIsSampleHit(1, 8))>) {
+    if (%<(LibIsSpecialSampleHit(2, 1))>) {
+        ARDroneTTSim_DW.RTrans7_Buffer = ARDroneTTSim_B.Time;
+    }
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B7)
+    /* {S!d116}Scope: '<S5>/Height (m)' */
+%<tlcOutputsFcnOfS8B7>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B8)
+    /* {S!d118}Scope: '<S5>/Inertial potition along Xe (m)' */
+%<tlcOutputsFcnOfS8B8>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B9)
+    /* {S!d120}Scope: '<S5>/Inertial potition along Ye (m)' */
+%<tlcOutputsFcnOfS8B9>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B10)
+    /* {S!d122}ToWorkspace: '<S5>/To Workspace' */
+%<tlcOutputsFcnOfS8B10>\
+%endif
+}
+/* {E!d124}End of RateTransition: '<Root>/RTrans7' */
+
+/* {S!d126}Gain: '<S5>/deg 2 rad1' */
+ARDroneTTSim_B.deg2rad1_l = ARDroneTTSim_P.deg2rad1_Gain_n * ARDroneTTSim_B.deg2rad_p[2];
+if (%<(SLibCGIRIsSampleHit(1, 8))>) {
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B11)
+    /* {S!d128}Scope: '<S5>/heading (deg)' */
+%<tlcOutputsFcnOfS8B11>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B12)
+    /* {S!d130}ToWorkspace: '<S5>/To Workspace1' */
+%<tlcOutputsFcnOfS8B12>\
+%endif
+    /* {S!d132}RateTransition: '<Root>/RTrans4' incorporates:
+ *  RateTransition: '<Root>/RTrans3'
+ */
+    if (%<(LibIsSpecialSampleHit(2, 1))>) {
+        ARDroneTTSim_B.RTrans4 = ARDroneTTSim_DW.RTrans4_Buffer0;
+        ARDroneTTSim_B.RTrans3 = ARDroneTTSim_DW.RTrans3_Buffer0;
+    }
+    /* {E!d132}End of RateTransition: '<Root>/RTrans4' */
+
+    /* {S!d134}Saturate: '<S1>/Saturation 1' */
+    if (ARDroneTTSim_B.RTrans4 > ARDroneTTSim_P.Saturation1_UpperSat) {
+        ARDroneTTSim_B.Saturation1 = ARDroneTTSim_P.Saturation1_UpperSat;
+    } else if (ARDroneTTSim_B.RTrans4 < ARDroneTTSim_P.Saturation1_LowerSat) {
+        ARDroneTTSim_B.Saturation1 = ARDroneTTSim_P.Saturation1_LowerSat;
+    } else {
+        ARDroneTTSim_B.Saturation1 = ARDroneTTSim_B.RTrans4;
+    }
+    /* {E!d134}End of Saturate: '<S1>/Saturation 1' */
+
+    /* {S!d136}Saturate: '<S1>/Saturation 2' */
+    if (ARDroneTTSim_B.RTrans3 > ARDroneTTSim_P.Saturation2_UpperSat) {
+        ARDroneTTSim_B.Saturation2 = ARDroneTTSim_P.Saturation2_UpperSat;
+    } else if (ARDroneTTSim_B.RTrans3 < ARDroneTTSim_P.Saturation2_LowerSat) {
+        ARDroneTTSim_B.Saturation2 = ARDroneTTSim_P.Saturation2_LowerSat;
+    } else {
+        ARDroneTTSim_B.Saturation2 = ARDroneTTSim_B.RTrans3;
+    }
+    /* {E!d136}End of Saturate: '<S1>/Saturation 2' */
+
+    /* {S!d138}RateTransition: '<Root>/RTrans2' incorporates:
+ *  RateTransition: '<Root>/RTrans1'
+ */
+    if (%<(LibIsSpecialSampleHit(2, 1))>) {
+        ARDroneTTSim_B.RTrans2 = ARDroneTTSim_DW.RTrans2_Buffer0;
+        ARDroneTTSim_B.RTrans1 = ARDroneTTSim_DW.RTrans1_Buffer0;
+    }
+    /* {E!d138}End of RateTransition: '<Root>/RTrans2' */
+
+    /* {S!d140}Saturate: '<S1>/Saturation 3' */
+    if (ARDroneTTSim_B.RTrans2 > ARDroneTTSim_P.Saturation3_UpperSat) {
+        ARDroneTTSim_B.Saturation3 = ARDroneTTSim_P.Saturation3_UpperSat;
+    } else if (ARDroneTTSim_B.RTrans2 < ARDroneTTSim_P.Saturation3_LowerSat) {
+        ARDroneTTSim_B.Saturation3 = ARDroneTTSim_P.Saturation3_LowerSat;
+    } else {
+        ARDroneTTSim_B.Saturation3 = ARDroneTTSim_B.RTrans2;
+    }
+    /* {E!d140}End of Saturate: '<S1>/Saturation 3' */
+
+    /* {S!d142}Saturate: '<S1>/Saturation 4' */
+    if (ARDroneTTSim_B.RTrans1 > ARDroneTTSim_P.Saturation4_UpperSat) {
+        ARDroneTTSim_B.Saturation4 = ARDroneTTSim_P.Saturation4_UpperSat;
+    } else if (ARDroneTTSim_B.RTrans1 < ARDroneTTSim_P.Saturation4_LowerSat) {
+        ARDroneTTSim_B.Saturation4 = ARDroneTTSim_P.Saturation4_LowerSat;
+    } else {
+        ARDroneTTSim_B.Saturation4 = ARDroneTTSim_B.RTrans1;
+    }
+    /* {E!d142}End of Saturate: '<S1>/Saturation 4' */
+}
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B15)
+/* {S!d144}VariableTransportDelay: '<S1>/total communication time delay' incorporates:
+ *  Constant: '<S1>/time delay'
+ */
+%<tlcOutputsFcnOfS8B15>\
+%endif
+/* {S!d146}MATLAB Function: '<S19>/Velocity from vehicle body frame  to inertial NED  frame' incorporates:
+ *  SignalConversion: '<S20>/TmpSignal ConversionAt SFunction Inport1'
+ */
+/* MATLAB Function 'Position estimation Important:This block provides an  inaccurate extimation of position  based on  velocity information. /Position estimation/Velocity from vehicle body frame  to inertial NED  frame': '<S20>:1' */
+/* '<S20>:1:4' */
+/* '<S20>:1:5' */
+ARDroneTTSim_B.Vel_xy[0] = 0.0;
+Vel_xy_tmp_0 = cos(ARDroneTTSim_B.deg2rad_p[2]);
+ARDroneTTSim_B.Vel_xy[0] += Vel_xy_tmp_0 * ARDroneTTSim_B.StateSpace3;
+Vel_xy_tmp = sin(ARDroneTTSim_B.deg2rad_p[2]);
+ARDroneTTSim_B.Vel_xy[0] += -Vel_xy_tmp * ARDroneTTSim_B.StateSpace2;
+ARDroneTTSim_B.Vel_xy[1] = 0.0;
+ARDroneTTSim_B.Vel_xy[1] += Vel_xy_tmp * ARDroneTTSim_B.StateSpace3;
+ARDroneTTSim_B.Vel_xy[1] += Vel_xy_tmp_0 * ARDroneTTSim_B.StateSpace2;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutput0LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%<SLibCGIRAccessLocalVar(28, 2, "")> %% rtb_dot_pd
+%<SLibCGIRAccessLocalVar(27, 2, "")> %% rtb_pd
+%<SLibCGIRAccessLocalVar(31, 2, "")> %% rtb_Add
+%<SLibCGIRAccessLocalVar(13, 2, "")> %% rtb_Add1
+%<SLibCGIRAccessLocalVar(30, 2, "")> %% rtb_psi_d
+%<SLibCGIRAccessLocalVar(4, 2, "")> %% rtb_yawanglerad
+%<SLibCGIRAccessLocalVar(15, 2, "")> %% rtb_Sum1
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T dt;
+real_T Rz[9];
+real_T dot_p[3];
+real_T u[3];
+real_T x[9];
+int32_T p1;
+int32_T p2;
+int32_T p3;
+static const real_T c[3] = { 0.0, 0.0, 9.81 };
+real_T rtb_ManualSwitch2;
+real_T p[6];
+real_T tmp;
+real_T Rz_tmp;
+real_T tmp_0;
+real_T rtb_ManualSwitch2_tmp;
+real_T p_tmp;
+real_T p_tmp_0;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%assign tlcOutputsFcnOfS8B6 = OpaqueTLCBlockFcn("Outputs", 8, 6, 1, 3)
+%assign tlcOutputsFcnOfS8B13 = OpaqueTLCBlockFcn("Outputs", 8, 13, 1, 3)
+%assign tlcOutputsFcnOfS8B20 = OpaqueTLCBlockFcn("Outputs", 8, 20, 1, 3)
+%assign tlcOutputsFcnOfS8B21 = OpaqueTLCBlockFcn("Outputs", 8, 21, 1, 3)
+%assign tlcOutputsFcnOfS8B22 = OpaqueTLCBlockFcn("Outputs", 8, 22, 1, 3)
+%assign tlcOutputsFcnOfS8B23 = OpaqueTLCBlockFcn("Outputs", 8, 23, 1, 3)
+%assign tlcOutputsFcnOfS8B24 = OpaqueTLCBlockFcn("Outputs", 8, 24, 1, 3)
+%assign tlcOutputsFcnOfS8B25 = OpaqueTLCBlockFcn("Outputs", 8, 25, 1, 3)
+%assign tlcOutputsFcnOfS8B27 = OpaqueTLCBlockFcn("Outputs", 8, 27, 1, 3)
+/* {S!d148}ManualSwitch: '<Root>/Manual Switch2' incorporates:
+ *  Constant: '<Root>/commands disabled'
+ *  Constant: '<Root>/commands enabled'
+ */
+if (ARDroneTTSim_P.ManualSwitch2_CurrentSetting == 1) {
+    rtb_ManualSwitch2 = ARDroneTTSim_P.commandsdisabled_Value;
+} else {
+    rtb_ManualSwitch2 = ARDroneTTSim_P.commandsenabled_Value;
+}
+/* {E!d148}End of ManualSwitch: '<Root>/Manual Switch2' */
+
+/* {S!d150}RateTransition: '<Root>/RTrans5' */
+rtb_yawanglerad = ARDroneTTSim_DW.RTrans5_3_Buffer;
+/* {S!d152}MATLAB Function: '<Root>/MATLAB Function1' incorporates:
+ *  RateTransition: '<Root>/RTrans5'
+ *  RateTransition: '<Root>/RTrans7'
+ */
+/* MATLAB Function 'MATLAB Function1': '<S2>:1' */
+/* '<S2>:1:21' */
+/* '<S2>:1:22' */
+if (!ARDroneTTSim_DW.previous_status_not_empty) {
+    /* '<S2>:1:24' */
+    ARDroneTTSim_DW.previous_status_not_empty = true;
+    /* '<S2>:1:26' */
+    ARDroneTTSim_DW.p0[0] = ARDroneTTSim_DW.RTrans5_7_Buffer;
+    ARDroneTTSim_DW.p0[1] = ARDroneTTSim_DW.RTrans5_8_Buffer;
+    ARDroneTTSim_DW.p0[2] = -1.0;
+}
+if (rtb_ManualSwitch2 == 0.0) {
+    /* '<S2>:1:29' */
+    if (ARDroneTTSim_DW.previous_status == 1.0) {
+        /* '<S2>:1:30' */
+        /* '<S2>:1:32' */
+        ARDroneTTSim_DW.p0[0] = ARDroneTTSim_DW.RTrans5_7_Buffer;
+        ARDroneTTSim_DW.p0[1] = ARDroneTTSim_DW.RTrans5_8_Buffer;
+        ARDroneTTSim_DW.p0[2] = -1.0;
+    }
+    /* '<S2>:1:34' */
+    /* '<S2>:1:35' */
+    /* '<S2>:1:36' */
+    rtb_pd[0] = ARDroneTTSim_DW.p0[0];
+    rtb_dot_pd[0] = 0.0;
+    rtb_pd[1] = ARDroneTTSim_DW.p0[1];
+    rtb_dot_pd[1] = 0.0;
+    rtb_pd[2] = ARDroneTTSim_DW.p0[2];
+    rtb_dot_pd[2] = 0.0;
+    /* '<S2>:1:37' */
+    rtb_psi_d = 0.0;
+} else {
+    if ((!ARDroneTTSim_DW.t0_not_empty) || (ARDroneTTSim_DW.previous_status == 0.0)) {
+        /* '<S2>:1:39' */
+        /* '<S2>:1:41' */
+        ARDroneTTSim_DW.t0 = ARDroneTTSim_DW.RTrans7_Buffer;
+        ARDroneTTSim_DW.t0_not_empty = true;
+        /* '<S2>:1:42' */
+        ARDroneTTSim_DW.p0[0] = ARDroneTTSim_DW.RTrans5_7_Buffer;
+        ARDroneTTSim_DW.p0[1] = ARDroneTTSim_DW.RTrans5_8_Buffer;
+        ARDroneTTSim_DW.p0[2] = -1.0;
+    }
+    /* '<S2>:1:44' */
+    dt = ARDroneTTSim_DW.RTrans7_Buffer - ARDroneTTSim_DW.t0;
+    /* '<S2>:1:63' */
+    rtb_pd[0] = ARDroneTTSim_DW.p0[0];
+    rtb_pd[1] = ARDroneTTSim_DW.p0[1];
+    rtb_pd[2] = ARDroneTTSim_DW.p0[2];
+    if (ARDroneTTSim_DW.RTrans7_Buffer > 20.0) {
+        /* '<S2>:1:64' */
+        /* '<S2>:1:65' */
+        rtb_dot_pd[0] = 0.1;
+        rtb_dot_pd[1] = 0.0;
+        rtb_dot_pd[2] = 0.0;
+        /* '<S2>:1:66' */
+        rtb_pd[0] = 0.1 * dt + ARDroneTTSim_DW.p0[0];
+    } else {
+        /* '<S2>:1:68' */
+        rtb_dot_pd[0] = 0.0;
+        rtb_dot_pd[1] = 0.0;
+        rtb_dot_pd[2] = 0.0;
+    }
+    if (ARDroneTTSim_DW.RTrans7_Buffer > 20.0 - dt) {
+        /* '<S2>:1:71' */
+        /* '<S2>:1:72' */
+        rtb_dot_pd[0] = 0.1;
+        rtb_dot_pd[1] = 0.0;
+        rtb_dot_pd[2] = 0.0;
+    }
+    if (ARDroneTTSim_DW.RTrans7_Buffer > 10.0) {
+        /* '<S2>:1:75' */
+        /* '<S2>:1:76' */
+        rtb_pd[2] = 0.75;
+    } else {
+        /* '<S2>:1:78' */
+        rtb_pd[2] = 0.0;
+    }
+    /* '<S2>:1:80' */
+    /* '<S2>:1:81' */
+    rtb_psi_d = 0.0;
+}
+/* '<S2>:1:86' */
+ARDroneTTSim_DW.previous_status = rtb_ManualSwitch2;
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B6)
+/* {S!d154}ToWorkspace: '<Root>/To Workspace' */
+%<tlcOutputsFcnOfS8B6>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B13)
+/* {S!d156}Scope: '<Root>/pd (m)' */
+%<tlcOutputsFcnOfS8B13>\
+%endif
+/* {S!d158}RelationalOperator: '<S8>/Compare' incorporates:
+ *  Constant: '<S8>/Constant'
+ */
+ARDroneTTSim_B.Compare = (rtb_ManualSwitch2 <= ARDroneTTSim_P.Constant_Value);
+/* {S!d160}DiscreteIntegrator: '<S3>/Discrete-Time Integrator' */
+if (ARDroneTTSim_B.Compare || (ARDroneTTSim_DW.DiscreteTimeIntegrator_PrevRese != 0)) {
+    ARDroneTTSim_DW.DiscreteTimeIntegrator_DSTATE[0] = ARDroneTTSim_P.DiscreteTimeIntegrator_IC[0];
+    ARDroneTTSim_DW.DiscreteTimeIntegrator_DSTATE[1] = ARDroneTTSim_P.DiscreteTimeIntegrator_IC[1];
+    ARDroneTTSim_DW.DiscreteTimeIntegrator_DSTATE[2] = ARDroneTTSim_P.DiscreteTimeIntegrator_IC[2];
+    ARDroneTTSim_DW.DiscreteTimeIntegrator_DSTATE[3] = ARDroneTTSim_P.DiscreteTimeIntegrator_IC[3];
+}
+/* {E!d160}End of DiscreteIntegrator: '<S3>/Discrete-Time Integrator' */
+
+/* {S!d162}MATLAB Function: '<S3>/MATLAB Function' incorporates:
+ *  Constant: '<S3>/Constant1'
+ *  MATLAB Function: '<Root>/MATLAB Function1'
+ *  MATLAB Function: '<S15>/Coordinate trnasformation  from inertial frame to body frame '
+ *  RateTransition: '<Root>/RTrans5'
+ *  SignalConversion: '<S2>/TmpSignal ConversionAt SFunction Inport2'
+ *  Sum: '<S9>/Add'
+ */
+/* MATLAB Function 'Outer-loop Controller/MATLAB Function': '<S10>:1' */
+/* '<S10>:1:24' */
+/* '<S10>:1:21' */
+/* '<S10>:1:22' */
+/* '<S10>:1:23' */
+/* '<S10>:1:61' */
+/* '<S10>:1:62' */
+tmp = sin(rtb_yawanglerad);
+Rz_tmp = cos(rtb_yawanglerad);
+Rz[0] = Rz_tmp;
+Rz[3] = -tmp;
+Rz[6] = 0.0;
+Rz[1] = tmp;
+Rz[4] = Rz_tmp;
+Rz[7] = 0.0;
+/* '<S10>:1:27' */
+Rz[2] = 0.0;
+Rz[5] = 0.0;
+Rz[8] = 1.0;
+/* '<S10>:1:28' */
+/* '<S10>:1:29' */
+/* '<S10>:1:30' */
+rtb_ManualSwitch2 = cos(ARDroneTTSim_DW.RTrans5_2_Buffer);
+x[0] = rtb_ManualSwitch2 * Rz_tmp;
+dt = cos(ARDroneTTSim_DW.RTrans5_1_Buffer);
+rtb_ManualSwitch2_tmp = sin(ARDroneTTSim_DW.RTrans5_2_Buffer);
+p_tmp = sin(ARDroneTTSim_DW.RTrans5_1_Buffer);
+p_tmp_0 = p_tmp * rtb_ManualSwitch2_tmp;
+x[3] = p_tmp_0 * Rz_tmp - dt * tmp;
+tmp_0 = dt * rtb_ManualSwitch2_tmp;
+x[6] = tmp_0 * Rz_tmp + p_tmp * tmp;
+x[1] = rtb_ManualSwitch2 * tmp;
+x[4] = p_tmp_0 * tmp + dt * Rz_tmp;
+x[7] = tmp_0 * tmp - p_tmp * Rz_tmp;
+x[2] = -rtb_ManualSwitch2_tmp;
+x[5] = p_tmp * rtb_ManualSwitch2;
+x[8] = dt * rtb_ManualSwitch2;
+for (p1 = 0; p1 < 3; p1++) {
+    dot_p[p1] = x[p1 + 6] * ARDroneTTSim_DW.RTrans5_6_Buffer + (x[p1 + 3] * ARDroneTTSim_DW.RTrans5_5_Buffer + x[p1] * ARDroneTTSim_DW.RTrans5_4_Buffer);
+}
+/* '<S10>:1:31' */
+dot_p[2] = -dot_p[2];
+/* '<S10>:1:46' */
+memcpy(&x[0], &Rz[0], 9U * sizeof(real_T));
+p1 = 0;
+p2 = 3;
+p3 = 6;
+dt = fabs(tmp);
+if ((dt > fabs(Rz_tmp)) && (dt > 0.0)) {
+    p1 = 3;
+    p2 = 0;
+    x[0] = tmp;
+    x[1] = Rz_tmp;
+    x[3] = Rz_tmp;
+    x[4] = -sin(rtb_yawanglerad);
+    x[6] = 0.0;
+    x[7] = 0.0;
+}
+rtb_ManualSwitch2_tmp = x[1] / x[0];
+x[1] = rtb_ManualSwitch2_tmp;
+dt = x[2] / x[0];
+x[2] /= x[0];
+x[4] -= rtb_ManualSwitch2_tmp * x[3];
+x[5] -= dt * x[3];
+x[7] -= rtb_ManualSwitch2_tmp * x[6];
+x[8] -= dt * x[6];
+if (fabs(x[5]) > fabs(x[4])) {
+    p3 = p2;
+    p2 = 6;
+    x[1] = dt;
+    x[2] = rtb_ManualSwitch2_tmp;
+    rtb_ManualSwitch2 = x[4];
+    x[4] = x[5];
+    x[5] = rtb_ManualSwitch2;
+    rtb_ManualSwitch2 = x[7];
+    x[7] = x[8];
+    x[8] = rtb_ManualSwitch2;
+}
+rtb_ManualSwitch2_tmp = x[5] / x[4];
+x[8] -= rtb_ManualSwitch2_tmp * x[7];
+rtb_ManualSwitch2 = (rtb_ManualSwitch2_tmp * x[1] - x[2]) / x[8];
+dt = -(x[7] * rtb_ManualSwitch2 + x[1]) / x[4];
+Rz[p1] = ((1.0 - x[3] * dt) - x[6] * rtb_ManualSwitch2) / x[0];
+Rz[p1 + 1] = dt;
+Rz[p1 + 2] = rtb_ManualSwitch2;
+rtb_ManualSwitch2 = -rtb_ManualSwitch2_tmp / x[8];
+dt = (1.0 - x[7] * rtb_ManualSwitch2) / x[4];
+Rz[p2] = -(x[3] * dt + x[6] * rtb_ManualSwitch2) / x[0];
+Rz[p2 + 1] = dt;
+Rz[p2 + 2] = rtb_ManualSwitch2;
+rtb_ManualSwitch2 = 1.0 / x[8];
+dt = -x[7] * rtb_ManualSwitch2 / x[4];
+Rz[p3] = -(x[3] * dt + x[6] * rtb_ManualSwitch2) / x[0];
+Rz[p3 + 1] = dt;
+Rz[p3 + 2] = rtb_ManualSwitch2;
+p_tmp = ARDroneTTSim_DW.RTrans5_7_Buffer - rtb_pd[0];
+p[0] = p_tmp;
+p[3] = dot_p[0] - rtb_dot_pd[0];
+p_tmp_0 = ARDroneTTSim_DW.RTrans5_8_Buffer - rtb_pd[1];
+p[1] = p_tmp_0;
+p[4] = dot_p[1] - rtb_dot_pd[1];
+rtb_ManualSwitch2_tmp = -ARDroneTTSim_DW.RTrans5_9_Buffer - rtb_pd[2];
+p[2] = rtb_ManualSwitch2_tmp;
+p[5] = dot_p[2] - rtb_dot_pd[2];
+for (p1 = 0; p1 < 3; p1++) {
+    rtb_ManualSwitch2 = 0.0;
+    for (p2 = 0; p2 < 6; p2++) {
+        rtb_ManualSwitch2 += ARDroneTTSim_P.K[3 * p2 + p1] * p[p2];
+    }
+    dot_p[p1] = rtb_ManualSwitch2 + c[p1];
+}
+for (p1 = 0; p1 < 3; p1++) {
+    u[p1] = Rz[p1 + 6] * dot_p[2] + (Rz[p1 + 3] * dot_p[1] + Rz[p1] * dot_p[0]);
+}
+/* '<S10>:1:48' */
+/* '<S10>:1:49' */
+/* '<S10>:1:50' */
+/* '<S10>:1:51' */
+/* '<S10>:1:52' */
+rtb_ManualSwitch2 = atan(u[0] / u[2]);
+dt = atan(-u[1] / sqrt(u[0] * u[0] + u[2] * u[2]));
+ARDroneTTSim_B.dot_xi[0] = 0.0;
+ARDroneTTSim_B.dot_xi[1] = 0.0;
+ARDroneTTSim_B.dot_xi[2] = 0.0;
+ARDroneTTSim_B.dot_xi[3] = 0.0;
+/* {S!d164}Sum: '<S9>/Add1' incorporates:
+ *  RateTransition: '<Root>/RTrans5'
+ */
+rtb_Add1[0] = ARDroneTTSim_DW.RTrans5_1_Buffer - dt;
+rtb_Add1[1] = ARDroneTTSim_DW.RTrans5_2_Buffer - rtb_ManualSwitch2;
+rtb_Add1[2] = rtb_yawanglerad - rtb_psi_d;
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B20)
+/* {S!d166}Scope: '<S9>/error_phi' */
+%<tlcOutputsFcnOfS8B20>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B21)
+/* {S!d168}Scope: '<S9>/error_psi' */
+%<tlcOutputsFcnOfS8B21>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B22)
+/* {S!d170}Scope: '<S9>/error_theta' */
+%<tlcOutputsFcnOfS8B22>\
+%endif
+/* {S!d172}Sum: '<S9>/Add' incorporates:
+ *  RateTransition: '<Root>/RTrans5'
+ */
+rtb_Add[0] = p_tmp;
+rtb_Add[1] = p_tmp_0;
+rtb_Add[2] = ARDroneTTSim_DW.RTrans5_9_Buffer - rtb_pd[2];
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B23)
+/* {S!d174}Scope: '<S9>/errorx' */
+%<tlcOutputsFcnOfS8B23>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B24)
+/* {S!d176}Scope: '<S9>/errory' */
+%<tlcOutputsFcnOfS8B24>\
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B25)
+/* {S!d178}Scope: '<S9>/errorz' */
+%<tlcOutputsFcnOfS8B25>\
+%endif
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[2], "Output",2)
+/* {S!d180}MATLAB Function: '<S9>/normalize angle  between -pi and pi radians' */
+%if SLibCG_SystemFcnArgAccessed("normalizeanglebetweenpiandp",2,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+%if SLibCG_SystemFcnArgAccessed("normalizeanglebetweenpiandp",2,1)
+%<SLibCGIRAccessLocalVar(13, 2, "")> %% rtb_Add1
+%endif
+
+%<SLibCGIRGenReusableSysCall("normalizeanglebetweenpiandp", ["%<_modelSS>", "rtb_Add1[2]", "&ARDroneTTSim_B.sf_normalizeanglebetweenpiand_c"], 2, 2, 7, 2, 7, 8)>\
+
+
+%endif
+%if !WHITE_SPACE(tlcOutputsFcnOfS8B27)
+/* {S!d182}Scope: '<S9>/psi  psi_d' */
+%<tlcOutputsFcnOfS8B27>\
+%endif
+/* {S!d184}Sum: '<S15>/Sum4' incorporates:
+ *  RateTransition: '<Root>/RTrans5'
+ */
+/* MATLAB Function 'Outer-loop Controller/Baseline Controller/Position controller/Coordinate trnasformation  from inertial frame to body frame ': '<S17>:1' */
+/* '<S17>:1:3' */
+/* '<S17>:1:4' */
+p_tmp = rtb_pd[0] - ARDroneTTSim_DW.RTrans5_7_Buffer;
+p_tmp_0 = rtb_pd[1] - ARDroneTTSim_DW.RTrans5_8_Buffer;
+/* {S!d186}Sum: '<S12>/Sum1' */
+rtb_Sum1 = rtb_psi_d - rtb_yawanglerad;
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[2], "Output",2)
+/* {S!d188}MATLAB Function: '<S12>/normalize angle  between -pi and pi radians' */
+%if SLibCG_SystemFcnArgAccessed("normalizeanglebetweenpiandp",2,0)
+%assign _modelSS = RTMGetModelSSFromIR()
+%endif
+%if SLibCG_SystemFcnArgAccessed("normalizeanglebetweenpiandp",2,1)
+%<SLibCGIRAccessLocalVar(15, 2, "")> %% rtb_Sum1
+%endif
+
+%<SLibCGIRGenReusableSysCall("normalizeanglebetweenpiandp", ["%<_modelSS>", "rtb_Sum1", "&ARDroneTTSim_B.sf_normalizeanglebetweenpiand_e"], 2, 1, 7, 2, 7, 8)>\
+
+
+%endif
+/* {S!d190}ManualSwitch: '<S3>/Manual Switch3' incorporates:
+ *  Constant: '<S3>/Constant'
+ *  Gain: '<S11>/Gain'
+ *  Gain: '<S12>/proportional control gain - yaw'
+ *  Gain: '<S13>/proportional control gain'
+ *  Gain: '<S14>/Gain1'
+ *  Gain: '<S15>/Gain2'
+ *  Gain: '<S15>/Gain3'
+ *  MATLAB Function: '<S15>/Coordinate trnasformation  from inertial frame to body frame '
+ *  MATLAB Function: '<S3>/MATLAB Function'
+ *  RateTransition: '<Root>/RTrans5'
+ *  Sum: '<S11>/Sum2'
+ *  Sum: '<S13>/Sum3'
+ *  Sum: '<S14>/Sum5'
+ */
+if (ARDroneTTSim_P.ManualSwitch3_CurrentSetting == 1) {
+    ARDroneTTSim_B.ManualSwitch3[0] = (rtb_pd[2] - ARDroneTTSim_DW.RTrans5_9_Buffer) * ARDroneTTSim_P.proportionalcontrolgain_Gain;
+    ARDroneTTSim_B.ManualSwitch3[1] = ARDroneTTSim_P.proportionalcontrolgainyaw_Gain * ARDroneTTSim_B.sf_normalizeanglebetweenpiand_e.angleOut;
+    ARDroneTTSim_B.ManualSwitch3[2] = ((Rz_tmp * p_tmp + tmp * p_tmp_0) * ARDroneTTSim_P.Gain2_Gain - ARDroneTTSim_DW.RTrans5_4_Buffer) * ARDroneTTSim_P.Gain_Gain;
+    ARDroneTTSim_B.ManualSwitch3[3] = ((-sin(rtb_yawanglerad) * p_tmp + Rz_tmp * p_tmp_0) * ARDroneTTSim_P.Gain3_Gain - ARDroneTTSim_DW.RTrans5_5_Buffer) * ARDroneTTSim_P.Gain1_Gain;
+} else {
+    ARDroneTTSim_B.ManualSwitch3[0] = rtb_ManualSwitch2_tmp * ARDroneTTSim_P.k_w;
+    ARDroneTTSim_B.ManualSwitch3[1] = 0.0;
+    ARDroneTTSim_B.ManualSwitch3[2] = rtb_ManualSwitch2;
+    ARDroneTTSim_B.ManualSwitch3[3] = dt;
+}
+/* {E!d190}End of ManualSwitch: '<S3>/Manual Switch3' */
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutput2LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
+%function OutputsFcnProtoTypeForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs0(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 2, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 2
+%assign ::GlobalCurrentTID = 2
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs1(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 3, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
