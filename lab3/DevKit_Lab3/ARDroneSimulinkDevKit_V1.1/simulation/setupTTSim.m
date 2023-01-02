@@ -52,6 +52,8 @@ simDT = 0.005 ;
 disp('Choose the simulation you want to run:'); 
 disp('    (1) Altitude'); 
 disp('    (2) Horizontal Line'); 
+disp('    (3) Circle - Constant Yaw'); 
+disp('    (4) Circle - Variable Yaw'); 
 
 choice = input('');
 
@@ -99,7 +101,7 @@ switch choice
 
         sim_line_results = sim('ARDroneTTSim_2019');
 
-        % Plot altitude tracking for different k_w
+        % Plot motion
         fig2 = figure();
         hold on;
         plot(sim_line_results.pd.signals.values(1, :), sim_line_results.pd.signals.values(2, :));
@@ -110,9 +112,73 @@ switch choice
         ylabel('Posição y [m]');
         saveas(fig2, '../imgs/Horizontal_line_Sim', 'png');
         
+    case 3
+        % Circle Simulation: const yaw angle
+        k_w = 1;
+
+        A = [zeros(3,3) eye(3);...
+             zeros(3,3) zeros(3,3)];
+        B = [zeros(3,3); eye(3)];
+
+        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        R = diag([1 1 1]);
+
+        K = lqr(A,B,Q,R);
+%         K=[diag([4 4 4]) diag([6 6 6])];
+
+        sim_circ_results = sim('ARDroneTTSim_2019');
+
+        % Plot motion
+        fig3 = figure();
+        hold on;
+        plot(sim_circ_results.pd.signals.values(1, :), sim_circ_results.pd.signals.values(2, :));
+        plot(sim_circ_results.x_sim.signals.values, sim_circ_results.y_sim.signals.values);
+        % xlim([0 30]);
+        legend('pedida', 'simulada', 'location', 'northwest');
+        xlabel('Posição x [m]');
+        ylabel('Posição y [m]');
+        saveas(fig3, '../imgs/Circ_line_Sim_1', 'png');
+        
+    case 4
+        % Circle Simulation: variable yaw angle
+        k_w = 1;
+
+        A = [zeros(3,3) eye(3);...
+             zeros(3,3) zeros(3,3)];
+        B = [zeros(3,3); eye(3)];
+
+        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        R = diag([1 1 1]);
+
+        K = lqr(A,B,Q,R);
+%         K=[diag([4 4 4]) diag([6 6 6])];
+
+        sim_circ_results = sim('ARDroneTTSim_2019');
+
+        % Plot motion
+        fig4 = figure();
+        hold on;
+        plot(sim_circ_results.pd.signals.values(1, :), sim_circ_results.pd.signals.values(2, :));
+        plot(sim_circ_results.x_sim.signals.values, sim_circ_results.y_sim.signals.values);
+        % xlim([0 30]);
+        legend('pedida', 'simulada', 'location', 'northwest');
+        xlabel('Posição x [m]');
+        ylabel('Posição y [m]');
+        saveas(fig4, '../imgs/Circ_line_Sim_2', 'png');
+        
+        fig5 = figure();
+        hold on;
+        plot(sim_circ_results.psi_d.time, sim_circ_results.psi_d.signals.values);
+        plot(sim_circ_results.yaw_deg.time, sim_circ_results.yaw_deg.signals.values); %simulada
+        % xlim([0 30]);
+        legend('pedida', 'simulada', 'location', 'northwest');
+        xlabel('Tempo [s]');
+        ylabel('\psi [rad]');
+        saveas(fig5, '../imgs/Circ_line_Sim_2', 'png');
+        
     otherwise
         %Loading Simulink model of ARDrone
-        ARDroneTTSim ;
+        ARDroneTTSim_2019 ;
         
 end
 

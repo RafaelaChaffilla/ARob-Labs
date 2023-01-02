@@ -80,66 +80,57 @@ Model {
       }
       Array {
 	Type			"Simulink.EditorInfo"
-	Dimension		6
+	Dimension		5
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "4950"
-	  Extents		  [1366.0, 768.0]
+	  Extents		  [1332.0, 605.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [0.0, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "4940"
-	  Extents		  [1366.0, 768.0]
-	  ZoomFactor		  [0.95944875655444628]
-	  Offset		  [-62.116417253521149, -48.385390985658944]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1332.0, 605.0]
+	  ZoomFactor		  [1.5]
+	  Offset		  [250.42441662540239, 287.66666666666674]
 	}
 	Object {
 	  $ObjectID		  7
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "4974"
-	  Extents		  [1366.0, 768.0]
-	  ZoomFactor		  [1.6439156626506022]
-	  Offset		  [-244.91379310344837, 48.85142365055512]
+	  LoadSaveID		  "4945"
+	  Extents		  [1332.0, 605.0]
+	  ZoomFactor		  [0.59999999999999987]
+	  Offset		  [-548.10546875000023, -177.25000000000011]
 	}
 	Object {
 	  $ObjectID		  8
 	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1332.0, 605.0]
-	  ZoomFactor		  [1.0471869328493648]
-	  Offset		  [234.42724419239858, 38.630849220103983]
-	}
-	Object {
-	  $ObjectID		  9
-	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "4951"
-	  Extents		  [1366.0, 768.0]
+	  Extents		  [1332.0, 605.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [0.0, 0.0]
 	}
 	Object {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "5024"
 	  Extents		  [1332.0, 605.0]
-	  ZoomFactor		  [0.84737678855325893]
-	  Offset		  [-228.29787171669795, 67.4784240150093]
+	  ZoomFactor		  [2.0]
+	  Offset		  [98.8330538617916, 371.27345215759874]
 	}
 	PropName		"EditorsInfo"
       }
       Object {
 	$PropName		"DockComponentsInfo"
-	$ObjectID		11
+	$ObjectID		10
 	$ClassName		"Simulink.DockComponentInfo"
 	Type			"GLUE2:PropertyInspector"
 	ID			"Property Inspector"
@@ -171,8 +162,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "User"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Dec 27 20:47:42 2022"
-  RTWModifiedTimeStamp	  594074859
+  LastModifiedDate	  "Mon Jan 02 22:05:31 2023"
+  RTWModifiedTimeStamp	  594597893
   ModelVersionFormat	  "$Id: UAV_SIL.mdl 912 2012-10-10 23:11:42Z joh07594 $"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -227,7 +218,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    12
+    $ObjectID		    11
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ARDroneTTSim_2019"
     Array {
@@ -271,7 +262,7 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      13
+      $ObjectID		      12
       Version		      "19.0.0"
       DisabledProps	      []
       Description	      ""
@@ -279,7 +270,7 @@ Model {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "19.0.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -322,7 +313,7 @@ Model {
 	  SolverOrder		  3
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "19.0.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -364,7 +355,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "19.0.0"
 	  Array {
 	    Type		    "Cell"
@@ -436,7 +427,7 @@ Model {
 	  DenormalBehavior	  "GradualUnderflow"
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  17
+	  $ObjectID		  16
 	  Version		  "19.0.0"
 	  Array {
 	    Type		    "Cell"
@@ -558,7 +549,7 @@ Model {
 	  ArithmeticOperatorsInVariantConditions "warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  18
+	  $ObjectID		  17
 	  Version		  "19.0.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -608,7 +599,7 @@ Model {
 	  HardwareBoardFeatureSet "EmbeddedCoderHSP"
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  19
+	  $ObjectID		  18
 	  Version		  "19.0.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -628,7 +619,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  20
+	  $ObjectID		  19
 	  Version		  "19.0.0"
 	  DisabledProps		  []
 	  Description		  ""
@@ -662,7 +653,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  21
+	  $ObjectID		  20
 	  Version		  "19.0.0"
 	  Array {
 	    Type		    "Cell"
@@ -752,7 +743,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      22
+	      $ObjectID		      21
 	      Version		      "19.0.0"
 	      Array {
 		Type			"Cell"
@@ -841,7 +832,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      23
+	      $ObjectID		      22
 	      Version		      "19.0.0"
 	      Array {
 		Type			"Cell"
@@ -954,7 +945,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  24
+	  $ObjectID		  23
 	  Version		  "19.0.0"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
@@ -1005,11 +996,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    13
+    $ObjectID		    12
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    25
+    $ObjectID		    24
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1364,9 +1355,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "105"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5075"
+    SIDHighWatermark	    "5079"
     SimulinkSubDomain	    "Simulink"
     Block {
       BlockType		      SubSystem
@@ -1385,8 +1376,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"ARDrone Simulation Block"
-	Location		[8, 8, 1944, 1064]
-	Open			on
+	Location		[8, 8, 1394, 796]
+	Open			off
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
 	ExecutionDomainType	"Deduce"
@@ -1400,7 +1391,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"96"
+	ZoomFactor		"60"
 	SIDHighWatermark	"199"
 	SIDPrevWatermark	"191"
 	SimulinkSubDomain	"Simulink"
@@ -2255,22 +2246,23 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingMaxPoints','500000','DataLo"
       "ggingLimitDataPoints',true,'DataLoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Vis"
-      "uals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-61.65069','MaxYLimReal','60.79785','YLabel"
-      "Real','','MinYLimMag','0.00000','MaxYLimMag','61.65069','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotM"
-      "agPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Colo"
-      "rOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.39"
-      "2156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;"
-      "1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelN"
-      "ames',{{}},'NumLines',3,'LineNames',{{'Euler angles (deg):1','Euler angles (deg):2','Euler angles (deg):3'}},'Sh"
-      "owContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-61.65069','MaxYLimReal','60.797"
-      "85','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','61.65069','LegendVisibility','On','XGrid',true,'YGrid',"
-      "true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450980"
-      "3922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431"
-      "372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294"
-      "117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefi"
-      "nedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('T"
-      "ools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','201"
-      "7b')),'Version','2021b','Location',[845 243 1272 522])"
+      "uals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-224.99767','MaxYLimReal','224.99875','YLab"
+      "elReal','','MinYLimMag',' 0.00000','MaxYLimMag','224.99875','LegendVisibility','On','XGrid',true,'YGrid',true,'P"
+      "lotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'"
+      "ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;"
+      "0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 "
+      "1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','o"
+      "ff'),struct('Visible','off'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{"
+      "'Euler angles (deg):1','Euler angles (deg):2','Euler angles (deg):3'}},'ShowContent',true,'Placement',1)},'Displ"
+      "ayPropertyDefaults',struct('MinYLimReal','-224.99767','MaxYLimReal','224.99875','YLabelReal','','MinYLimMag',' 0"
+      ".00000','MaxYLimMag','224.99875','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesCol"
+      "or',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666"
+      "66666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725"
+      "49019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0."
+      "650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0"
+      ",'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'Once"
+      "AtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2019a')),'Version','2019a','Location'"
+      ",[1 76 1367 727],'VisibleAtModelOpen','on')"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2292,7 +2284,7 @@ Model {
       SFBlockType	      "MATLAB Function"
       System {
 	Name			"MATLAB Function1"
-	Location		[8, 8, 1944, 1064]
+	Location		[8, 8, 1394, 796]
 	Open			on
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
@@ -2583,7 +2575,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"85"
+	ZoomFactor		"200"
 	SimulinkSubDomain	"Simulink"
 	Block {
 	  BlockType		  Inport
@@ -4077,8 +4069,8 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Error Scopes"
-	    Location		    [8, 8, 1944, 1064]
-	    Open		    on
+	    Location		    [8, 8, 1394, 796]
+	    Open		    off
 	    PortBlocksUseCompactNotation off
 	    SetExecutionDomain	    off
 	    ExecutionDomainType	    "Deduce"
@@ -4850,7 +4842,7 @@ Model {
 	  SFBlockType		  "MATLAB Function"
 	  System {
 	    Name		    "MATLAB Function"
-	    Location		    [8, 8, 1944, 1064]
+	    Location		    [8, 8, 1394, 796]
 	    Open		    on
 	    PortBlocksUseCompactNotation off
 	    SetExecutionDomain	    off
@@ -5213,19 +5205,20 @@ Model {
 	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'S"
-	  "erializedDisplays',{struct('MinYLimReal','-122293.05998','MaxYLimReal','14360.66443','YLabelReal','','MinYLimMag','"
-	  "    0.00000','MaxYLimMag','122293.05998','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'A"
-	  "xesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666"
-	  "66666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725"
-	  "49019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650"
-	  "980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'Line"
-	  "Names',{{[]}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-122293.05998','Ma"
-	  "xYLimReal','14360.66443','YLabelReal','','MinYLimMag','    0.00000','MaxYLimMag','122293.05998','LegendVisibility',"
-	  "'off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627"
-	  "4509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607843137"
-	  "2549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.07450980392"
-	  "15686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigatio"
-	  "n',true),extmgr.Configuration('Tools','Measurements',true,'Version','2019a')),'Version','2019a')"
+	  "erializedDisplays',{struct('MinYLimReal','-0.66111','MaxYLimReal','3.35678','YLabelReal','','MinYLimMag','0.00000',"
+	  "'MaxYLimMag','3.35678','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],"
+	  "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745"
+	  "098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098"
+	  "039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
+	  "le','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',4,'LineNames',{{'Discrete"
+	  "-Time Integrator:1','Discrete-Time Integrator:2','Discrete-Time Integrator:3','Discrete-Time Integrator:4'}},'ShowC"
+	  "ontent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.66111','MaxYLimReal','3.35678','YLa"
+	  "belReal','','MinYLimMag','0.00000','MaxYLimMag','3.35678','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotM"
+	  "agPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOr"
+	  "der',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.71764705"
+	  "8823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.07450"
+	  "98039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools',"
+	  "'Measurements',true,'Version','2019a')),'Version','2019a')"
 	  NumInputPorts		  "1"
 	  Floating		  off
 	}
@@ -5621,19 +5614,12 @@ Model {
       SourceBlock	      "ARBlocks/Position estimation\nImportant:This block provides an \ninaccurate extimation of pos"
       "ition \nbased on  velocity information. "
       SourceType	      "SubSystem"
-      ShowPortLabels	      FromPortIcon
-      SystemSampleTime	      -1
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
       GeneratePreprocessorConditionals off
       AllowZeroVariantControls off
       PropagateVariantConditions off
       ContentPreviewEnabled   off
-      Latency		      0
-      AutoFrameSizeCalculation off
     }
     Block {
       BlockType		      RateTransition
@@ -5696,6 +5682,33 @@ Model {
       OutPortSampleTime	      "FMS.Ts"
     }
     Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "5079"
+      Ports		      [1]
+      Position		      [670, 569, 700, 601]
+      ZOrder		      474
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-2.249','MaxYLimReal','20.241','YLabelReal','','MinYLimMag','"
+      "0.00000','MaxYLimMag','20.241','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColo"
+      "r',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666"
+      "6666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137254"
+      "9019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6"
+      "50980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,"
+      "'LineNames',{{'MATLAB Function1/psi_d'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('Mi"
+      "nYLimReal','-2.249','MaxYLimReal','20.241','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','20.241','LegendV"
+      "isibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509"
+      "803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.41176470588"
+      "2353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549"
+      "019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration("
+      "'Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2019a')),'Version','"
+      "2019a','VisibleAtModelOpen','on')"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
       BlockType		      Sum
       Name		      "Sum"
       SID		      "5070"
@@ -5752,6 +5765,19 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "5077"
+      Ports		      [1]
+      Position		      [990, 555, 1050, 585]
+      ZOrder		      472
+      VariableName	      "psi_d"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      SubSystem
       Name		      "Visualization of Drone states"
       SID		      "4925"
@@ -5764,7 +5790,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Visualization of Drone states"
-	Location		[-8, -8, 1374, 736]
+	Location		[8, 8, 1394, 796]
 	Open			off
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
@@ -5945,6 +5971,19 @@ Model {
 	  SampleTime		  "-1"
 	}
 	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  SID			  "5076"
+	  Ports			  [1]
+	  Position		  [515, -20, 575, 10]
+	  ZOrder		  443
+	  VariableName		  "yaw_deg"
+	  MaxDataPoints		  "inf"
+	  SaveFormat		  "Structure With Time"
+	  FixptAsFi		  on
+	  SampleTime		  "-1"
+	}
+	Block {
 	  BlockType		  Gain
 	  Name			  "deg 2 rad1"
 	  SID			  "4922"
@@ -5980,7 +6019,7 @@ Model {
 	  "0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},"
 	  "'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configurat"
 	  "ion('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','"
-	  "2017b')),'Version','2021b','Location',[1 95 1281 747])"
+	  "2019a')),'Version','2019a','Location',[1 95 1281 747])"
 	  NumInputPorts		  "1"
 	  Floating		  off
 	}
@@ -5997,8 +6036,18 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector2"
 	  SrcPort		  1
-	  DstBlock		  "deg 2 rad1"
-	  DstPort		  1
+	  Points		  [79, 0]
+	  Branch {
+	    ZOrder		    132
+	    Points		    [0, -50]
+	    DstBlock		    "To Workspace3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    131
+	    DstBlock		    "deg 2 rad1"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  Name			  "<X_e (m)>"
@@ -6126,15 +6175,16 @@ Model {
       ".411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274"
       "509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineProp"
       "ertiesCache',{{struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struc"
-      "t('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowC"
-      "ontent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-2.49975','MaxYLimReal','22.49775',"
-      "'YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','22.49775','LegendVisibility','On','XGrid',true,'YGrid',true"
-      ",'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922"
-      "],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784313725"
-      "49;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882352941176"
-      "47 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>')),extmgr.Configuration('Tools','Plot Nav"
-      "igation',true,'OnceAtStop',false,'PreviousZoomMode','Pan'),extmgr.Configuration('Tools','Measurements',true,'Ver"
-      "sion','2019a')),'Version','2019a','Location',[1 344 1371 1039])"
+      "t('Visible','on'),struct('Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',6,'LineNames',{{'MATLAB Fun"
+      "ction1/pd:1','MATLAB Function1/pd:2','MATLAB Function1/pd:3','MATLAB Function1/dot_pd:1','MATLAB Function1/dot_p"
+      "d:2','MATLAB Function1/dot_pd:3'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimR"
+      "eal','-2.49975','MaxYLimReal','22.49775','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','22.49775','LegendV"
+      "isibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862745098"
+      "03922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176"
+      "4706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764705882"
+      "3529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>'"
+      ")),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousZoomMode','Pan'),extmgr.Confi"
+      "guration('Tools','Measurements',true,'Version','2019a')),'Version','2019a','Location',[-62 101 1308 796])"
       NumInputPorts	      "2"
       Floating		      off
     }
@@ -6320,11 +6370,13 @@ Model {
       DstPort		      2
     }
     Line {
-      ZOrder		      797
+      ZOrder		      835
       SrcBlock		      "Mux1"
       SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
+      Points		      [116, 0; 0, -26; 66, 0; 0, 26]
+      DstBlock		      "Position estimation\nImportant:This block provides an \ninaccurate extimation of position \nbas"
+      "ed on  velocity information. "
+      DstPort		      3
     }
     Line {
       ZOrder		      146
@@ -6499,8 +6551,28 @@ Model {
       ZOrder		      698
       SrcBlock		      "MATLAB Function1"
       SrcPort		      4
-      DstBlock		      "Outer-loop Controller"
-      DstPort		      6
+      Points		      [-15, 0]
+      Branch {
+	ZOrder			872
+	Points			[0, 17; 189, 0; 0, 38]
+	DstBlock		"To Workspace1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			871
+	Points			[-9, 0]
+	Branch {
+	  ZOrder		  891
+	  Points		  [0, 17; -98, 0; 0, 53]
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  881
+	  DstBlock		  "Outer-loop Controller"
+	  DstPort		  6
+	}
+      }
     }
     Line {
       ZOrder		      699
@@ -6531,12 +6603,10 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      798
+      ZOrder		      834
       SrcBlock		      "Sum"
       SrcPort		      1
-      DstBlock		      "Position estimation\nImportant:This block provides an \ninaccurate extimation of position \nbas"
-      "ed on  velocity information. "
-      DstPort		      3
+      Points		      [-5, 0; 20, 0]
     }
     Line {
       ZOrder		      802
@@ -6577,9 +6647,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6627,9 +6694,22 @@ Stateflow {
       "    ang = 45;\n      t_track = 20;\n      t_init  = 10;\n\n      if(dt > t_track)\n        dot_pd = [0.1*cosd(an"
       "g); 0.1*sind(ang);0];\n        pd(1) = p0(1) + 0.1*cosd(ang)*(dt - t_track);\n        pd(2) = p0(2) + 0.1*sind(a"
       "ng)*(dt - t_track);\n      else\n        dot_pd = [0;0;0]; \n      end\n\n      if(dt > t_init)\n        pd(3) ="
-      " 0.75;  \n      else\n        pd(3) = 0;  \n      end\n      ddot_pd = [0;0;0];\n      psi_d = 0;\n    otherwise"
-      "\n      pd = p0;\n      dot_pd = [0;0;0];\n      ddot_pd = [0;0;0];\n      psi_d = 0;\nend\n        \n%!!!!!!!!!"
-      "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\nend\n\nprevious_status = on_off;\n"
+      " 0.75;  \n      else\n        pd(3) = 0;  \n      end\n      ddot_pd = [0;0;0];\n      psi_d = 0;\n      \n	case"
+      " 3\n      % --- Circular Line - Constant Yaw ---\n      pd = p0;\n\n      ang_rate = 0.1; %rad/s\n      t_track "
+      "= 20;\n      t_init  = 10;\n\n      if(dt > t_track)\n        pd = [cos(ang_rate*(dt - t_track)) - 1; sin(ang_ra"
+      "te*(dt - t_track)); 0.75];\n        dot_pd = ang_rate*[ -sin(ang_rate*(dt - t_track)); cos(ang_rate*(dt - t_trac"
+      "k));0];\n        ddot_pd = (ang_rate^2)*[ -cos(ang_rate*(dt - t_track)); -sin(ang_rate*(dt - t_track));0];\n    "
+      "  else\n        dot_pd  = [0;0;0]; \n        ddot_pd = [0;0;0]; \n      end\n\n      if(dt > t_init)\n        pd"
+      "(3) = 0.75;  \n      else\n        pd(3) = 0;  \n      end\n      psi_d = 0;\n     \n    case 4\n      % --- Cir"
+      "cular Line - Variable Yaw ---\n      pd = p0;\n\n      ang_rate = 0.1; %rad/s\n      t_track = 20;\n      t_init"
+      "  = 10;\n\n      if(dt > t_track)\n        pd = [cos(ang_rate*(dt - t_track)) - 1; sin(ang_rate*(dt - t_track));"
+      " 0.75];\n        dot_pd = ang_rate*[ -sin(ang_rate*(dt - t_track)); cos(ang_rate*(dt - t_track));0];\n        dd"
+      "ot_pd = (ang_rate^2)*[ -cos(ang_rate*(dt - t_track)); -sin(ang_rate*(dt - t_track));0];\n        psi_d = ang_rat"
+      "e * (dt - t_track);\n      else\n        dot_pd  = [0;0;0]; \n        ddot_pd = [0;0;0];\n        psi_d = 0;\n  "
+      "    end\n\n      if(dt > t_init)\n        pd(3) = 0.75;  \n      else\n        pd(3) = 0;  \n      end\n      \n"
+      "    otherwise\n      pd = p0;\n      dot_pd = [0;0;0];\n      ddot_pd = [0;0;0];\n      psi_d = 0;\nend\n       "
+      " \n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\nend\n\nprevious_status = on_off;"
+      "\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -6916,20 +6996,28 @@ Stateflow {
       "; % position vector\np(3) = -p(3); % height is symmetric of z\nvb = states(4:6,1); % velocity vector in body coo"
       "rdinates\ndot_p = R*vb; % body velocity rotated to inertial frame \ndot_p(3) = -dot_p(3);\n\n%!!!!!!!!!!!!!!!!!!"
       "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n% replace with the necessary code to implement the traject"
-      "ory tracking\n% controller\n\nswitch choice\n    case 1\n        %--- Altitude Tracking --- \n        w_r= k_w*("
-      "p(3) - pd(3));\n        dot_psi_r = 0;\n        theta_r = 0;\n        phi_r = 0;\n        dot_xi = [0;0;0;0];\n "
-      "   case 2\n        % --- Horizontal Line ---\n        tilde_x = [p - pd; dot_p - dot_pd];\n\n        u_star = Rz"
-      "^(-1)*(K*tilde_x + [0; 0; 9.81] - ddot_pd - xi(1:3));\n\n        w_r = k_w*(p(3) - pd(3));\n        dot_psi_r = "
-      "0;\n        theta_r = atan(u_star(1)/u_star(3));\n        phi_r = atan(-u_star(2)/sqrt(u_star(1)^2+u_star(3)^2))"
-      ";\n        dot_xi = -[k_w*1*K*tilde_x; 0];\n        \n    otherwise\n        w_r = 0;\n        dot_psi_r = 0;\n "
-      "       theta_r = 0;\n        phi_r = 0;\n        dot_xi = [0;0;0;0];    \nend\n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-      "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\nfunction R = euler2R(l)\n%#codegen\n% returns the rotation matrix fo"
-      "r a given vector of euler angles\n\nphi = l(1); theta = l(2); psi = l(3);\nR = [cos(theta)*cos(psi)...\n      si"
-      "n(phi)*sin(theta)*cos(psi)-cos(phi)*sin(psi)...\n      cos(phi)*sin(theta)*cos(psi)+sin(phi)*sin(psi);\n   cos(t"
-      "heta)*sin(psi)...\n   sin(phi)*sin(theta)*sin(psi)+cos(phi)*cos(psi)... \n   cos(phi)*sin(theta)*sin(psi)-sin(ph"
-      "i)*cos(psi);\n   -sin(theta)...\n   sin(phi)*cos(theta)...\n   cos(phi)*cos(theta)];\n\nfunction angleOut = norm"
-      "alize_angle(angleIn)\n%#codegen\n\nangleOut = mod(angleIn, 2*pi) ;\nif angleOut > pi\n    angleOut = -2*pi + ang"
-      "leOut ; \nend\n\n"
+      "ory tracking\n% controller\n\n%fixme - put variables that apply everywher here\nswitch choice\n    case 1\n     "
+      "   %--- Altitude Tracking --- \n        w_r= k_w*(p(3) - pd(3));\n        dot_psi_r = 0;\n        theta_r = 0;\n"
+      "        phi_r = 0;\n        dot_xi = [0;0;0;0];\n    case 2\n        % --- Horizontal Line ---\n        tilde_x "
+      "= [p - pd; dot_p - dot_pd];\n\n        u_star = Rz^(-1)*(K*tilde_x + [0; 0; 9.81] - ddot_pd - xi(1:3));\n\n     "
+      "   w_r = k_w*(p(3) - pd(3));\n        dot_psi_r = 0;\n        theta_r = atan(u_star(1)/u_star(3));\n        phi_"
+      "r = atan(-u_star(2)/sqrt(u_star(1)^2+u_star(3)^2));\n        dot_xi = -[k_w*1*K*tilde_x; 0];\n        \n    case"
+      " 3\n        % --- Circular path - constant yaw ---\n        tilde_x = [p - pd; dot_p - dot_pd];\n\n        u_sta"
+      "r = Rz^(-1)*(K*tilde_x + [0; 0; 9.81] - ddot_pd - xi(1:3));\n\n        w_r = k_w*(p(3) - pd(3));\n        dot_ps"
+      "i_r = 0;\n        theta_r = atan(u_star(1)/u_star(3));\n        phi_r = atan(-u_star(2)/sqrt(u_star(1)^2+u_star("
+      "3)^2));\n        dot_xi = -[k_w*1*K*tilde_x; 0];\n       \n    case 4\n        % --- Circular path - variable ya"
+      "w ---\n        tilde_x = [p - pd; dot_p - dot_pd];\n\n        u_star = Rz^(-1)*(K*tilde_x + [0; 0; 9.81] - ddot_"
+      "pd - xi(1:3));\n\n        w_r = k_w*(p(3) - pd(3));\n        %fixme -  no clue como obter o psi_ponto recorrendo"
+      " ao xi e\n        %dot_xi...\n        dot_psi_r = 0.1; %rad/s\n        theta_r = atan(u_star(1)/u_star(3));\n   "
+      "     phi_r = atan(-u_star(2)/sqrt(u_star(1)^2+u_star(3)^2));\n        %dot_xi = dot[w_hat, psi];\n        dot_xi"
+      " = -[k_w*1*K*tilde_x; 0];\n        \n    otherwise\n        w_r = 0;\n        dot_psi_r = 0;\n        theta_r = "
+      "0;\n        phi_r = 0;\n        dot_xi = [0;0;0;0];    \nend\n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      "!!!!!!!!!!!!!!!!!!!!!\n\n\nfunction R = euler2R(l)\n%#codegen\n% returns the rotation matrix for a given vector "
+      "of euler angles\n\nphi = l(1); theta = l(2); psi = l(3);\nR = [cos(theta)*cos(psi)...\n      sin(phi)*sin(theta)"
+      "*cos(psi)-cos(phi)*sin(psi)...\n      cos(phi)*sin(theta)*cos(psi)+sin(phi)*sin(psi);\n   cos(theta)*sin(psi)..."
+      "\n   sin(phi)*sin(theta)*sin(psi)+cos(phi)*cos(psi)... \n   cos(phi)*sin(theta)*sin(psi)-sin(phi)*cos(psi);\n   "
+      "-sin(theta)...\n   sin(phi)*cos(theta)...\n   cos(phi)*cos(theta)];\n\nfunction angleOut = normalize_angle(angle"
+      "In)\n%#codegen\n\nangleOut = mod(angleIn, 2*pi) ;\nif angleOut > pi\n    angleOut = -2*pi + angleOut ; \nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
