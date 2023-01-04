@@ -15,7 +15,7 @@
 %   Rafaela Chaffilla, 95840
 %%
 %  Cleaning workspace
-bdclose all;
+%bdclose all;
 close all;
 clear all;
 clc
@@ -70,9 +70,9 @@ switch choice
         % Plot altitude tracking for different k_w
         fig1 = figure();
         hold on;
-        plot(sim_results(1).pd.time, sim_results(1).pd.signals.values(3, :));
+        plot(sim_results(1).pd.time, -sim_results(1).pd.signals.values(3, :));
         for c = 1:size(sim_results,2)
-            plot(sim_results(c).tout, - sim_results(c).h_sim.signals.values);
+            plot(sim_results(c).tout, sim_results(c).h_sim.signals.values);
         end
         xlim([0 30]);
         legend('pedida', sprintf('k = %0.1f', k_w_vector(1)), ...
@@ -112,6 +112,13 @@ switch choice
         ylabel('Posição y [m]');
         saveas(fig2, '../imgs/Horizontal_line_Sim', 'png');
         
+        fig2_3d = figure();
+        plot3(sim_line_results.x_sim.signals.values, sim_line_results.y_sim.signals.values, sim_line_results.h_sim.signals.values);
+        xlabel('Posição x [m]');
+        ylabel('Posição y [m]');
+        zlabel('Posição z [m]');
+        saveas(fig2_3d, '../imgs/Horizontal_line_Sim_3d', 'png');
+        
     case 3
         % Circle Simulation: const yaw angle
         k_w = 1;
@@ -138,6 +145,13 @@ switch choice
         xlabel('Posição x [m]');
         ylabel('Posição y [m]');
         saveas(fig3, '../imgs/Circ_line_Sim_1', 'png');
+        
+        fig3_3d = figure();
+        plot3(sim_circ_results.x_sim.signals.values, sim_circ_results.y_sim.signals.values, sim_circ_results.h_sim.signals.values);
+        xlabel('Posição x [m]');
+        ylabel('Posição y [m]');
+        zlabel('Posição z [m]');
+        saveas(fig3_3d, '../imgs/Circ_line_Sim_1_3d', 'png');
         
     case 4
         % Circle Simulation: variable yaw angle
@@ -175,6 +189,13 @@ switch choice
         xlabel('Tempo [s]');
         ylabel('\psi [rad]');
         saveas(fig5, '../imgs/Circ_line_Sim_2', 'png');
+        
+        fig4_3d = figure();
+        plot3(sim_circ_results.x_sim.signals.values, sim_circ_results.y_sim.signals.values, sim_circ_results.h_sim.signals.values);
+        xlabel('Posição x [m]');
+        ylabel('Posição y [m]');
+        zlabel('Posição z [m]');
+        saveas(fig4_3d, '../imgs/Circ_line_Sim_2_3d', 'png');
         
     otherwise
         %Loading Simulink model of ARDrone
