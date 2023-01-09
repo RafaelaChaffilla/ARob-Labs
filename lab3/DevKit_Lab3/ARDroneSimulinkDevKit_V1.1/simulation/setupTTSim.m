@@ -202,9 +202,3 @@ switch choice
         ARDroneTTSim_2019 ;
         
 end
-
-
- 
- 
- 
- 
