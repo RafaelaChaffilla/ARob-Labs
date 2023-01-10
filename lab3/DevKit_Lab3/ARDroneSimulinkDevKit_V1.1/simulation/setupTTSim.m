@@ -1,6 +1,6 @@
 %% =======================================================================
 %  ARDrone Simulation Example: Trajectory Tracking 
-%  =======================================================================
+%  ========================================================================
 %  
 %  The simulation is used to validate the trajectory tracking controller
 %  and generation of the desired trajectory for the ARDRone before flight 
@@ -71,7 +71,7 @@ switch choice
         % Plot altitude tracking for different k_w
         fig1 = figure();
         hold on;
-        plot(sim_results(1).pd.time, -sim_results(1).pd.signals.values(3, :));
+        plot(sim_results(1).pd.time, sim_results(1).pd.signals.values(3, :));
         for c = 1:size(sim_results,2)
             plot(sim_results(c).tout, sim_results(c).h_sim.signals.values);
         end
