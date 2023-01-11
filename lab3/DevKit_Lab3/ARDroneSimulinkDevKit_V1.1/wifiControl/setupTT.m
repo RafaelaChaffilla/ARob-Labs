@@ -55,6 +55,7 @@ disp('    (1) Altitude');
 disp('    (2) Horizontal Line'); 
 disp('    (3) Circle - Constant Yaw'); 
 disp('    (4) Circle - Variable Yaw'); 
+disp('    (5) LOS');
 
 choice = input('');
 
@@ -104,7 +105,19 @@ switch choice
 
         K = lqr(A,B,Q,R);
 %         K=[diag([4 4 4]) diag([6 6 6])];
+     case 5
+        % LOS
+        k_w = 1;
 
+        A = [zeros(3,3) eye(3);...
+             zeros(3,3) zeros(3,3)];
+        B = [zeros(3,3); eye(3)];
+
+        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        R = diag([1 1 1]);
+
+        K = lqr(A,B,Q,R);
+%         K=[diag([4 4 4]) diag([6 6 6])];
         
     otherwise
         %Loading Simulink model of ARDrone
@@ -112,4 +125,4 @@ switch choice
         
 end
 
-ARDroneTT ; 
+%ARDroneTT ; 

@@ -95,7 +95,8 @@ switch choice
              zeros(3,3) zeros(3,3)];
         B = [zeros(3,3); eye(3)];
 
-        Q = diag([2; 2; 2; 20; 20; 20]);
+%         Q = diag([2; 2; 2; 20; 20; 20]);
+        Q = diag([2; 2; 2; 10; 10; 10]);
         R = diag([1 1 1]);
 
         K = lqr(A,B,Q,R);
