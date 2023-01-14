@@ -10,7 +10,7 @@
 %  may lead to unexpected behavior of the vehicle.  The position is estimated
 %  by intergating a velocity estimation, which in turn is inaccurate.
 %  The velocity is estimated by the Drone onboard flight computer. The
-%  velocity estimation can be improved if there are features on the floor
+%  velocity estimat2ion can be improved if there are features on the floor
 %  as the Drone runs an optical flow algorithm for velocity determination.
 %  
 %  
@@ -45,18 +45,7 @@ disp('    (1) Altitude');
 disp('    (2) Horizontal Line'); 
 disp('    (3) Circle - Constant Yaw'); 
 disp('    (4) Circle - Variable Yaw'); 
-
-choice = input('');
-
-%% choose simulation to run
-
-disp('Choose the simulation you want to run:'); 
-disp('    (1) Altitude'); 
-disp('    (2) Horizontal Line'); 
-disp('    (3) Circle - Constant Yaw'); 
-disp('    (4) Circle - Variable Yaw'); 
-disp('    (5) LOS');
-
+disp('    (5) LOS'); 
 choice = input('');
 
 switch choice
@@ -73,7 +62,8 @@ switch choice
              zeros(3,3) zeros(3,3)];
         B = [zeros(3,3); eye(3)];
 
-        Q = diag([2; 2; 2; 20; 20; 20]);
+        %Q = diag([2; 2; 2; 20; 20; 20]);
+        Q = diag([1; 1; 1; 2.5; 2.5; 2.5]);
         R = diag([1 1 1]);
 
         K = lqr(A,B,Q,R);
@@ -86,7 +76,7 @@ switch choice
              zeros(3,3) zeros(3,3)];
         B = [zeros(3,3); eye(3)];
 
-        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        Q = diag([1; 1; 1; 2.5; 2.5; 2.5]);
         R = diag([1 1 1]);
 
         K = lqr(A,B,Q,R);
@@ -100,29 +90,28 @@ switch choice
              zeros(3,3) zeros(3,3)];
         B = [zeros(3,3); eye(3)];
 
-        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        Q = diag([1; 1; 1; 2.5; 2.5; 2.5]);
         R = diag([1 1 1]);
 
         K = lqr(A,B,Q,R);
-%         K=[diag([4 4 4]) diag([6 6 6])];
-     case 5
-        % LOS
+        %K=[diag([1 1 1]) diag([2 2 2])]*0.2;
+    case 5
+        % Line of Sight
         k_w = 1;
 
         A = [zeros(3,3) eye(3);...
              zeros(3,3) zeros(3,3)];
         B = [zeros(3,3); eye(3)];
 
-        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        Q = diag([1; 1; 1; 2.5; 2.5; 2.5]);
         R = diag([1 1 1]);
 
         K = lqr(A,B,Q,R);
-%         K=[diag([4 4 4]) diag([6 6 6])];
-        
+        K = [zeros(3), K(:,4:6)];
     otherwise
         %Loading Simulink model of ARDrone
         quit;
         
 end
 
-%ARDroneTT ; 
+ARDroneTT ; 

@@ -82,7 +82,7 @@ switch choice
             sprintf('k_w = %0.1f', k_w_vector(4)), ...
             sprintf('k_w = %0.1f', k_w_vector(5)), ...
             sprintf('k_w = %0.1f', k_w_vector(6)), ...
-            'location', 'west');
+            'location', 'southeast');
         xlabel('Tempo [s]');
         ylabel('Altitude h [m]');
         saveas(fig1, '../imgs/Altitude_Sim', 'png');
@@ -96,9 +96,8 @@ switch choice
         B = [zeros(3,3); eye(3)];
 
 %         Q = diag([2; 2; 2; 20; 20; 20]);
-        Q = diag([2; 2; 2; 10; 10; 10]);
+        Q = diag([1; 1; 1; 2.5; 2.5; 2.5]);
         R = diag([1 1 1]);
-
         K = lqr(A,B,Q,R);
 
         sim_line_results = sim('ARDroneTTSim_2019');
@@ -108,7 +107,8 @@ switch choice
         hold on;
         plot(sim_line_results.pd.signals.values(1, :), sim_line_results.pd.signals.values(2, :));
         plot(sim_line_results.x_sim.signals.values, sim_line_results.y_sim.signals.values);
-        % xlim([0 30]);
+        xlim([0 30]);
+        ylim([0 30]);
         legend('pedida', 'simulada', 'location', 'northwest');
         xlabel('Posição x [m]');
         ylabel('Posição y [m]');
@@ -129,7 +129,7 @@ switch choice
              zeros(3,3) zeros(3,3)];
         B = [zeros(3,3); eye(3)];
 
-        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        Q = diag([1; 1; 1; 2.5; 2.5; 2.5]);
         R = diag([1 1 1]);
 
         K = lqr(A,B,Q,R);
@@ -163,7 +163,7 @@ switch choice
              zeros(3,3) zeros(3,3)];
         B = [zeros(3,3); eye(3)];
 
-        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        Q = diag([1; 1; 1; 2.5; 2.5; 2.5]);
         R = diag([1 1 1]);
 
         K = lqr(A,B,Q,R);
@@ -207,10 +207,11 @@ switch choice
              zeros(3,3) zeros(3,3)];
         B = [zeros(3,3); eye(3)];
 
-        Q = diag([2; 2; 2; 20; 20; 20]).*2;
+        Q = diag([1; 1; 1; 2.5; 2.5; 2.5]);
         R = diag([1 1 1]);
 
         K = lqr(A,B,Q,R);
+        K = [zeros(3), K(:,4:6)];
 %       K=[diag([4 4 4]) diag([6 6 6])];
 
         sim_circ_results = sim('ARDroneTTSim_2019');
@@ -218,7 +219,7 @@ switch choice
         % Plot motion
         fig6 = figure();
         hold on;
-        plot(sim_circ_results.pd.signals.values(1, :), sim_circ_results.pd.signals.values(2, :));
+        plot(sim_circ_results.pd.signals.values(1, :), ones(size(sim_circ_results.pd.signals.values(1, :))));
         plot(sim_circ_results.x_sim.signals.values, sim_circ_results.y_sim.signals.values);
         % xlim([0 30]);
         legend('pedida', 'simulada', 'location', 'southeast');
