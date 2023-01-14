@@ -97,7 +97,7 @@ Model {
 	  LoadSaveID		  "4925"
 	  Extents		  [1328.0, 561.0]
 	  ZoomFactor		  [1.3356481481481481]
-	  Offset		  [-125.80098209127675, 46.209705372616952]
+	  Offset		  [-125.80098209127675, 13.266897746967029]
 	}
 	Object {
 	  $ObjectID		  7
@@ -115,7 +115,7 @@ Model {
 	  LoadSaveID		  "0"
 	  Extents		  [1328.0, 561.0]
 	  ZoomFactor		  [0.82748999240559629]
-	  Offset		  [98.300738615896307, 35.081366386920763]
+	  Offset		  [98.300738615896307, 44.764263435643329]
 	}
 	PropName		"EditorsInfo"
       }
@@ -153,8 +153,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "User"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jan 11 12:07:21 2023"
-  RTWModifiedTimeStamp	  595339628
+  LastModifiedDate	  "Sat Jan 14 16:16:26 2023"
+  RTWModifiedTimeStamp	  595613786
   ModelVersionFormat	  "$Id: UAV_SIL.mdl 912 2012-10-10 23:11:42Z joh07594 $"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -267,7 +267,7 @@ Model {
 	  Description		  ""
 	  Components		  []
 	  StartTime		  "0.0"
-	  StopTime		  "200"
+	  StopTime		  "100"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
 	  FixedStep		  "simDT"
@@ -1372,7 +1372,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "83"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5118"
+    SIDHighWatermark	    "5123"
     SimulinkSubDomain	    "Simulink"
     Block {
       BlockType		      SubSystem
@@ -1616,7 +1616,7 @@ Model {
 	  B			  "ssYaw.b"
 	  C			  "ssYaw.c"
 	  D			  "ssYaw.d"
-	  InitialCondition	  "pi/4"
+	  InitialCondition	  "0"
 	}
 	Block {
 	  BlockType		  StateSpace
@@ -2607,7 +2607,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"60"
+	ZoomFactor		"68"
 	SimulinkSubDomain	"Simulink"
 	Block {
 	  BlockType		  Inport
@@ -4382,21 +4382,21 @@ Model {
 	      "'Sources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingMaxPoints','500000','Dat"
 	      "aLoggingLimitDataPoints',true,'DataLoggingDecimation','1','DataLoggingDecimateData',true,'DataLoggingVariableNa"
 	      "me','ScopeData6'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal',"
-	      "'-0.0586','MaxYLimReal','0.00651','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.0586','LegendVisibilit"
-	      "y','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 "
-	      "0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 "
-	      "1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529"
-	      " 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','L"
-	      "inePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Demux/1'}},'ShowContent',tr"
-	      "ue,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.0586','MaxYLimReal','0.00651','YLabelReal"
-	      "','','MinYLimMag','0.00000','MaxYLimMag','0.0586','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPh"
-	      "ase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOr"
-	      "der',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.3921"
-	      "56862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1"
-	      " 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelN"
-	      "ames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plo"
-	      "t Navigation',true,'OnceAtStop',false,'PreviousZoomMode','ZoomX'),extmgr.Configuration('Tools','Measurements',t"
-	      "rue,'Version','2019a')),'Version','2019a','Location',[-39 365 1331 1060])"
+	      "'-0.32604','MaxYLimReal','0.3258','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.32604','LegendVisibili"
+	      "ty','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922"
+	      " 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706"
+	      " 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764705882352"
+	      "9 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','"
+	      "LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Demux/1'}},'ShowContent',t"
+	      "rue,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.32604','MaxYLimReal','0.3258','YLabelRea"
+	      "l','','MinYLimMag','0.00000','MaxYLimMag','0.32604','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMag"
+	      "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Color"
+	      "Order',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.39"
+	      "2156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1"
+	      ";1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChanne"
+	      "lNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','P"
+	      "lot Navigation',true,'OnceAtStop',false,'PreviousZoomMode','ZoomX'),extmgr.Configuration('Tools','Measurements'"
+	      ",true,'Version','2019a')),'Version','2019a','Location',[-259 168 1111 863])"
 	      NumInputPorts	      "1"
 	      Floating		      off
 	    }
@@ -4742,10 +4742,19 @@ Model {
 	  BlockType		  Constant
 	  Name			  "K"
 	  SID			  "5066"
-	  Position		  [1060, 557, 1090, 573]
+	  Position		  [1060, 532, 1090, 548]
 	  ZOrder		  498
 	  BlockMirror		  on
 	  Value			  "K"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "K1"
+	  SID			  "5119"
+	  Position		  [1060, 577, 1090, 593]
+	  ZOrder		  507
+	  BlockMirror		  on
+	  Value			  "psi_kp"
 	}
 	Block {
 	  BlockType		  ManualSwitch
@@ -4786,8 +4795,8 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "Outer Loop"
 	  SID			  "4950"
-	  Ports			  [8, 5]
-	  Position		  [360, 374, 675, 581]
+	  Ports			  [10, 5]
+	  Position		  [360, 376, 675, 584]
 	  ZOrder		  434
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -4816,7 +4825,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "42"
+	    SIDHighWatermark	    "44"
 	    SimulinkSubDomain	    "Simulink"
 	    Block {
 	      BlockType		      Inport
@@ -4890,6 +4899,24 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
+	      BlockType		      Inport
+	      Name		      "psi_ki"
+	      SID		      "4950::43"
+	      Position		      [20, 386, 40, 404]
+	      ZOrder		      32
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "psi_kp"
+	      SID		      "4950::44"
+	      Position		      [20, 426, 40, 444]
+	      ZOrder		      33
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
 	      SID		      "4950::40"
@@ -4904,11 +4931,11 @@ Model {
 	      Name		      " SFunction "
 	      SID		      "4950::39"
 	      Tag		      "Stateflow S-Function ARDroneTTSim_2019 2"
-	      Ports		      [8, 6]
-	      Position		      [180, 100, 230, 280]
+	      Ports		      [10, 6]
+	      Position		      [180, 100, 230, 320]
 	      ZOrder		      29
 	      FunctionName	      "sf_sfun"
-	      PortCounts	      "[8 6]"
+	      PortCounts	      "[10 6]"
 	      SFunctionDeploymentMode off
 	      EnableBusSupport	      on
 	      SFcnIsStateOwnerBlock   off
@@ -4985,64 +5012,79 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      456
+	      ZOrder		      487
 	      SrcBlock		      "states"
 	      SrcPort		      1
+	      Points		      [120, 0]
 	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      457
+	      ZOrder		      488
 	      SrcBlock		      "pd"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      458
+	      ZOrder		      489
 	      SrcBlock		      "dot_pd"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      459
+	      ZOrder		      490
 	      SrcBlock		      "ddot_pd"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      460
+	      ZOrder		      491
 	      SrcBlock		      "psi_d"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      461
+	      ZOrder		      492
 	      SrcBlock		      "xi"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      462
+	      ZOrder		      493
 	      SrcBlock		      "k_w"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      463
+	      ZOrder		      494
 	      SrcBlock		      "K"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      8
 	    }
 	    Line {
+	      ZOrder		      495
+	      SrcBlock		      "psi_ki"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      9
+	    }
+	    Line {
+	      ZOrder		      496
+	      SrcBlock		      "psi_kp"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      10
+	    }
+	    Line {
 	      Name		      "w_r"
-	      ZOrder		      464
+	      ZOrder		      497
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      2
@@ -5051,7 +5093,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "dot_psi_r"
-	      ZOrder		      465
+	      ZOrder		      498
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      3
@@ -5060,7 +5102,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "theta_r"
-	      ZOrder		      466
+	      ZOrder		      499
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      4
@@ -5069,7 +5111,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "phi_r"
-	      ZOrder		      467
+	      ZOrder		      500
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      5
@@ -5078,7 +5120,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "dot_xi"
-	      ZOrder		      468
+	      ZOrder		      501
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      6
@@ -5086,14 +5128,14 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      469
+	      ZOrder		      502
 	      SrcBlock		      " Demux "
 	      SrcPort		      1
 	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      470
+	      ZOrder		      503
 	      SrcBlock		      " SFunction "
 	      SrcPort		      1
 	      DstBlock		      " Demux "
@@ -5156,14 +5198,56 @@ Model {
 	  Floating		  off
 	}
 	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  SID			  "5122"
+	  Ports			  [1]
+	  Position		  [-43, 590, -7, 615]
+	  ZOrder		  510
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  VariableName		  "pitch_ref"
+	  MaxDataPoints		  "inf"
+	  SaveFormat		  "Structure With Time"
+	  FixptAsFi		  on
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  SID			  "5123"
+	  Ports			  [1]
+	  Position		  [2, 590, 38, 615]
+	  ZOrder		  512
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  VariableName		  "roll_ref"
+	  MaxDataPoints		  "inf"
+	  SaveFormat		  "Structure With Time"
+	  FixptAsFi		  on
+	  SampleTime		  "-1"
+	}
+	Block {
 	  BlockType		  Constant
 	  Name			  "k_w"
 	  SID			  "5061"
-	  Position		  [1060, 532, 1090, 548]
+	  Position		  [1060, 512, 1090, 528]
 	  ZOrder		  495
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
 	  Value			  "k_w"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "k_w1"
+	  SID			  "5120"
+	  Position		  [1060, 557, 1090, 573]
+	  ZOrder		  506
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Value			  "psi_ki"
 	}
 	Block {
 	  BlockType		  Outport
@@ -5242,6 +5326,7 @@ Model {
 	  Points		  [-119, 0]
 	  Branch {
 	    ZOrder		    690
+	    Points		    [-246, 0]
 	    DstBlock		    "Outer Loop"
 	    DstPort		    2
 	  }
@@ -5262,6 +5347,7 @@ Model {
 	  ZOrder		  677
 	  SrcBlock		  "dot_pd"
 	  SrcPort		  1
+	  Points		  [-365, 0]
 	  DstBlock		  "Outer Loop"
 	  DstPort		  3
 	}
@@ -5269,6 +5355,7 @@ Model {
 	  ZOrder		  678
 	  SrcBlock		  "ddot_pd"
 	  SrcPort		  1
+	  Points		  [-365, 0]
 	  DstBlock		  "Outer Loop"
 	  DstPort		  4
 	}
@@ -5338,25 +5425,36 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  703
-	  SrcBlock		  "Demux1"
-	  SrcPort		  2
-	  DstBlock		  "yaw rate ref."
-	  DstPort		  1
-	}
-	Line {
 	  ZOrder		  704
 	  SrcBlock		  "Demux1"
 	  SrcPort		  3
-	  DstBlock		  "pitch angle ref."
-	  DstPort		  1
+	  Points		  [-60, 0]
+	  Branch {
+	    ZOrder		    1052
+	    DstBlock		    "To Workspace"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    1051
+	    DstBlock		    "pitch angle ref."
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  705
 	  SrcBlock		  "Demux1"
 	  SrcPort		  4
-	  DstBlock		  "roll angle ref."
-	  DstPort		  1
+	  Points		  [-15, 0]
+	  Branch {
+	    ZOrder		    1056
+	    DstBlock		    "roll angle ref."
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    1055
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  706
@@ -5391,6 +5489,7 @@ Model {
 	  ZOrder		  829
 	  SrcBlock		  "k_w"
 	  SrcPort		  1
+	  Points		  [-237, 0; 0, -10]
 	  DstBlock		  "Outer Loop"
 	  DstPort		  7
 	}
@@ -5398,6 +5497,7 @@ Model {
 	  ZOrder		  837
 	  SrcBlock		  "K"
 	  SrcPort		  1
+	  Points		  [-237, 0; 0, -10]
 	  DstBlock		  "Outer Loop"
 	  DstPort		  8
 	}
@@ -5466,7 +5566,7 @@ Model {
 	  Points		  [104, 0]
 	  Branch {
 	    ZOrder		    1002
-	    Points		    [0, -170]
+	    Points		    [0, -195]
 	    DstBlock		    "Outer Loop"
 	    DstPort		    6
 	  }
@@ -5489,6 +5589,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    688
+	    Points		    [-276, 0]
 	    DstBlock		    "Outer Loop"
 	    DstPort		    5
 	  }
@@ -5498,6 +5599,29 @@ Model {
 	    DstBlock		    "Baseline Controller"
 	    DstPort		    2
 	  }
+	}
+	Line {
+	  ZOrder		  1037
+	  SrcBlock		  "k_w1"
+	  SrcPort		  1
+	  Points		  [-237, 0; 0, -15]
+	  DstBlock		  "Outer Loop"
+	  DstPort		  9
+	}
+	Line {
+	  ZOrder		  1038
+	  SrcBlock		  "K1"
+	  SrcPort		  1
+	  Points		  [-237, 0; 0, -15]
+	  DstBlock		  "Outer Loop"
+	  DstPort		  10
+	}
+	Line {
+	  ZOrder		  703
+	  SrcBlock		  "Demux1"
+	  SrcPort		  2
+	  DstBlock		  "yaw rate ref."
+	  DstPort		  1
 	}
       }
     }
@@ -6846,7 +6970,7 @@ Stateflow {
     id			    1
     name		    "ARDroneTTSim_2019"
     sfVersion		    80000015
-    firstTarget		    69
+    firstTarget		    71
   }
   chart {
     id			    2
@@ -6901,29 +7025,30 @@ Stateflow {
       " any additional parameters\n\npd      = p0;\nt_init  = 10;\nt_track = 20;\n\n% DEFINES THE STARTING HEIGHT\nif(d"
       "t > t_init)\n    pd(3) = pd(3) + 0.25;  \nelse\n    pd(3) = pd(3) + 0;  \nend\n\n% DIFFERENT TRACKS\nswitch choi"
       "ce\n    %--- Altitude Tracking ---\n    case 1\n      dot_pd    = [0;0;0];\n      ddot_pd   = [0;0;0];\n      ps"
-      "i_d     = 0;\n    % --- Horizontal Line in X-Y ---\n    case 2\n      ang = 45;\n      vel = 0.5;\n\n      if(dt"
+      "i_d     = 0;\n    % --- Horizontal Line in X-Y ---\n    case 2\n      ang = 45;\n      vel = 0.2;\n\n      if(dt"
       " > t_track)\n        dot_pd  = [vel*cosd(ang); vel*sind(ang);0];\n        pd(1)   = p0(1) + vel*cosd(ang)*(dt - "
       "t_track);\n        pd(2)   = p0(2) + vel*sind(ang)*(dt - t_track);\n      else\n        dot_pd  = [0;0;0]; \n   "
       "   end\n      \n      ddot_pd   = [0;0;0];\n      psi_d     = 0;\n    % --- Circular Line - Constant Yaw ---\n	c"
-      "ase 3\n      ang_rate = 0.1; %rad/s\n\n      if(dt > t_track)\n        pd(1:2)	= [ cos(ang_rate*(dt - t_track)) "
-      "- 1;... \n                    sin(ang_rate*(dt - t_track))];\n        dot_pd	= [-sin(ang_rate*(dt - t_track));.."
-      ".\n                    cos(ang_rate*(dt - t_track));0]*ang_rate;\n        ddot_pd = [-cos(ang_rate*(dt - t_track"
-      "));...\n                   -sin(ang_rate*(dt - t_track));0]*(ang_rate^2);\n      else\n        dot_pd  = [0;0;0]"
-      "; \n        ddot_pd = [0;0;0]; \n      end\n      psi_d = 0;\n    % --- Circular Line - Variable Yaw ---\n    ca"
-      "se 4\n      ang_rate  = 0.1; %rad/s\n      R         = 1;\n      if(dt > t_track)\n        pd(1:2)	= [ cos(ang_r"
-      "ate*(dt - t_track)) - 1;... \n                    sin(ang_rate*(dt - t_track))  ]*R;\n        dot_pd	= [-sin(ang"
-      "_rate*(dt - t_track));...\n                    cos(ang_rate*(dt - t_track));0]*R*ang_rate;\n        ddot_pd = [-"
-      "cos(ang_rate*(dt - t_track));...\n                   -sin(ang_rate*(dt - t_track));0]*R*(ang_rate^2);\n        %"
-      "psi_d = pi/2;\n        psi_d   =       ang_rate*(dt - t_track);\n      else\n        dot_pd  = [0;0;0]; \n      "
-      "  ddot_pd = [0;0;0];\n        psi_d   = 0;\n      end\n    % --- Line of Sight ---\n    case 5\n      Delta  = 0"
-      ".3; \n      V      = 0.1;\n      yd     = p0(2) + 1;\n      %vel = 0.1;\n      if(dt > t_track)\n        %pd(1:2"
-      ")	= p0(1:2) + [V*(dt - t_track); 1];\n        pd(1:2)   = states(7:8);\n        psi_d     = atan(-(states(8) - y"
-      "d)/Delta);\n        dot_pd	  = [cos(psi_d);sin(psi_d);0]*V;\n        %ddot_pd   = [0;0;0];\n        dot_psi_d = "
-      "(-states(5)/Delta)/(1+(-(states(8)-yd)/Delta)^2);\n        ddot_pd   = [-V*dot_psi_d*sin(psi_d); V*dot_psi_d*cos"
-      "(psi_d); 0];\n      else\n        dot_pd  = [0;0;0]; \n        ddot_pd = [0;0;0];\n        psi_d   = 0;\n      e"
-      "nd  \n    otherwise\n      pd        = p0;\n      dot_pd    = [0;0;0];\n      ddot_pd   = [0;0;0];\n      psi_d "
-      "    = 0;\nend\n        \n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\nend\n\npre"
-      "vious_status = on_off;\n"
+      "ase 3\n      ang_rate = 0.2; %rad/s\n      R = 0.75;\n      if(dt > t_track)\n        pd(1:2)	= [ cos(ang_rate*("
+      "dt - t_track)) - 1;... \n                    sin(ang_rate*(dt - t_track))]*R;\n        dot_pd	= [-sin(ang_rate*("
+      "dt - t_track));...\n                    cos(ang_rate*(dt - t_track));0]*R*ang_rate;\n        ddot_pd = [-cos(ang"
+      "_rate*(dt - t_track));...\n                   -sin(ang_rate*(dt - t_track));0]*R*(ang_rate^2);\n      else\n    "
+      "    dot_pd  = [0;0;0]; \n        ddot_pd = [0;0;0]; \n      end\n      psi_d = 0;\n    % --- Circular Line - Var"
+      "iable Yaw ---\n    case 4\n      ang_rate  = 0.2; %rad/s\n      R         = 0.75;\n      if(dt > t_track)\n     "
+      "   pd(1:2)	= [ cos(ang_rate*(dt - t_track)) - 1;... \n                    sin(ang_rate*(dt - t_track))  ]*R;\n  "
+      "      dot_pd	= [-sin(ang_rate*(dt - t_track));...\n                    cos(ang_rate*(dt - t_track));0]*R*ang_rat"
+      "e;\n        ddot_pd = [-cos(ang_rate*(dt - t_track));...\n                   -sin(ang_rate*(dt - t_track));0]*R*"
+      "(ang_rate^2);\n        %psi_d = pi/2;\n        psi_d   =       ang_rate*(dt - t_track);\n      else\n        dot"
+      "_pd  = [0;0;0]; \n        ddot_pd = [0;0;0];\n        psi_d   = 0;\n      end\n    % --- Line of Sight ---\n    "
+      "case 5\n      Delta  = 0.3; \n      V      = 0.1;\n      yd     = p0(2) + 1;\n      %vel = 0.1;\n      if(dt > t"
+      "_track)\n        %pd(1:2)	= p0(1:2) + [V*(dt - t_track); 1];\n        pd(1:2)   = states(7:8);\n        psi_d   "
+      "  = atan(-(states(8) - yd)/Delta);\n        dot_pd	  = [cos(psi_d);sin(psi_d);0]*V;\n        %ddot_pd   = [0;0;0"
+      "];\n        dot_psi_d = (-states(5)/Delta)/(1+(-(states(8)-yd)/Delta)^2);\n        ddot_pd   = [-V*dot_psi_d*sin"
+      "(psi_d); V*dot_psi_d*cos(psi_d); 0];\n      else\n        dot_pd  = [0;0;0]; \n        ddot_pd = [0;0;0];\n     "
+      "   psi_d   = 0;\n      end  \n    % --- Psi_testing ---\n    case 6\n      pd        = p0;\n      dot_pd    = [0"
+      ";0;0];\n      ddot_pd   = [0;0;0];\n      psi_d     = pi/2; \n    otherwise\n      pd        = p0;\n      dot_pd"
+      "    = [0;0;0];\n      ddot_pd   = [0;0;0];\n      psi_d     = 0;\nend\n        \n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\nend\n\nprevious_status = on_off;\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -7173,7 +7298,7 @@ Stateflow {
     visible		    1
     subviewS {
     }
-    ssIdHighWaterMark	    20
+    ssIdHighWaterMark	    22
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     chartFileNumber	    2
@@ -7182,8 +7307,8 @@ Stateflow {
       name		      "tt_controller"
     }
     firstData		    17
-    firstTransition	    31
-    firstJunction	    30
+    firstTransition	    33
+    firstJunction	    32
   }
   state {
     id			    16
@@ -7200,28 +7325,28 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function [w_r, dot_psi_r, theta_r, phi_r, dot_xi] = tt_controller(states, pd, dot_pd, ddot_pd,psi"
-      "_d,xi, k_w, K)\n%#codegen\n\n% ------------------------------------------------------------------------\n% input"
-      "s:\n% states - structure with state variables\n% pd - desired position\n% dot_pd - desired velocity\n% ddot_pt -"
-      " desired acceleration\n% psi_d - desired yaw angle\n% xi - integral state (four variables)\n%\n% outputs:\n% w_r"
-      " - vertical velocity reference\n% dot_psi_r - yaw rate reference\n% theta_r - pitch angle reference\n% phi_r - r"
-      "oll angle reference\n% dot_xi - integral state derivative\n% ---------------------------------------------------"
-      "---------------------\n\nlambda      = states(1:3,1); % Euler angles\npsi         = lambda(3);\nR           = eu"
-      "ler2R(lambda);\nRz          = [cos(psi) -sin(psi) 0; sin(psi) cos(psi) 0; 0 0 1];\npsi_e       = normalize_angle"
-      "(psi-psi_d);\n\np           = states(7:9,1); % position vector\np(3)        = p(3); % height is symmetric of z\n"
-      "vb          = states(4:6,1); % velocity vector in body coordinates\ndot_p       = R*vb; % body velocity rotated "
-      "to inertial frame \ndot_p(3)    = dot_p(3);\n\n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-      "!!!!!!\n% replace with the necessary code to implement the trajectory tracking\n% controller\n% pd(3)       = pd"
-      "(3);\n% dot_pd(3)   = dot_pd(3);\n\n% HEIGHT CONTROL\nw_r     = -k_w*(p(3) - pd(3));\n\n% OTHER CONTROL\ntilde_x"
-      "     = [p - pd; dot_p - dot_pd];\n\nu_star      = Rz^(-1)*(K*tilde_x + [0; 0; 9.81] - ddot_pd + xi(1:3));\n\nk_w"
-      "         = 0.1;\ntheta_r     = atan(u_star(1)/u_star(3));\nphi_r       = atan(-u_star(2)/sqrt(u_star(1)^2+u_star"
-      "(3)^2));\ndot_xi      = [k_w*1*K*tilde_x; psi_e];\ndot_xi(3)   = dot_xi(3);\n\n% PSI CONTROL\ndot_psi_r   = -1*p"
-      "si_e - 0.1*xi(4);\n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\nfunction R = eul"
-      "er2R(l)\n%#codegen\n% returns the rotation matrix for a given vector of euler angles\n\nphi = l(1); theta = l(2)"
-      "; psi = l(3);\nR = [cos(theta)*cos(psi)...\n      sin(phi)*sin(theta)*cos(psi)-cos(phi)*sin(psi)...\n      cos(p"
-      "hi)*sin(theta)*cos(psi)+sin(phi)*sin(psi);\n   cos(theta)*sin(psi)...\n   sin(phi)*sin(theta)*sin(psi)+cos(phi)*"
-      "cos(psi)... \n   cos(phi)*sin(theta)*sin(psi)-sin(phi)*cos(psi);\n   -sin(theta)...\n   sin(phi)*cos(theta)...\n"
-      "   cos(phi)*cos(theta)];\n\nfunction angleOut = normalize_angle(angleIn)\n%#codegen\n\nangleOut = mod(angleIn, 2"
-      "*pi) ;\nif angleOut > pi\n    angleOut = -2*pi + angleOut ; \nend\n\n"
+      "_d,xi, k_w, K, psi_ki, psi_kp)\n%#codegen\n\n% -----------------------------------------------------------------"
+      "-------\n% inputs:\n% states - structure with state variables\n% pd - desired position\n% dot_pd - desired veloc"
+      "ity\n% ddot_pt - desired acceleration\n% psi_d - desired yaw angle\n% xi - integral state (four variables)\n%\n%"
+      " outputs:\n% w_r - vertical velocity reference\n% dot_psi_r - yaw rate reference\n% theta_r - pitch angle refere"
+      "nce\n% phi_r - roll angle reference\n% dot_xi - integral state derivative\n% -----------------------------------"
+      "-------------------------------------\n\nlambda      = states(1:3,1); % Euler angles\npsi         = lambda(3);\n"
+      "R           = euler2R(lambda);\nRz          = [cos(psi) -sin(psi) 0; sin(psi) cos(psi) 0; 0 0 1];\npsi_e       ="
+      " normalize_angle(psi-psi_d);\n\np           = states(7:9,1); % position vector\np(3)        = p(3); % height is "
+      "symmetric of z\nvb          = states(4:6,1); % velocity vector in body coordinates\ndot_p       = R*vb; % body v"
+      "elocity rotated to inertial frame \ndot_p(3)    = dot_p(3);\n\n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      "!!!!!!!!!!!!!!!!!!!!!!\n% replace with the necessary code to implement the trajectory tracking\n% controller\n% "
+      "pd(3)       = pd(3);\n% dot_pd(3)   = dot_pd(3);\n\n% HEIGHT CONTROL\nw_r     = -k_w*(p(3) - pd(3));\n\n% OTHER "
+      "CONTROL\ntilde_x     = [p - pd; dot_p - dot_pd];\n\nu_star      = Rz^(-1)*(K*tilde_x + [0; 0; 9.81] - ddot_pd + "
+      "xi(1:3));\n\n%k_w         = 0.1;\ntheta_r     = atan(u_star(1)/u_star(3));\nphi_r       = atan(-u_star(2)/sqrt(u"
+      "_star(1)^2+u_star(3)^2));\ndot_xi      = [k_w*1*K*tilde_x; psi_e];\ndot_xi(3)   = dot_xi(3);\n\n% PSI CONTROL\nd"
+      "ot_psi_r   = psi_kp*psi_e + psi_kp*psi_ki*xi(4);\n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      "!!!!!!!!!\n\n\nfunction R = euler2R(l)\n%#codegen\n% returns the rotation matrix for a given vector of euler ang"
+      "les\n\nphi = l(1); theta = l(2); psi = l(3);\nR = [cos(theta)*cos(psi)...\n      sin(phi)*sin(theta)*cos(psi)-co"
+      "s(phi)*sin(psi)...\n      cos(phi)*sin(theta)*cos(psi)+sin(phi)*sin(psi);\n   cos(theta)*sin(psi)...\n   sin(phi"
+      ")*sin(theta)*sin(psi)+cos(phi)*cos(psi)... \n   cos(phi)*sin(theta)*sin(psi)-sin(phi)*cos(psi);\n   -sin(theta)."
+      "..\n   sin(phi)*cos(theta)...\n   cos(phi)*cos(theta)];\n\nfunction angleOut = normalize_angle(angleIn)\n%#codeg"
+      "en\n\nangleOut = mod(angleIn, 2*pi) ;\nif angleOut > pi\n    angleOut = -2*pi + angleOut ; \nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -7543,10 +7668,60 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [15 28 0]
+    linkNode		    [15 28 30]
+  }
+  data {
+    id			    30
+    ssIdNumber		    21
+    name		    "psi_ki"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [15 29 31]
+  }
+  data {
+    id			    31
+    ssIdNumber		    22
+    name		    "psi_kp"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [15 30 0]
   }
   junction {
-    id			    30
+    id			    32
     position		    [23.5747 49.5747 7]
     chart		    15
     subviewer		    15
@@ -7555,7 +7730,7 @@ Stateflow {
     linkNode		    [15 0 0]
   }
   transition {
-    id			    31
+    id			    33
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -7563,7 +7738,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      30
+      id		      32
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -7579,20 +7754,23 @@ Stateflow {
     linkNode		    [15 0 0]
   }
   instance {
-    id			    32
+    id			    34
     machine		    1
     name		    "Outer-loop Controller/Outer Loop"
     chart		    15
   }
   chart {
-    id			    33
+    id			    35
     machine		    1
     name		    "normalize angle \nbetween -pi and pi radians"
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
-    treeNode		    [0 34 0 0]
-    viewObj		    33
+    treeNode		    [0 36 0 0]
+    viewObj		    35
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -7601,19 +7779,19 @@ Stateflow {
     eml {
       name		      "fcn"
     }
-    firstData		    35
-    firstTransition	    38
-    firstJunction	    37
+    firstData		    37
+    firstTransition	    40
+    firstJunction	    39
   }
   state {
-    id			    34
+    id			    36
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    33
-    treeNode		    [33 0 0 0]
+    chart		    35
+    treeNode		    [35 0 0 0]
     superState		    SUBCHART
-    subviewer		    33
+    subviewer		    35
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -7625,7 +7803,7 @@ Stateflow {
     }
   }
   data {
-    id			    35
+    id			    37
     ssIdNumber		    4
     name		    "angleIn"
     scope		    INPUT_DATA
@@ -7644,10 +7822,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [33 0 36]
+    linkNode		    [35 0 38]
   }
   data {
-    id			    36
+    id			    38
     ssIdNumber		    5
     name		    "angleOut"
     scope		    OUTPUT_DATA
@@ -7667,19 +7845,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [33 35 0]
+    linkNode		    [35 37 0]
   }
   junction {
-    id			    37
+    id			    39
     position		    [23.5747 49.5747 7]
-    chart		    33
-    subviewer		    33
+    chart		    35
+    subviewer		    35
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [33 0 0]
+    linkNode		    [35 0 0]
   }
   transition {
-    id			    38
+    id			    40
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -7687,36 +7865,36 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      37
+      id		      39
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    33
+    chart		    35
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    33
+    subviewer		    35
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [33 0 0]
+    linkNode		    [35 0 0]
   }
   instance {
-    id			    39
+    id			    41
     machine		    1
     name		    "normalize angle \nbetween -pi and pi radians"
-    chart		    33
+    chart		    35
   }
   chart {
-    id			    40
+    id			    42
     machine		    1
     name		    "Outer-loop Controller/Baseline Controller/Heading controller/normalize angle \nbetween -pi and pi radians"
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
-    treeNode		    [0 41 0 0]
-    viewObj		    40
+    treeNode		    [0 43 0 0]
+    viewObj		    42
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -7725,19 +7903,19 @@ Stateflow {
     eml {
       name		      "fcn"
     }
-    firstData		    42
-    firstTransition	    45
-    firstJunction	    44
+    firstData		    44
+    firstTransition	    47
+    firstJunction	    46
   }
   state {
-    id			    41
+    id			    43
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    40
-    treeNode		    [40 0 0 0]
+    chart		    42
+    treeNode		    [42 0 0 0]
     superState		    SUBCHART
-    subviewer		    40
+    subviewer		    42
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -7749,7 +7927,7 @@ Stateflow {
     }
   }
   data {
-    id			    42
+    id			    44
     ssIdNumber		    4
     name		    "angleIn"
     scope		    INPUT_DATA
@@ -7768,10 +7946,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [40 0 43]
+    linkNode		    [42 0 45]
   }
   data {
-    id			    43
+    id			    45
     ssIdNumber		    5
     name		    "angleOut"
     scope		    OUTPUT_DATA
@@ -7791,19 +7969,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [40 42 0]
+    linkNode		    [42 44 0]
   }
   junction {
-    id			    44
+    id			    46
     position		    [23.5747 49.5747 7]
-    chart		    40
-    subviewer		    40
+    chart		    42
+    subviewer		    42
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [40 0 0]
+    linkNode		    [42 0 0]
   }
   transition {
-    id			    45
+    id			    47
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -7811,36 +7989,36 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      44
+      id		      46
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    40
+    chart		    42
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    40
+    subviewer		    42
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [40 0 0]
+    linkNode		    [42 0 0]
   }
   instance {
-    id			    46
+    id			    48
     machine		    1
     name		    "Outer-loop Controller/Baseline Controller/Heading controller/normalize angle \nbetween -pi and pi radians"
-    chart		    40
+    chart		    42
   }
   chart {
-    id			    47
+    id			    49
     machine		    1
     name		    "ARDrone Simulation Block/normalize angle \nbetween -pi and pi radians"
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
-    treeNode		    [0 48 0 0]
-    viewObj		    47
+    treeNode		    [0 50 0 0]
+    viewObj		    49
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -7849,19 +8027,19 @@ Stateflow {
     eml {
       name		      "fcn"
     }
-    firstData		    49
-    firstTransition	    52
-    firstJunction	    51
+    firstData		    51
+    firstTransition	    54
+    firstJunction	    53
   }
   state {
-    id			    48
+    id			    50
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    47
-    treeNode		    [47 0 0 0]
+    chart		    49
+    treeNode		    [49 0 0 0]
     superState		    SUBCHART
-    subviewer		    47
+    subviewer		    49
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -7873,7 +8051,7 @@ Stateflow {
     }
   }
   data {
-    id			    49
+    id			    51
     ssIdNumber		    4
     name		    "angleIn"
     scope		    INPUT_DATA
@@ -7892,10 +8070,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [47 0 50]
+    linkNode		    [49 0 52]
   }
   data {
-    id			    50
+    id			    52
     ssIdNumber		    5
     name		    "angleOut"
     scope		    OUTPUT_DATA
@@ -7915,19 +8093,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [47 49 0]
+    linkNode		    [49 51 0]
   }
   junction {
-    id			    51
+    id			    53
     position		    [23.5747 49.5747 7]
-    chart		    47
-    subviewer		    47
+    chart		    49
+    subviewer		    49
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [47 0 0]
+    linkNode		    [49 0 0]
   }
   transition {
-    id			    52
+    id			    54
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -7935,37 +8113,37 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      51
+      id		      53
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    47
+    chart		    49
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    47
+    subviewer		    49
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [47 0 0]
+    linkNode		    [49 0 0]
   }
   instance {
-    id			    53
+    id			    55
     machine		    1
     name		    "ARDrone Simulation Block/normalize angle \nbetween -pi and pi radians"
-    chart		    47
+    chart		    49
   }
   chart {
-    id			    54
+    id			    56
     machine		    1
     name		    "Outer-loop Controller/Baseline Controller/Position controller/Coordinate trnasformation \nfrom inertial"
     " frame to body frame "
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
-    treeNode		    [0 55 0 0]
-    viewObj		    54
+    treeNode		    [0 57 0 0]
+    viewObj		    56
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -7974,19 +8152,19 @@ Stateflow {
     eml {
       name		      "fcn"
     }
-    firstData		    56
-    firstTransition	    60
-    firstJunction	    59
+    firstData		    58
+    firstTransition	    62
+    firstJunction	    61
   }
   state {
-    id			    55
+    id			    57
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    54
-    treeNode		    [54 0 0 0]
+    chart		    56
+    treeNode		    [56 0 0 0]
     superState		    SUBCHART
-    subviewer		    54
+    subviewer		    56
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -7998,7 +8176,7 @@ Stateflow {
     }
   }
   data {
-    id			    56
+    id			    58
     ssIdNumber		    4
     name		    "Vec_b"
     scope		    INPUT_DATA
@@ -8017,10 +8195,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [54 0 57]
+    linkNode		    [56 0 59]
   }
   data {
-    id			    57
+    id			    59
     ssIdNumber		    5
     name		    "Vec_xy"
     scope		    OUTPUT_DATA
@@ -8040,10 +8218,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [54 56 58]
+    linkNode		    [56 58 60]
   }
   data {
-    id			    58
+    id			    60
     ssIdNumber		    6
     name		    "psi"
     scope		    INPUT_DATA
@@ -8065,19 +8243,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [54 57 0]
+    linkNode		    [56 59 0]
   }
   junction {
-    id			    59
+    id			    61
     position		    [23.5747 49.5747 7]
-    chart		    54
-    subviewer		    54
+    chart		    56
+    subviewer		    56
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [54 0 0]
+    linkNode		    [56 0 0]
   }
   transition {
-    id			    60
+    id			    62
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -8085,37 +8263,37 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      59
+      id		      61
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    54
+    chart		    56
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    54
+    subviewer		    56
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [54 0 0]
+    linkNode		    [56 0 0]
   }
   instance {
-    id			    61
+    id			    63
     machine		    1
     name		    "Outer-loop Controller/Baseline Controller/Position controller/Coordinate trnasformation \nfrom inertial"
     " frame to body frame "
-    chart		    54
+    chart		    56
   }
   chart {
-    id			    62
+    id			    64
     machine		    1
     name		    "Outer-loop Controller/Error Scopes/normalize angle \nbetween -180 and 180 degrees"
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
-    treeNode		    [0 63 0 0]
-    viewObj		    62
+    treeNode		    [0 65 0 0]
+    viewObj		    64
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -8124,19 +8302,19 @@ Stateflow {
     eml {
       name		      "fcn"
     }
-    firstData		    64
-    firstTransition	    67
-    firstJunction	    66
+    firstData		    66
+    firstTransition	    69
+    firstJunction	    68
   }
   state {
-    id			    63
+    id			    65
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    62
-    treeNode		    [62 0 0 0]
+    chart		    64
+    treeNode		    [64 0 0 0]
     superState		    SUBCHART
-    subviewer		    62
+    subviewer		    64
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -8148,7 +8326,7 @@ Stateflow {
     }
   }
   data {
-    id			    64
+    id			    66
     ssIdNumber		    4
     name		    "angleIn"
     scope		    INPUT_DATA
@@ -8167,10 +8345,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [62 0 65]
+    linkNode		    [64 0 67]
   }
   data {
-    id			    65
+    id			    67
     ssIdNumber		    5
     name		    "angleOut"
     scope		    OUTPUT_DATA
@@ -8190,19 +8368,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [62 64 0]
+    linkNode		    [64 66 0]
   }
   junction {
-    id			    66
+    id			    68
     position		    [23.5747 49.5747 7]
-    chart		    62
-    subviewer		    62
+    chart		    64
+    subviewer		    64
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [62 0 0]
+    linkNode		    [64 0 0]
   }
   transition {
-    id			    67
+    id			    69
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -8210,38 +8388,38 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      66
+      id		      68
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    62
+    chart		    64
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    62
+    subviewer		    64
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [62 0 0]
+    linkNode		    [64 0 0]
   }
   instance {
-    id			    68
+    id			    70
     machine		    1
     name		    "Outer-loop Controller/Error Scopes/normalize angle \nbetween -180 and 180 degrees"
-    chart		    62
+    chart		    64
   }
   target {
-    id			    69
+    id			    71
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
-    linkNode		    [1 0 70]
+    linkNode		    [1 0 72]
   }
   target {
-    id			    70
+    id			    72
     machine		    1
     name		    "rtw"
-    linkNode		    [1 69 0]
+    linkNode		    [1 71 0]
   }
 }

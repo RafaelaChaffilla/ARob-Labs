@@ -34,7 +34,7 @@ fig2 = figure();
 hold on;
 plot(Alt_exp.desired.ans(2,:), Alt_exp.desired.ans(3,:));
 plot(Alt_exp.results.ans(8,:), Alt_exp.results.ans(9,:));
-legend('Pedida', 'Experimental', 'location', 'southeast');
+legend('Pedida', 'Experimental', 'location', 'northwest');
 xlabel('Posição x [m]');
 ylabel('Posição y [m]');
 saveas(fig2, '../../imgs/Horz_45_EXP', 'png');
@@ -83,6 +83,23 @@ ylim([-1 1]);
 xlim([-2 0.5]);
 saveas(fig5, '../../imgs/circ_yawvar_EXP', 'png');
 
+psi_d = mod(Alt_exp.desired.ans(5,:), 2*pi) ;
+for i=1:size(psi_d,2)
+    if psi_d(i) > pi
+        psi_d(i) = -2*pi + psi_d(i) ; 
+    end
+end
+
+fig8 = figure();
+hold on;
+plot(Alt_exp.desired.ans(1,:), psi_d);
+plot(Alt_exp.results.ans(1,:), Alt_exp.results.ans(4,:));
+legend('Pedida', 'Experimental', 'location', 'northeast');
+xlabel('Tempo [s]');
+ylabel('\Psi [rad]');
+xlim([17.22 55]);
+saveas(fig8, '../../imgs/yawvar_EXP', 'png');
+
 %% LOS - first try
 Alt_exp.desired = load('desired_data_5.mat');
 Alt_exp.results = load('exp_data_5.mat');
@@ -97,3 +114,20 @@ ylabel('Posição y [m]');
 % ylim([-1 1]);
 % xlim([-2 0.5]);
 saveas(fig6, '../../imgs/LOS1_EXP', 'png');
+
+psi_d = mod(Alt_exp.desired.ans(5,:), 2*pi) ;
+for i=1:size(psi_d,2)
+    if psi_d(i) > pi
+        psi_d(i) = -2*pi + psi_d(i) ; 
+    end
+end
+
+fig7 = figure();
+hold on;
+plot(Alt_exp.desired.ans(1,:), psi_d);
+plot(Alt_exp.results.ans(1,:), Alt_exp.results.ans(4,:));
+legend('Pedida', 'Experimental', 'location', 'northeast');
+xlabel('Tempo [s]');
+ylabel('\Psi [rad]');
+xlim([9.12 32]);
+saveas(fig7, '../../imgs/los_yaw_EXP', 'png');
