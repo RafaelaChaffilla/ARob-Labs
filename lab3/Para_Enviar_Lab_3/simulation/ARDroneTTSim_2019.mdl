@@ -60,7 +60,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [8.0, 8.0, 1386.0, 788.0]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -95,7 +95,7 @@ Model {
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "4925"
-	  Extents		  [1366.0, 768.0]
+	  Extents		  [1882.0, 873.0]
 	  ZoomFactor		  [1.3356481481481481]
 	  Offset		  [-125.80098209127675, 13.266897746967061]
 	}
@@ -113,9 +113,9 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "5024"
-	  Extents		  [1332.0, 605.0]
-	  ZoomFactor		  [0.7313054499366286]
-	  Offset		  [-493.45798581022541, 64.856152512998221]
+	  Extents		  [1882.0, 873.0]
+	  ZoomFactor		  [0.68]
+	  Offset		  [-966.58134191176464, -162.67647058823525]
 	}
 	PropName		"EditorsInfo"
       }
@@ -139,7 +139,7 @@ Model {
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP////sAAABgAFMAaQBtAHUAb"
       "ABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZ"
       "QBzAAAAAAD/////AAAAAAAAAAAAAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAd"
-      "ABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAawA////AAAFWgAAApgAAAABAAAAAgAAAAEAAAAC/"
+      "ABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAawA////AAAHgAAAA6QAAAABAAAAAgAAAAEAAAAC/"
       "AAAAAEAAAACAAAAD/////8AAAAAAP////8AAAAAAAAAAP////8BAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAA"
       "P////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAAAef////8AAAAAAAAAAP////8BAAAA2v////8AAAAAAAAAAP////8AAAAAA"
       "P////8AAAAAAAAAAP////8BAAABU/////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAA"
@@ -151,10 +151,10 @@ Model {
   Creator		  "Paul Freeman"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "User"
+  LastModifiedBy	  "Gaming"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Jan 15 20:16:21 2023"
-  RTWModifiedTimeStamp	  595714579
+  LastModifiedDate	  "Sun Jan 15 20:01:46 2023"
+  RTWModifiedTimeStamp	  595713694
   ModelVersionFormat	  "$Id: UAV_SIL.mdl 912 2012-10-10 23:11:42Z joh07594 $"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -2597,7 +2597,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Outer-loop Controller"
-	Location		[8, 8, 1394, 796]
+	Location		[-8, -8, 1928, 1048]
 	Open			on
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
@@ -2612,7 +2612,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"73"
+	ZoomFactor		"68"
 	SimulinkSubDomain	"Simulink"
 	Block {
 	  BlockType		  Inport
@@ -2954,7 +2954,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Heading controller"
-		Location		[8, 8, 1944, 1064]
+		Location		[-8, -8, 1928, 1048]
 		Open			on
 		PortBlocksUseCompactNotation off
 		SetExecutionDomain	off
@@ -4844,7 +4844,7 @@ Model {
 	  SFBlockType		  "MATLAB Function"
 	  System {
 	    Name		    "Outer Loop"
-	    Location		    [8, 8, 1944, 1064]
+	    Location		    [-8, -8, 1928, 1048]
 	    Open		    on
 	    PortBlocksUseCompactNotation off
 	    SetExecutionDomain	    off
@@ -5932,7 +5932,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Visualization of Drone states"
-	Location		[8, 8, 1944, 1064]
+	Location		[-8, -8, 1928, 1048]
 	Open			on
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
@@ -7590,13 +7590,14 @@ Stateflow {
       "\n% HEIGHT CONTROL\nw_r     = -k_w*(-p(3) - pd(3));\n\n% OTHER CONTROL\ntilde_x     = [p - pd; dot_p - dot_pd];\n"
       "\nu_star      = Rz^(-1)*(K*tilde_x + [0; 0; 9.81] - ddot_pd + xi(1:3));\n\ntheta_r     = atan(u_star(1)/u_star(3"
       "));\nphi_r       = atan(-u_star(2)/sqrt(u_star(1)^2+u_star(3)^2));\ndot_xi      = [k_w*1*K*tilde_x; psi_e];\n\n%"
-      " PSI CONTROL\ndot_psi_r   = - psi_kp*psi_e - psi_ki*xi(4);\n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-      "!!!!!!!!!!!!!!!!!!!\n\n\nfunction R = euler2R(l)\n%#codegen\n% returns the rotation matrix for a given vector of"
-      " euler angles\n\nphi = l(1); theta = l(2); psi = l(3);\nR = [cos(theta)*cos(psi)...\n      sin(phi)*sin(theta)*c"
-      "os(psi)-cos(phi)*sin(psi)...\n      cos(phi)*sin(theta)*cos(psi)+sin(phi)*sin(psi);\n   cos(theta)*sin(psi)...\n"
-      "   sin(phi)*sin(theta)*sin(psi)+cos(phi)*cos(psi)... \n   cos(phi)*sin(theta)*sin(psi)-sin(phi)*cos(psi);\n   -s"
-      "in(theta)...\n   sin(phi)*cos(theta)...\n   cos(phi)*cos(theta)];\n\nfunction angleOut = normalize_angle(angleIn"
-      ")\n%#codegen\n\nangleOut = mod(angleIn, 2*pi) ;\nif angleOut > pi\n    angleOut = -2*pi + angleOut ; \nend\n\n"
+      " PSI CONTROL\ndot_psi_r   = - psi_kp*psi_e - psi_kp*psi_ki*xi(4);\n%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      "!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\nfunction R = euler2R(l)\n%#codegen\n% returns the rotation matrix for a given ve"
+      "ctor of euler angles\n\nphi = l(1); theta = l(2); psi = l(3);\nR = [cos(theta)*cos(psi)...\n      sin(phi)*sin(t"
+      "heta)*cos(psi)-cos(phi)*sin(psi)...\n      cos(phi)*sin(theta)*cos(psi)+sin(phi)*sin(psi);\n   cos(theta)*sin(ps"
+      "i)...\n   sin(phi)*sin(theta)*sin(psi)+cos(phi)*cos(psi)... \n   cos(phi)*sin(theta)*sin(psi)-sin(phi)*cos(psi);"
+      "\n   -sin(theta)...\n   sin(phi)*cos(theta)...\n   cos(phi)*cos(theta)];\n\nfunction angleOut = normalize_angle("
+      "angleIn)\n%#codegen\n\nangleOut = mod(angleIn, 2*pi) ;\nif angleOut > pi\n    angleOut = -2*pi + angleOut ; \nen"
+      "d\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
