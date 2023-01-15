@@ -171,6 +171,11 @@ PHI.DES = Alt_exp.desired.ans(6,Active:end);
 PHI.EXP = Alt_exp.results.ans(2,Active:end);
 THE.DES = Alt_exp.desired.ans(7,Active:end);
 THE.EXP = Alt_exp.results.ans(3,Active:end);
+% X AND Y
+X.DES   = Alt_exp.desired.ans(2,Active:end);
+X.EXP   = Alt_exp.results.ans(8,Active:end);
+Y.DES   = Alt_exp.desired.ans(3,Active:end);
+Y.EXP   = Alt_exp.results.ans(9,Active:end);
 % DEMODDING OF PSI
 counter = 0;
 for i=2:length(PSI.EXP)
@@ -205,30 +210,48 @@ ylim([-1 1]);
 xlim([-2 0.5]);
 saveas(fig5, '../../imgs/circ_yawvar_EXP', 'png');
 
+% ERRORS
+figure();
+hold on;
+plot(TIME, X.DES);
+plot(TIME, X.EXP);
+ylabel('Posição x [m]');
+xlabel('Tempo [s]');
+legend('Pedido', 'Experimental', 'location', 'southeast');
+figure();
+hold on;
+plot(TIME, Y.DES);
+plot(TIME, Y.EXP);
+legend('y');
+ylabel('Posição y [m]');
+xlabel('Tempo [s]');
+legend('Pedido', 'Experimental', 'location', 'southeast');
+
 % PLOT ANGLES
 fig8 = figure();
+subplot(1,3,1);
 hold on;
 plot(TIME,(PSI.EXP - PSI.DES)*180/pi);
 xlim([TIME(Active) 50]);
-legend('Erro', 'location', 'northeast');
+legend('Erro \psi', 'location', 'southeast');
 xlabel('Tempo [s]');
-ylabel('\psi [rad]');
-fig8 = figure();
+ylabel('e [º]');
+subplot(1,3,2);
 hold on;
 plot(TIME,THE.DES*180/pi);
 plot(TIME,THE.EXP*180/pi);
 xlim([TIME(Active) 50]);
-legend('Pedida', 'Experimental', 'location', 'northeast');
+legend('Pedida', 'Experimental', 'location', 'southeast');
 xlabel('Tempo [s]');
-ylabel('\theta [rad]');
-fig8 = figure();
+ylabel('\theta [º]');
+subplot(1,3,3);
 hold on;
 plot(TIME, PHI.DES*180/pi);
 plot(TIME, PHI.EXP*180/pi);
 xlim([TIME(Active) 50]);
-legend('Pedida', 'Experimental', 'location', 'northeast');
+legend('Pedida', 'Experimental', 'location', 'southeast');
 xlabel('Tempo [s]');
-ylabel('\phi [rad]');
+ylabel('\phi [º]');
 
 %saveas(fig8, '../../imgs/yawvar_EXP', 'png');
 
@@ -242,6 +265,7 @@ Alt_exp.results = load('exp_data_5.mat');
 % DISTANCE SINCE ENABLED
 x_0	= Alt_exp.results.ans(8,Enabled);
 y_0	= Alt_exp.results.ans(9,Enabled);
+
 % PSI AFTER ENABLED
 QUIVER_D = downsample(Alt_exp.desired.ans(:,Active:end)',30);
 QUIVER_D = QUIVER_D';
@@ -263,7 +287,7 @@ ylabel('Posição y [m]');
 ylim([-0.2 1.4]);
 xlim([-0.4 1]);
 saveas(fig6, '../../imgs/LOS1_EXP', 'png');
-
+% ANGLES
 psi_d = mod(Alt_exp.desired.ans(5,:), 2*pi) ;
 for i=1:size(psi_d,2)
     if psi_d(i) > pi
