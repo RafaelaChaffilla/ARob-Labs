@@ -55,6 +55,7 @@ disp('    (2) Horizontal Line');
 disp('    (3) Circle - Constant Yaw'); 
 disp('    (4) Circle - Variable Yaw'); 
 disp('    (5) Line of Sight'); 
+disp('    (6) Yaw Controller'); 
 
 choice = input('');
 
@@ -77,13 +78,13 @@ switch choice
         for c = 1:size(sim_results,2)
             plot(sim_results(c).tout, sim_results(c).h_sim.signals.values);
         end
-        xlim([0 30]);
-        legend('Pedida', sprintf('k = %0.1f', k_w_vector(1)), ...
-            sprintf('k_w = %0.1f', k_w_vector(2)), ...
-            sprintf('k_w = %0.1f', k_w_vector(3)), ...
-            sprintf('k_w = %0.1f', k_w_vector(4)), ...
-            sprintf('k_w = %0.1f', k_w_vector(5)), ...
-            sprintf('k_w = %0.1f', k_w_vector(6)), ...
+        xlim([10 40]);
+        legend('Pedida', sprintf('k_w = %0.1f s^{-1}', k_w_vector(1)), ...
+            sprintf('k_w = %0.1f s^{-1}', k_w_vector(2)), ...
+            sprintf('k_w = %0.1f s^{-1}', k_w_vector(3)), ...
+            sprintf('k_w = %0.1f s^{-1}', k_w_vector(4)), ...
+            sprintf('k_w = %0.1f s^{-1}', k_w_vector(5)), ...
+            sprintf('k_w = %0.1f s^{-1}', k_w_vector(6)), ...
             'location', 'southeast');
         xlabel('Tempo [s]');
         ylabel('Altitude h [m]');
@@ -268,8 +269,9 @@ switch choice
         % Psi Simulation for different k_i and k_p
         k_w = 1;
         K=zeros(3,6);
-        psi_ki_vector = [0.1:0.4:0.9];
-        psi_kp_vector = -[0.2:0.4:1];
+        psi_ki_vector = [0.1, 0.5, 0.9];
+        %psi_ki_vector = [0.1];
+        psi_kp_vector = [0.5, 1, 1.5];
         for i = 1:size(psi_ki_vector,2)
             psi_ki = psi_ki_vector(i);
             for j = 1:size(psi_kp_vector,2)
@@ -280,23 +282,92 @@ switch choice
 
         % Plot altitude tracking for different k_w
         fig7 = figure();
+        subplot(3,1,1);
         hold on;
         plot(sim_results(1).psi_d.time, sim_results(1).psi_d.signals.values);
-        for c = 1:size(sim_results,2)
+        for c = 1:3
             plot(sim_results(c).tout, sim_results(c).yaw_rad.signals.values);
         end
-        legend('pedida', 'k_i = 0.1; k_p = -0.2',...
-            'k_i = 0.1; k_p = -0.6', 'k_i = 0.1; k_p = -1',...
-            'k_i = 0.5; k_p = -0.2',...
-            'k_i = 0.5; k_p = -0.6', 'k_i = 0.5; k_p = -1',...
-            'k_i = 0.9; k_p = -0.2',...
-            'k_i = 0.9; k_p = -0.6', 'k_i = 0.5; k_p = -1',...
+        legend('pedida', 'k_p = 0.5',...
+            'k_p = 1', 'k_p = 1.5', ...
             'location', 'southeast');
-        xlabel('Tempo [s]');
-        ylabel('\psi [rad]');
+        xlim([0 40]);
+        title('k_i = 0.1');
+        
+        subplot(3,1,2);
+        hold on;
+        plot(sim_results(1).psi_d.time, sim_results(1).psi_d.signals.values);
+        for c = 4:6
+            plot(sim_results(c).tout, sim_results(c).yaw_rad.signals.values);
+        end
+        legend('pedida', 'k_p = 0.5',...
+            'k_p = 1', 'k_p = 1.5', ...
+            'location', 'southeast');
+        xlim([0 40]);
+        title('k_i = 0.5');
+        
+        subplot(3,1,3);
+        hold on;
+        plot(sim_results(1).psi_d.time, sim_results(1).psi_d.signals.values);
+        for c = 7:9
+            plot(sim_results(c).tout, sim_results(c).yaw_rad.signals.values);
+        end
+        legend('pedida', 'k_p = 0.5',...
+            'k_p = 1', 'k_p = 1.5', ...
+            'location', 'southeast');
+        xlim([0 40]);
+        title('k_i = 0.9');
+        
+        han=axes(fig7,'visible','off');
+        han.XLabel.Visible='on';
+        han.YLabel.Visible='on';
+        ylabel(han,'\psi [rad]');
+        xlabel(han,'Tempo [s]');
+        
         saveas(fig7, '../imgs/PSI_Sim', 'png');
         
+        % Plot yaw_rate references
+        fig8 = figure();
+        subplot(3,1,1);
+        hold on;
+        plot(sim_results(1).yaw_rate_ref.time, ones(1, size(sim_results(1).yaw_rate_ref.time, 1)), '--');
+        for c = 1:3
+            plot(sim_results(c).yaw_rate_ref.time, sim_results(c).yaw_rate_ref.signals.values);
+        end
+        legend('Limite de Saturação', 'k_p = 0.5', 'k_p = 1',...
+            'k_p = 1.5', 'location', 'northeast');
+        xlim([0 15]);
+        title('k_i = 0.1');
         
+        subplot(3,1,2);
+        hold on;
+        plot(sim_results(1).yaw_rate_ref.time, ones(1, size(sim_results(1).yaw_rate_ref.time, 1)), '--');
+        for c = 4:6
+            plot(sim_results(c).yaw_rate_ref.time, sim_results(c).yaw_rate_ref.signals.values);
+        end
+        legend('Limite de Saturação', 'k_p = 0.5', 'k_p = 1',...
+            'k_p = 1.5', 'location', 'northeast');
+        xlim([0 15]);
+        title('k_i = 0.5');
+        
+        subplot(3,1,3);
+        hold on;
+        plot(sim_results(1).yaw_rate_ref.time, ones(1, size(sim_results(1).yaw_rate_ref.time, 1)), '--');
+        for c = 7:9
+            plot(sim_results(c).yaw_rate_ref.time, sim_results(c).yaw_rate_ref.signals.values);
+        end
+        legend('Limite de Saturação', 'k_p = 0.5', 'k_p = 1',...
+            'k_p = 1.5', 'location', 'northeast');
+        xlim([0 151]);
+        title('k_i = 0.9');
+        
+        han=axes(fig8,'visible','off');
+        han.XLabel.Visible='on';
+        han.YLabel.Visible='on';
+        ylabel(han,'velocidade \psi_r [rad]');
+        xlabel(han,'Tempo [s]');
+        
+        saveas(fig8, '../imgs/PSI_Sim_req', 'png'); 
         
     otherwise
         %Loading Simulink model of ARDrone
