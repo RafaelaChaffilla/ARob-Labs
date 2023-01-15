@@ -26,6 +26,7 @@ Q1 = diag([2; 2; 2; 20; 20; 20])*2;
 R = diag([1 1 1]);
 k_w = 1;
 K = lqr(A,B,Q1,R);
+K = [zeros(3), K(:,4:6)];
 psi_ki = 0.1;
 psi_kp = -1;
 
